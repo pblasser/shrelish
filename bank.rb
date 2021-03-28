@@ -1,0 +1,1 @@
+printf "%5.3f\n", rand(8)

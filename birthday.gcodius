@@ -1,0 +1,18 @@
+
+G1 x1 F30
+g1 x0 f30
+g1 x1.5 f45
+g1 x0 f45
+g1 x1.666 f50
+g1 x0 f50
+g1 x1.5 f45
+g1 x0 f45
+g1 x1.333 f40
+g1 x0 f40
+g1 x1 f36
+g1 x0 f36
+g1 x1 f33
+g1 x0 f33
+g1 x1 f30
+g1 x0 f30
+

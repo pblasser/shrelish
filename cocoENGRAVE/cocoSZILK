@@ -1,0 +1,36 @@
+ 
+Part alpspot { Name USD36U11_1_1 Loc { 850 1150 180 } } 
+Part alpspot { Name USD36U11_1_3_1 Loc { 650 2150 180 } } 
+Part alpspot { Name USD36U11_1 Loc { -650 2150 180 } } 
+Part alpspot { Name USD36U11_1_2 Loc { -850 1150 180 } } 
+Part JOHNSON { Name USD25USD120U11_2_7_1 Loc { -1000 600 } } 
+Part JOHNSON { Name USD25USD120U11_2_7_1_1 Loc { -500 600 } } 
+Part JOHNSON { Name USD25USD120U11_2_7_1_2 Loc { 1000 600 } } 
+Part JOHNSON { Name USD25USD120U11_2_7_1_3 Loc { 500 600 } } 
+Part JOHNSON { Name USD25USD120U11_2_7_1_4 Loc { -550 5400 } } 
+Part JOHNSON { Name USD25USD120U11_2_7_1_5 Loc { 550 5400 } } 
+Part JOHNSON { Name USD25USD120U11_2_7_1_6 Loc { 0 2150 } } 
+Part swdpdt { Name USD25USD60U21 Loc { 250 1150 } } 
+Part swdpdt { Name USD25USD60U21_1 Loc { -250 1150 } } 
+Part JOHNSON { Name USD25USD120U11_2_7_1_6_1 Loc { 0 3900 } } 
+Part JOHNSON { Name USD25U16 Loc { 0 5400 } } 
+Part JOHNSON { Name USD25USD120U11_2_7_1_3_1 Loc { 0 600 } } 
+Part 6screw { Name USD25U3_4 Loc { -1000 5750 180 } } 
+Part 6screw { Name USD25U3_3 Loc { 1000 5750 180 } } 
+Part 6screw { Name USD25U3_2 Loc { -1000 250 180 } } 
+Part 6screw { Name USD25U3_1 Loc { 1000 250 180 } }  
+
+Path S 2 D 25 { -25 2150 W 10 25 2150 } 
+Path S 2 D 25 { 0 2125 W 10 0 2175 } 
+Path S 2 D 25 { 650 5900 W 2m S 10 650 5650 } 
+Path S 2 D 25 { 650 5900 W 2m S 10 450 5900 } 
+Path S 2 D 25 { 650 5750 W 2m S 10 450 5750 } 
+Path S 2 D 25 { -450 5650 W 2m S 10 -650 5700 -450 5850 -650 5900 } 
+Path S 2 D 25 { 500 350 W 2m S 10 500 100 } 
+Path S 2 D 25 { 400 100 W 2m S 10 600 100 } 
+Path S 2 D 25 { 400 350 W 2m S 10 600 350 } 
+Path S 2 D 25 { -600 350 W 2m S 10 -600 100 -400 100 } 
+Path S 2 D 25 { -600 250 W 2m S 10 -400 250 } 
+Path S 2 D 25 { 850 2600 W 2m S 10 450 2900 850 3100 450 3300 } 
+Path S 2 D 25 { -450 2600 W 2m S 10 -650 3300 -850 2600 } 
+Path S 2 D 25 { -750 3000 W 2m S 10 -550 3000 }     End 
