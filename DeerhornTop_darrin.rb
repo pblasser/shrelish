@@ -35,11 +35,11 @@ class Deerorg < PlumPott
  johnson(x,y)
  end
  def a_psalpot(x,y)
-  alpspot(x,y,180+163)
+  alpspot(x,y,17)
  end
  def a_trimcap(x,y)
   pipe(x,y,0.06,0,-@depth)
-  tubo(x,y,0.25,0,-0.4,4)
+  tubo(x,y,0.27,0,-0.44,4)
  end
  def SMTLED(x,y)
  pipe(x,y,3.3/32,0,-@depth)

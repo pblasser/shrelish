@@ -64,7 +64,9 @@ end
   widochub = @width/2
   
   omronish()
-  shallot(dx(0),dy(0),1)
+  shallot(dx(0),dy(400),1)
+  
+  shallot(dx(0),dy(-400),1)
   
    #drillus(dx(3100), dy(0),0,-@depth)
    #pipe(dx(3100), dy(0),0.52,0,-@depth)
@@ -120,6 +122,7 @@ JOHNSON(dx(250), dy(-1750), dr(-72))
   @curxo += @width /2
   @myOkuda = Okuda.new(@curxo,@stary,@width+MARJ*2+$bitwidth,@heigh+@@lipp*2+$bitwidth,0.25)
   @curxo += @width /2
+  shallot(dx(0),dy(-1000),-1)
   shallot(dx(0),dy(1000),-1)
   @curxo += MARJ
 

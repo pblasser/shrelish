@@ -13,8 +13,8 @@ main: clean
 	$(CC) Barre_2mm.rb 5 2 2 $(PP)shbarre522.nc
 	$(CC) CocoBot.rb $(PP)cocobot.nc
 	$(CC) CocoCoco.rb 2 2 $(PP)cocococo22.nc
-	$(CC) CocoQuanto.rb 1 2 $(PP)cocoquanto12.nc
-	$(CC) CocoStrip.rb 4 2 $(PP)cocostrip42.nc
+	$(CC) CocoQuanto_darrin.rb 1 2 $(PP)cocoquanto12.nc
+	$(CC) CocoStrip_darrin.rb 4 2 $(PP)cocostrip42.nc
 	$(CC) PlumBot.rb $(PP)plumbot.nc 
 	$(CC) Plumbutt.rb 1 2 $(PP)plumbutt12.nc 
 	$(CC) Plumsteam.rb 1 2 $(PP)plumsteam12.nc 
@@ -37,8 +37,8 @@ main: clean
 	$(CC) RolzTop.rb 5 2 $(PP)rotop52.nc 
 	$(CC) RolzTop.rb 5 2 3 $(PP)rotop523.nc 
 	$(CC) DeerhornBot.rb $(PP)deerbot.nc 
-	$(CC) DeerhornTop.rb 2 2 $(PP)deertop22.nc 
-	$(CC) DeerhornTop.rb 2 2 0 $(PP)deertop220.nc 
+	$(CC) DeerhornTop_darrin.rb 2 2 $(PP)deertop22.nc 
+	$(CC) DeerhornTop_darrin.rb 2 2 0 $(PP)deertop220.nc 
 	$(CC) Stuberbot.rb $(PP)stuberbot.nc 
 	$(CC) Stubertop.rb JOHNSON $(PP)stubertop_johnson.nc 
 	$(CC) Stubertop.rb STUDS $(PP)stubertop_studs.nc 
@@ -48,7 +48,7 @@ clean:
 	-rm ciatBASTL2020/*.nc
 
 jomp:CC=-ruby -W0
-jomp:PP= | perl "./mmmaker.pl" > ..//temp//
+jomp:PP= | perl "./mmmaker.pl" > e://temp//
 jomp:main
  
  
