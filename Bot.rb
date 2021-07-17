@@ -131,14 +131,14 @@ class Bot
   miny += $halfwidth
   maxx -= $halfwidth
   maxy -= $halfwidth
-  #drawzframe(minx,miny,maxx,maxy)
-  while (minx < maxx) and (miny < maxy-(bronk*2)) 
-   drawzframe(minx,miny,maxx,maxy)
+  drawzframe(minx,miny,maxx,maxy)
+  while (minx < maxx) and (miny < maxy) 
+   #drawzframe(minx,miny,maxx,maxy)
    minx += bronk
    miny += bronk
    maxx -= bronk
    maxy -= bronk
-   #drawzframe(minx,miny,maxx,maxy)
+   drawzframe(minx,miny,maxx,maxy)
   end
   midx = (minx + maxx) / 2
   #cutoPoint(midx,maxy)

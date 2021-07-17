@@ -6,6 +6,9 @@ main: clean
 	$(CC) Studworth.rb 1 1 2 $(PP)4mm_studworth11_bot.nc
 	$(CC) Studworth.rb 2 1 1 $(PP)4mm_studworth21_top.nc
 	$(CC) Studworth.rb 2 1 2 $(PP)4mm_studworth21_bot.nc
+	$(CC) Interojoke.rb grassi mocante $(PP)igm.nc
+	$(CC) Interojoke.rb grassi $(PP)ig.nc
+	$(CC) Interojoke.rb mocante $(PP)im.nc
 	$(CC) Tocante.rb 2 1 1 $(PP)tocante21_top.nc
 	$(CC) Tocante.rb 2 1 2 $(PP)tocante21_bot.nc
 	$(CC) Shnth.rb 2 2 $(PP)shnth22.nc
@@ -48,7 +51,7 @@ clean:
 	-rm ciatBASTL2020/*.nc
 
 jomp:CC=-ruby -W0
-jomp:PP= | perl "./mmmaker.pl" > e://temp//
+jomp:PP= | perl "./mmmaker.pl" > I:/
 jomp:main
- 
- 
+
+

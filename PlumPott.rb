@@ -342,7 +342,7 @@ end
  
  def parabolza(x,y,z,xx,yy)
   
-  x/=10.0
+  x/=12.0
   y/=10.0
   z/=8.0
   cutoPointz(xx+x,yy+y,(x**2)+8*(y**4)-z)
@@ -351,9 +351,9 @@ end
   skimtoPoint(x,y,0.1)
   signx = signy = 1
   for k in 0..3 do
-   for j in -10..10 do
+   for j in -12..12 do
     for i in -13..14 do
-     parabolza(signx*j+xs*10,signy*i,k,x,y)
+     parabolza(signx*j+xs*12,signy*i,k,x,y)
     end
     signy*=-1
    end
