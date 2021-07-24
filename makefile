@@ -16,10 +16,12 @@ main: clean
 	$(CC) Barre_2mm.rb 5 2 2 $(PP)shbarre522.nc
 	$(CC) CocoBot.rb $(PP)cocobot.nc
 	$(CC) CocoCoco.rb 2 2 $(PP)cocococo22.nc
-	$(CC) CocoQuanto_darrin.rb 1 2 $(PP)cocoquanto12.nc
+	$(CC) CocoQuanto.rb 1 2 $(PP)cocoquanto12.nc
+	$(CC) CocoQuanto_pre.rb 1 2 $(PP)cocoquanto12_pre.nc
 	$(CC) CocoStrip_darrin.rb 4 2 $(PP)cocostrip42.nc
 	$(CC) PlumBot.rb $(PP)plumbot.nc 
 	$(CC) Plumbutt.rb 1 2 $(PP)plumbutt12.nc 
+	$(CC) Plumbutt_pre.rb 1 2 $(PP)plumbutt12_pre.nc 
 	$(CC) Plumsteam.rb 1 2 $(PP)plumsteam12.nc 
 	$(CC) Plumdeerboo.rb 2 2 $(PP)plumdeer22.nc 
 	$(CC) Sidrax.rb $(PP)sidrax.nc 
@@ -52,6 +54,7 @@ clean:
 
 jomp:CC=-ruby -W0
 jomp:PP= | perl "./mmmaker.pl" > I:/
+jomp:PP= | perl "./mmmaker.pl" > ../temp/
 jomp:main
 
 

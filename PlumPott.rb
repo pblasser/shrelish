@@ -343,7 +343,7 @@ end
  def parabolza(x,y,z,xx,yy)
   
   x/=12.0
-  y/=10.0
+  y/=12.0
   z/=8.0
   cutoPointz(xx+x,yy+y,(x**2)+8*(y**4)-z)
  end
