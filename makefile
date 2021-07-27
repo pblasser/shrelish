@@ -24,6 +24,7 @@ main: clean
 	$(CC) Plumbutt_pre.rb 1 2 $(PP)plumbutt12_pre.nc 
 	$(CC) Plumsteam.rb 1 2 $(PP)plumsteam12.nc 
 	$(CC) Plumdeerboo.rb 2 2 $(PP)plumdeer22.nc 
+	$(CC) Plumdeer_pre.rb 2 2 $(PP)plumdeer22_pre.nc 
 	$(CC) Sidrax.rb $(PP)sidrax.nc 
 	$(CC) Sidbar_2mm.rb 5 2 $(PP)sidbar52.nc 
 	$(CC) Sidbar_2mm.rb 5 2 3 $(PP)sidbar523.nc 
@@ -54,7 +55,7 @@ clean:
 
 jomp:CC=-ruby -W0
 jomp:PP= | perl "./mmmaker.pl" > I:/
-jomp:PP= | perl "./mmmaker.pl" > ../temp/
+#jomp:PP= | perl "./mmmaker.pl" > ../temp/
 jomp:main
 
 

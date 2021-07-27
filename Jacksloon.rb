@@ -6,7 +6,7 @@ attr_accessor :batdepth
  def initialize(starx, stary)
  @zstep = 4
  @magic = 0.023
- @bronk = 0.15
+ @bronk = 0.128
   super(starx, stary)
  end
   NUMSEGS = 32
