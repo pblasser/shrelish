@@ -2,6 +2,7 @@ CC=-ruby -d -W0
 PP= | perl "./mmbaker.pl" > ciatBASTL2020//
  
 main: clean
+	$(CC) MountBar.rb 4 1 $(PP)mounter.nc
 	$(CC) Studworth.rb 1 1 1 $(PP)4mm_studworth11_top.nc
 	$(CC) Studworth.rb 1 1 2 $(PP)4mm_studworth11_bot.nc
 	$(CC) Studworth.rb 2 1 1 $(PP)4mm_studworth21_top.nc

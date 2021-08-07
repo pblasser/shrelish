@@ -44,5 +44,5 @@ class Plumdeer < PlumPott
 end
 $rimmer = 0.01
 stutterat(Plumdeer)
-Qunt.new(0,0).drillus(0,0,0,-0.55)
+Plumdeer.new(0,0).drillus(0,0,0,-0.55)
 printf "G0 Z0.5\n"
