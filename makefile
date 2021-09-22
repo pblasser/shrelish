@@ -3,6 +3,9 @@ PP= | perl "./mmbaker.pl" > ciatBASTL2020//
  
 main: clean
 	$(CC) MountBar.rb 4 1 $(PP)mounter.nc
+	$(CC) Dudebot.rb $(PP)duderbot.nc
+	$(CC) Dudetop.rb JOHNSON FYRALL $(PP)fyralltop_johnson.nc 
+	$(CC) Dudetop.rb JOHNSON SRINE $(PP)srinetop_johnson.nc 
 	$(CC) Studworth.rb 1 1 1 $(PP)4mm_studworth11_top.nc
 	$(CC) Studworth.rb 1 1 2 $(PP)4mm_studworth11_bot.nc
 	$(CC) Studworth.rb 2 1 1 $(PP)4mm_studworth21_top.nc

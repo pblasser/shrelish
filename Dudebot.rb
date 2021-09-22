@@ -26,9 +26,9 @@ class Duderon < Dude
     here = ova(xx,yy,i/numzegs)
     cutoPointDeepo(here[0],here[1],z)
    end
-   #yy -= $bitwidth
+   yy -= $bitwidth
    #xx -= $bitwidth
-      yy -= 0.16 #$bitwidth
+     # yy -= 0.16 #$bitwidth
    xx -= 0.25 #$bitwidth
   end
  end
