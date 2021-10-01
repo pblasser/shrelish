@@ -29,7 +29,7 @@ class Duderon < Dude
    yy -= $bitwidth
    #xx -= $bitwidth
      # yy -= 0.16 #$bitwidth
-   xx -= 0.25 #$bitwidth
+   xx -= $bitwidth
   end
  end
  def lozgnd(z)

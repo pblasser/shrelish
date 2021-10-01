@@ -21,8 +21,8 @@ class Stuberon < Dude
     here = ova(xx,yy,i/numzegs)
     cutoPointDeepo(here[0],here[1],z)
    end
-   yy -= 0.16 #$bitwidth
-   xx -= 0.25 #$bitwidth
+   yy -= $bitwidth
+   xx -= $bitwidth
   end
  end
  def lozgnd(z)

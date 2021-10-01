@@ -23,6 +23,9 @@ class Mounter < Jacksloon
   super(starx, stary)
  end
  def boxo()
+  #spyrtub(dx(4),dy(0),cmil(0.420),0)
+  #spyrtub(dx(32),dy(0),cmil(0.420),0)
+  
   spyrtub(dx(4),dy(0),cmil(0.35),0)
   spyrtub(dx(32),dy(0),cmil(0.35),0)
   @curxo += @width /2
