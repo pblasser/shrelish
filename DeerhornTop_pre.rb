@@ -19,7 +19,7 @@ class Deerorg < PlumPott
   super(starx, stary)
  end
  def dy(y)
-  return @stary-y
+  return @stary+y
  end
  def dx(x)
   return @curxo+x
@@ -38,8 +38,8 @@ class Deerorg < PlumPott
   alpspot(x,y,17)
  end
  def a_trimcap(x,y)
-  pipe(x,y,0.06,0,-@depth)
-  tubo(x,y,0.27,0,-0.44,4)
+  #pipe(x,y,0.06,0,-@depth)
+  tubo(x,y,0.33,0,-0.44,4)
  end
  def SMTLED(x,y)
  pipe(x,y,3.3/32,0,-@depth)
@@ -47,7 +47,6 @@ end
 def a_dwitch(x,y)
  swdpdt(x,y,17)
  end
- 
  
  def syck
  shallot(dx(0),dy(-0.85),1)
@@ -67,6 +66,7 @@ end
 
 
 
+
  
  def boxo()
   @curxo += MARJ
@@ -75,7 +75,7 @@ end
    #organoPHORM($seck_horn,dx(0),dy(0),1)
    seck
    
-  elsif (@@numero == 1) then
+  elsif (@@numero == 0) then
    #organoPHORM($syck_horn,dx(0),dy(0),1)
    syck
   else 
@@ -119,4 +119,10 @@ unless ARGV[3].nil?  then
  nummerat(Deerorg, Integer(ARGV[3]))
  else
  stutterat(Deerorg) 
-end#stutterat(Deerorg)
+end
+
+Deerorg.new(0,0).drillus(0,0,0,-0.55)
+printf "G0 Z0.5\n"
+printf "G0 X0 Y0\n"
+
+#stutterat(Deerorg)

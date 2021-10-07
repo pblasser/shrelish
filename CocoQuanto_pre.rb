@@ -52,3 +52,4 @@ $rimmer = 0.01
 stutterat(Qunt)
 Qunt.new(0,0).drillus(0,0,0,-0.55)
 printf "G0 Z0.5\n"
+printf "G0 X0 Y0\n"

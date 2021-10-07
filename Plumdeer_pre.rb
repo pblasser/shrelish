@@ -20,7 +20,7 @@ class Plumdeer < PlumPott
   super(starx, stary)
  end
  def dy(y)
-  return @stary-0.55+y
+  return @stary-0.55-y
  end
  def dx(x)
   return @curxo+(x/1000.0)
@@ -28,7 +28,11 @@ class Plumdeer < PlumPott
  def boxo()
   @curxo += MARJ
   shallot(dx(50),dy(0),1)
-  @curxo += @width 
+  @curxo += @width /2
+tubo(dx(2234),dy(0.703),0.33,0,-0.44,4)
+
+    @curxo += @width /2
+
   shallot(dx(-50),dy(0),-1)
   @curxo += MARJ
   return @curxo
@@ -46,3 +50,4 @@ $rimmer = 0.01
 stutterat(Plumdeer)
 Plumdeer.new(0,0).drillus(0,0,0,-0.55)
 printf "G0 Z0.5\n"
+printf "G0 X0 Y0\n"

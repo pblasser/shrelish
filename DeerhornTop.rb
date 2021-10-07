@@ -159,7 +159,7 @@ $surck_horn = [ [2.000000,0.85], [2.000000,0.85], [2.119281,0.918166], [2.215531
   if (@heigh==2) then
    #organoPHORM($seck_horn,dx(0),dy(0),1)
    seck
-  elsif (@@numero == 0) then
+  elsif (@@numero == 1) then
    organoPHORM($syck_horn,dx(0),dy(0),1)
    syck
   else 

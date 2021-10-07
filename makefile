@@ -3,6 +3,11 @@ PP= | perl "./mmbaker.pl" > ciatBASTL2020//
  
 main: clean
 	$(CC) MountBar.rb 4 1 $(PP)mounter.nc
+	$(CC) DeerhornBot.rb $(PP)deerbot.nc 
+	$(CC) DeerhornTop_pre.rb 2 2 $(PP)deertop22_pre.nc 
+	$(CC) DeerhornTop_pre.rb 2 2 0 $(PP)deertop220_pre.nc 
+	$(CC) DeerhornTop.rb 2 2 $(PP)deertop22.nc 
+	$(CC) DeerhornTop.rb 2 2 0 $(PP)deertop220.nc 
 	$(CC) Dudebot.rb $(PP)duderbot.nc
 	$(CC) Dudetop.rb JOHNSON FYRALL $(PP)fyralltop_johnson.nc 
 	$(CC) Dudetop.rb JOHNSON SRINE $(PP)srinetop_johnson.nc 
@@ -46,9 +51,7 @@ main: clean
 	$(CC) RolzBot.rb $(PP)robot.nc 
 	$(CC) RolzTop.rb 5 2 $(PP)rotop52.nc 
 	$(CC) RolzTop.rb 5 2 3 $(PP)rotop523.nc 
-	$(CC) DeerhornBot.rb $(PP)deerbot.nc 
-	$(CC) DeerhornTop_darrin.rb 2 2 $(PP)deertop22.nc 
-	$(CC) DeerhornTop_darrin.rb 2 2 0 $(PP)deertop220.nc 
+
 	$(CC) Stuberbot.rb $(PP)stuberbot.nc 
 	$(CC) Stubertop.rb JOHNSON $(PP)stubertop_johnson.nc 
 	$(CC) Stubertop.rb STUDS $(PP)stubertop_studs.nc 
@@ -59,7 +62,7 @@ clean:
 
 jomp:CC=-ruby -W0
 jomp:PP= | perl "./mmmaker.pl" > E:/
-#jomp:PP= | perl "./mmmaker.pl" > ../temp/
+jomp:PP= | perl "./mmmaker.pl" > ../temp/
 jomp:main
 
 

@@ -5,8 +5,7 @@
 #print "desc xpos ypos rota tobo\n";
 #my $endor = "";
 print "G90 G21 G17\n";
-#print "T1 M06\n";
-#print "S12000 M03 G04 X15\n";
+print "S1000 M3\n";
 #print "G0 X0 Y0 Z12.7\n";
 while (<STDIN>){
  while ($_=~/\b([^\s]+)\b/g) {
@@ -20,5 +19,5 @@ while (<STDIN>){
 
  } print "\n"; 
 } 
-#print "M05 M30\n";
+print "M5 M30\n";
 
