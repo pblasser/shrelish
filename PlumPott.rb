@@ -344,7 +344,7 @@ end
   
   x/=12.0
   y/=12.0
-  z/=8.0
+  z/=10.0
   cutoPointz(xx+x,yy+y,(x**2)+8*(y**4)-z)
  end
  def shallot(x,y,xs)
