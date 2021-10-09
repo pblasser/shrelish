@@ -383,7 +383,7 @@ retrax(0.1)
  retrax(0.5)
 
  end
- def flip
+ def flipp
  end
  
 def flipmark(x)
@@ -392,7 +392,7 @@ drillus(x*12.0,0,0,-12.0/8.0)#@depth)
   drillus(0,0,0,-12.0/8.0)#@depth)
    @@pentrate = 30
    retrax(0.1)
-  printf("m 0 \n")#dwellus(60)
+  #printf("m 0 \n")#dwellus(60)
  end
  
  def boxo
@@ -455,36 +455,41 @@ end
 $rimmer = 0.01
 
 def dudderat(clasz)
- nodes = "BODY"
+ process = 0
   xarg = yarg = 1
- unless ARGV[0].nil? then nodes = String(ARGV[0]) end
+ unless ARGV[0].nil? then process = Integer(ARGV[0]) end
  unless ARGV[1].nil? then xarg = Integer(ARGV[1]) end
- if nodes=="PLASTIC" then
-  broth = clasz.new(-6,0)
-  broth.plastique()
-  printf "G0 Z0.5\n"
-  printf "G0 X0 Y0 \n"
-  return
- end
+
 
  curxo = 0
+
+ if process==0 then
  for i in 1..xarg do
   mystuff = clasz.new(curxo,0)
   mystuff.flip()
   curxo = mystuff.duxo() + $rimmer*2
  end
-    printf "G0 Z0.5\n"
- printf "G0 X0 Y0 \n"
-  printf("m 0 \n")
  mystuff.flipmark(xarg)
- curxo = 0
+ end
+
+ if process==1 then
  for i in 1..xarg do
   mystuff = clasz.new(curxo,0)
   mystuff.boxo()
   curxo = mystuff.duxo() + $rimmer*2
  end
- printf "G0 Z0.5\n"
- printf "G0 X0 Y0 \n"
+ end
+
+ if process==2 then
+  broth = clasz.new(-6,0)
+  broth.plastique()
+
+ end
+
+  printf "G0 Z0.5\n"
+  printf "G0 X0 Y0 \n"
+
+
 end
 
 

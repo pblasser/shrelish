@@ -2,6 +2,14 @@ CC=-ruby -d -W0
 PP= | perl "./mmbaker.pl" > ciatBASTL2020//
  
 main: clean
+
+
+	$(CC) Shneck.rb 2 1 1 $(PP)shneck21_bot.nc	
+	$(CC) Shneck.rb 2 1 2 $(PP)shneck21_top.nc	
+	$(CC) Shtar.rb 0 $(PP)shtar_bot.nc	
+	$(CC) Shtar.rb 1 $(PP)shtar_top.nc	
+	$(CC) Shtar.rb 2 $(PP)shtar_pla.nc		
+
 	$(CC) MountBar.rb 4 1 $(PP)mounter.nc
 	$(CC) DeerhornBot.rb $(PP)deerbot.nc 
 	$(CC) DeerhornTop_pre.rb 2 2 $(PP)deertop22_pre.nc 
@@ -62,7 +70,7 @@ clean:
 
 jomp:CC=-ruby -W0
 jomp:PP= | perl "./mmmaker.pl" > I:/
-#jomp:PP= | perl "./mmmaker.pl" > ../temp/
+jomp:PP= | perl "./mmmaker.pl" > ../temp/
 jomp:main
 
 

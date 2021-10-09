@@ -39,7 +39,7 @@ class Deerorg < PlumPott
  end
  def a_trimcap(x,y)
   #pipe(x,y,0.06,0,-@depth)
-  tubo(x,y,0.33,0,-0.44,4)
+  tubo(x,y,0.33,0,-0.4,4)
  end
  def SMTLED(x,y)
  pipe(x,y,3.3/32,0,-@depth)

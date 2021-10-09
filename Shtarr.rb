@@ -1,6 +1,6 @@
 
 require './Bot.rb'
-require 'Complex'
+#require 'Complex'
 include Math
 require './Jacksloon.rb'
 require './dudefunks.rb'

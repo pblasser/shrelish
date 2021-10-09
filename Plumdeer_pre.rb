@@ -29,7 +29,7 @@ class Plumdeer < PlumPott
   @curxo += MARJ
   shallot(dx(50),dy(0),1)
   @curxo += @width /2
-tubo(dx(2234),dy(0.703),0.33,0,-0.44,4)
+tubo(dx(2234),dy(0.703),0.33,0,-0.4,4)
 
     @curxo += @width /2
 

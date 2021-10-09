@@ -187,9 +187,9 @@ drillus(26,0,0,-8.0/8.0)#@depth)
   drillus(0,0,0,-8.0/8.0)#@depth)
    @@pentrate = 30
    retrax(0.5)
-  printf("m 0 \n")#dwellus(60)
+  #printf("m 0 \n")#dwellus(60)
  end
-def flip
+def flipp
 end
 def boxo
   @dock=dock=0.7+$halfwidth+0.05+0.03#fatness bogey
@@ -338,24 +338,29 @@ def flipperat(clasz)
  xarg = yarg = 1
  unless ARGV[0].nil? then yarg = Integer(ARGV[0]) end
  unless ARGV[1].nil? then xarg = Integer(ARGV[1]) end
+ process=3
+ unless ARGV[2].nil? then process = Integer(ARGV[2]) end
+
+
  broth = clasz.new(0,0).getBrot + $rimmer
  curyop = (yarg-1)*broth
  curxo = 0
  mystuff = clasz.new(curxo,0)
  #curxo = mystuff.duxo()
- for i in 1..xarg do
+
+ if (process&1)>0 then 
   curyo = curyop
   for j in 1..yarg do
    mystuff = clasz.new(curxo,curyo)
    mystuff.flip()
    curyo -= broth*2
   end
-  curxo = mystuff.duxo() + $rimmer*2
+  mystuff.flipmark()
  end
- mystuff.flipmark()
- curxo = $bitwidth
- for i in 1..xarg do
-  if i == 1 then mystuff.numerize end
+
+ if (process&2)>0 then
+#why did curxo be 0 and now bitwidth
+  curxo = $bitwidth
   curyo = curyop
   for j in 1..yarg do
    mystuff = clasz.new(curxo,curyo)
@@ -363,7 +368,6 @@ def flipperat(clasz)
    mystuff.ducabot()
    curyo -= broth*2
   end
-  curxo = mystuff.duxo() + $rimmer*2
  end
  printf "G0 Z0.5\n"
  printf "G0 X0 Y0 \n"
