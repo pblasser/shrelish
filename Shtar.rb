@@ -28,9 +28,8 @@ class Shtar < Jacksloon
  end
  def cutoPointDeepo(x,y,z)
   if z < -@depth then z = -@depth end
-  printf "G1 X%5.3f Y%5.3f Z%5.3f F%d\n", dx(x), y, z, @@feedrate
+  printf "G1 X%5.4f Y%5.4f Z%5.4f\n", dx(x), y, z
  end
- 
  def polka_bevel(t,z,qz)
   q=5
   q = @q
@@ -356,6 +355,8 @@ s=1
  
  def nex()
  y = (1.5-$bitwidth)/2.0
+ fatnessbogey = 0.02 #0.03
+ y = 0.75+fatnessbogey-$halfwidth
  incro = y/6.0
  starx = -5.9
  dendx = -3.5 + $halfwidth

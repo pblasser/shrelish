@@ -163,7 +163,7 @@ end
  def mountSCREW(x,y)
   tubo(x,y+@stary,0.15,0,-0.2,2)
   
-  spyrtub(x,y+@stary,5.0/64.0,5.0/64.0)
+  spyrtub(x,y+@stary,5.0/64.0,0)#5.0/64.0)
 end
 
 
