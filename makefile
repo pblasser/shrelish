@@ -1,5 +1,5 @@
 CC=-ruby -d -W0
-PP= | perl "./mmbaker.pl" > ciatBASTL2020//
+PP= | perl "./mmbaker.pl" > ciatBASTL2021/
  
 main: clean
 
@@ -67,11 +67,11 @@ main: clean
  
 clean:
 	-rm *.nc
-	-rm ciatBASTL2020/*.nc
+	-rm ciatBASTL2021/*.nc
 
 jomp:CC=-ruby -W0
 jomp:PP= | perl "./mmmaker.pl" > I:/
-jomp:PP= | perl "./mmmaker.pl" > ../temp/
+#jomp:PP= | perl "./mmmaker.pl" > ../temp/
 jomp:main
 
 
