@@ -187,6 +187,20 @@ class Shtar < Jacksloon
   bridge.call(-0.3,-2.7)
   pront.call(1,-2.7)
   nut.call(-1.8,-3.2)
+
+
+
+
+  dront = lambda(){|xx,yy| 
+   r=4
+   d = 0.9 / (r*2+1)
+
+   drillus(xx-0.45, yy, 0, plasthick)
+   drillus(xx-0.45+d, yy, 0, plasthick)
+   drillus(xx+0.45-d*r, yy, 0, plasthick)
+   drillus(xx+0.45, yy, 0, plasthick)
+  } 
+  #tarsh test
   bridge.call(0,-3.3)
   nut.call(1.8,-3.2)
   
