@@ -29,7 +29,8 @@ class Deerorg < PlumPott
  end
  
   def a_ground(x,y)
- drillus(x,y,0,-@depth)
+ #drillus(x,y,0,-@depth)
+ pipe(x,y,0.048,0,-@depth)
  end
  def a_johnson(x,y)
  johnson(x,y)

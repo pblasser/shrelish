@@ -37,7 +37,11 @@ class Plumdeer < PlumPott
   @curxo += MARJ
   widochub = @width/2
   organoPHORM($plumDEER,dx(0),dy(0),1)
-  drillus(dx(-2.75),dy(-1.5),0,-@depth)
+  #drillus(dx(-2.75),dy(-1.5),0,-@depth)
+ pipe(dx(-2.75),dy(-1.5),0.048,0,-@depth)
+
+
+
   looscrew(dx(-2.75),dy(-0.75))
   looscrew(dx(-2.75),dy(0.75))
   #tubo(dx(-2.272),dy(0.8),3.3/32,0,-@depth,@zstep)
@@ -58,7 +62,10 @@ class Plumdeer < PlumPott
   tubo(dx(1.805),dy(0.291),3.3/32,0,-@depth,@zstep)
   johnson(dx(1.844),dy(-0.243))
   
-  drillus(dx(2.75),dy(-1.5),0,-@depth)
+  #drillus(dx(2.75),dy(-1.5),0,-@depth)
+ pipe(dx(2.75),dy(-1.5),0.048,0,-@depth)
+
+
   looscrew(dx(2.75),dy(-0.75))
   
     pipe(dx(2.234),dy(0.703),0.06,0,-@depth)
