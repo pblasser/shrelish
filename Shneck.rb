@@ -192,7 +192,7 @@ drillus(26,0,0,-8.0/8.0)#@depth)
 def flipp
 end
 def boxo
-  @dock=dock=0.7+$halfwidth+0.05+0.03#fatness bogey
+  @dock=dock=0.7+$halfwidth+0.05+0.02#fatness bogey
   p = 23.7
   mountSCREW(0.5,0.4)
   mountSCREW(0.5,-0.4)

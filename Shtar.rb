@@ -11,7 +11,7 @@ class Shtar < Jacksloon
  def initialize(starx, stary)
   @width = 12
   @heigh = 8
-  
+  oscacc = 0
   @depth = 1.0
   @zstep = @depth/7.0
   @sensoreft = -2.8
@@ -46,7 +46,7 @@ class Shtar < Jacksloon
   sqrt(50*sin(t)**4+3*q**2*cos(t)**4)
    unless r.is_a?(Complex) then 
     x = r*sin(t)
-	y = r*cos(t)
+  y = r*cos(t)
     cutoPointDeepo(x,y,zz) 
    end
  rescue Math::DomainError => e then end
@@ -144,7 +144,7 @@ class Shtar < Jacksloon
   fox(tarx,-y,dend,y,0,plasthick,2)
   
       slott = 0.125# - $bitwidth
-	  
+    
   ##################PRONT BRIDGE
   pront = lambda(){|x,y| 
    slotf = slott/2.0
@@ -161,9 +161,9 @@ class Shtar < Jacksloon
   }
   bridge = lambda() {|x,y|
    fox(x-0.8,y,x+slott-0.8,y+0.3,0,plasthick,2)
-	fox(x+0.8-slott,y,x+0.8,y+0.3,0,plasthick,2)
-	dront.call(x, y+0.6-$halfwidth)
-	fox(x-1,y,x+1,y+0.55+$bitwidth,0,plasthick,2)
+  fox(x+0.8-slott,y,x+0.8,y+0.3,0,plasthick,2)
+  dront.call(x, y+0.6-$halfwidth)
+  fox(x-1,y,x+1,y+0.55+$bitwidth,0,plasthick,2)
   }
 
   nut = lambda(){|x,y| 
@@ -204,7 +204,7 @@ class Shtar < Jacksloon
   bridge.call(0,-3.3)
   nut.call(1.8,-3.2)
   
-	
+  
   #pront.call(0,-1.5)
   #pront.call(-0.3,-2.1)
   #pront.call(0.3,-2.1)
@@ -223,11 +223,11 @@ class Shtar < Jacksloon
   #nut.call(-1.8,2.9)
   #bridge.call(0,2.7)
   #nut.call(1.8,2.9)
-	
-	
+  
+  
 
   
-	
+  
  retrax(0.1)
   polka_bevel(0,-0.31,-1)
    mult = 100
@@ -282,15 +282,15 @@ class Shtar < Jacksloon
     r = -(sqrt(5)*
       sqrt((s*sqrt(2304000*sin(t)**4*z+
              161280*q**2*cos(t)**4*z+
-		     11025*q**4*sin(t)**4-
-		     5880*q**4*cos(t)**2*sin(t)**2+
-		     784*q**4*cos(t)**4))+
-		105*q**2*sin(t)**2-
-		28*q**2*cos(t)**2))/
-	(2*sqrt(3)*sqrt(100*sin(t)**4+7*q**2*cos(t)**4))
-	unless r.is_a?(Complex) then 
+         11025*q**4*sin(t)**4-
+         5880*q**4*cos(t)**2*sin(t)**2+
+         784*q**4*cos(t)**4))+
+    105*q**2*sin(t)**2-
+    28*q**2*cos(t)**2))/
+  (2*sqrt(3)*sqrt(100*sin(t)**4+7*q**2*cos(t)**4))
+  unless r.is_a?(Complex) then 
      x = r*sin(t)
-	 y = r*cos(t)
+   y = r*cos(t)
      cutoPointDeepo(x,y,zz) 
     end
   rescue Math::DomainError => e then end
@@ -359,8 +359,8 @@ s=1
    if  (i.divmod(2)[1] != 0) then 
     penetrate(starz)
     cutoPointDeepo(dendx,dendy,dendz)
-	else 
-	penetrate(dendz)
+  else 
+  penetrate(dendz)
     cutoPointDeepo(starx, stary, starz) 
    end
   end
