@@ -14,7 +14,7 @@ class Shtar < Jacksloon
   @width = 12
   @heigh = 8
   
-  @depth = 1.25
+  @depth = Float(11)/Float(8)
   @zstep = @depth/7.0
   @sensoreft = -2.8
   @sensorite = 3.6
@@ -284,7 +284,7 @@ drillus(x*12.0,0,0,-12.0/8.0)#@depth)
  pipe(dx(5.25), -0.75, 0.125, 0, -1)
 
  skimtoPoint(dx(0),-4,0.1)
-  for j in 1..9 do
+  for j in 1..11 do
    ova(6,j)
   end 
   retrax(0.1)
