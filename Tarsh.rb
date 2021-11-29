@@ -14,7 +14,7 @@ class Shtar < Jacksloon
   @width = 12
   @heigh = 8
   
-  @depth = Float(11)/Float(8)
+  @depth = Float(12)/Float(8)
   @zstep = @depth/7.0
   @sensoreft = -2.8
   @sensorite = 3.6
@@ -79,7 +79,8 @@ class Shtar < Jacksloon
   
   for i in 0..(mult*2)do
    t = PI*Float(i)/mult
-   polka_bevel(t,z,qz)
+   polka_b 
+   evel(t,z,qz)
   end
  end
 
@@ -280,11 +281,11 @@ drillus(x*12.0,0,0,-12.0/8.0)#@depth)
   polka_bowl(-1)
   retrax(0.1)
   
- pipe(dx(5.25), 0.75, 0.125, 0, -1)
- pipe(dx(5.25), -0.75, 0.125, 0, -1)
+ pipe(dx(5.3), 0.75, 2.0/25.4, 0, -1)
+ pipe(dx(5.3), -0.75, 2.0/25.4, 0, -1)
 
  skimtoPoint(dx(0),-4,0.1)
-  for j in 1..11 do
+  for j in 1..12 do
    ova(6,j)
   end 
   retrax(0.1)
