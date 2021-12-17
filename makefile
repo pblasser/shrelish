@@ -2,8 +2,15 @@ CC=-ruby -d -W0
 PP= | perl "./mmbaker.pl" > ../ciatBASTL2021/
  
 main: clean
-	$(CC) Sunbeetle.rb 0 $(PP)sun_bot.nc	
-	$(CC) Sunbeetle.rb 1 $(PP)sun_top.nc	
+	#$(CC) Sunbeetle.rb 0 $(PP)sun_bot.nc	
+	#$(CC) Sunbeetle.rb 1 $(PP)sun_top.nc	
+	$(CC) SolarGrassi.rb 0 $(PP)solargrassi0.nc
+	$(CC) SolarGrassi.rb 1 $(PP)solargrassi1.nc		
+	$(CC) SolarBMT.rb 1 $(PP)solarbmt.nc	
+	
+	$(CC) SolarCICADA.rb 1 $(PP)solarcic.nc	
+	$(CC) SolarFlange.rb 1 $(PP)solarfla.nc	
+	
 	$(CC) Tarsh.rb 1 $(PP)tarsh.nc	
 	$(CC) Shneck.rb 1 1 1 $(PP)shneck11_bot.nc	
 	$(CC) Shneck.rb 1 1 2 $(PP)shneck11_top.nc	

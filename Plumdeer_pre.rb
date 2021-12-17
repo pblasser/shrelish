@@ -33,7 +33,7 @@ tubo(dx(2234),dy(0.703),0.33,0,-0.4,4)
 
     @curxo += @width /2
 
-  shallot(dx(-50),dy(0),-1)
+  #shallot(dx(-50),dy(0),-1)
   @curxo += MARJ
   return @curxo
  end
