@@ -6,7 +6,7 @@ main: clean
 	#$(CC) Sunbeetle.rb 1 $(PP)sun_top.nc	
 	$(CC) SolarGrassi.rb 0 $(PP)solargrassi0.nc
 	$(CC) SolarGrassi.rb 1 $(PP)solargrassi1.nc		
-	$(CC) SolarBMT.rb 1 $(PP)solarbmt.nc	
+	$(CC) SolarGrassiChub.rb 1 1 $(PP)solargrassichub0.nc	
 	
 	$(CC) SolarCICADA.rb 1 $(PP)solarcic.nc	
 	$(CC) SolarFlange.rb 1 $(PP)solarfla.nc	
@@ -55,11 +55,14 @@ main: clean
 	$(CC) Sidrax.rb $(PP)sidrax.nc 
 	$(CC) Sidbar_2mm.rb 5 2 $(PP)sidbar52.nc 
 	$(CC) Sidbar_2mm.rb 5 2 3 $(PP)sidbar523.nc 
-	$(CC) Sidbar_2mm.rb 5 2 0 0 $(PP)sidbar5200.nc 
+	$(CC) Sidbar_2mm.rb 5 2 0 0 $(PP)sidbar5200.nc
+	$(CC) Sidbar_2mm.rb 5 2 0 5 $(PP)sidbar52leftmoon.nc
+	$(CC) Sidbar_2mm.rb 5 2 0 1 $(PP)sidbar52ritemoon.nc	 
 	$(CC) Sidmat_2mm.rb 3 2 $(PP)sidmat32.nc  
 	$(CC) Tetrax.rb $(PP)tetrax.nc 
 	$(CC) Tetbar_2mm.rb 5 2 $(PP)tetbar52.nc 
 	$(CC) Tetbar_2mm.rb 5 2 2 $(PP)tetbar522.nc 
+	$(CC) Tetbar_2mm.rb 5 2 2 1 $(PP)tetbar52midd.nc 
 	$(CC) Tetmat_2mm.rb 3 2 $(PP)tetmat32.nc
 	$(CC) Quatrax.rb $(PP)quatrax.nc 
 	$(CC) Quabar_2mm.rb 5 2 $(PP)quabar52.nc 
@@ -80,7 +83,7 @@ clean:
 
 jomp:CC=-ruby -W0
 jomp:PP= | perl "./mmmaker.pl" > I:/
-#jomp:PP= | perl "./mmmaker.pl" > ../temp/
+jomp:PP= | perl "./mmmaker.pl" > ../temp/
 jomp:main
 
 
