@@ -28,12 +28,12 @@ class Qunt < PlumPott
 
  def boxo()
   @curxo += MARJ
-  shallot(dx(50),dy(400),1)
-  shallot(dx(50),dy(-400),1)
+  shallot(dx(0),dy(400),1)
+  shallot(dx(0),dy(-400),1)
   tubo(dx(3100),dy(0),0.6,0,-0.1,1)
   @curxo += @width 
-  shallot(dx(-50),dy(-1000),-1)
-  shallot(dx(-50),dy(1000),-1)
+  shallot(dx(0),dy(-1000),-1)
+  shallot(dx(0),dy(1000),-1)
   @curxo += MARJ
   return @curxo
  end

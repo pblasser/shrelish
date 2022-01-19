@@ -27,7 +27,7 @@ class Plumdeer < PlumPott
  end
  def boxo()
   @curxo += MARJ
-  shallot(dx(50),dy(0),1)
+  shallot(dx(0),dy(0),1)
   @curxo += @width /2
 tubo(dx(2234),dy(0.703),0.33,0,-0.4,4)
 

@@ -28,11 +28,11 @@ class Plumbutt < PlumPott
  end
  def boxo()
   @curxo += MARJ
-  shallot(dx(50),dy(2000),1)
-  shallot(dx(50),dy(-2000),1)
+  shallot(dx(0),dy(2000),1)
+  shallot(dx(0),dy(-2000),1)
   @curxo += @width 
-  shallot(dx(-50),dy(-1500),-1)
-  shallot(dx(-50),dy(1500),-1)
+  shallot(dx(0),dy(-1500),-1)
+  shallot(dx(0),dy(1500),-1)
   @curxo += MARJ
   return @curxo
  end

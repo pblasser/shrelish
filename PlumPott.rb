@@ -345,26 +345,19 @@ end
   x/=12.0
   y/=12.0
   z/=10.0
-  cutoPointz(xx+x,yy+y,(x**2)+8*(y**4)-z)
+  cutoPointz(xx+x,yy+y,(x**4)+8*(y**4)-z)
  end
  def shallot(x,y,xs)
   skimtoPoint(x,y,0.1)
   signx = signy = 1
   for k in 0..3 do
-   for j in -12..12 do
+   for j in 0..12 do
     for i in -13..14 do
-     parabolza(signx*j+xs*12,signy*i,k,x,y)
+     parabolza(xs*j,signy*i,k,x,y)
     end
     signy*=-1
    end
    signx*=-1
   end
  end
- 
-
-
-
-
- 
-
- end
+end

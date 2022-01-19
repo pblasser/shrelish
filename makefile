@@ -4,6 +4,8 @@ PP= | perl "./mmbaker.pl" > ../ciatBASTL2021/
 main: clean
 	#$(CC) Sunbeetle.rb 0 $(PP)sun_bot.nc	
 	#$(CC) Sunbeetle.rb 1 $(PP)sun_top.nc	
+	$(CC) CocoQuanto.rb 1 2 $(PP)cocoquanto12.nc
+	$(CC) CocoQuanto_pre.rb 1 2 $(PP)cocoquanto12_pre.nc
 	$(CC) SolarGrassi.rb 0 $(PP)solargrassi0.nc
 	$(CC) SolarGrassi.rb 1 $(PP)solargrassi1.nc		
 	$(CC) SolarGrassiChub.rb 1 1 $(PP)solargrassichub0.nc	
@@ -43,8 +45,7 @@ main: clean
 	$(CC) Barre_2mm.rb 5 2 2 $(PP)shbarre522.nc
 	$(CC) CocoBot.rb $(PP)cocobot.nc
 	$(CC) CocoCoco.rb 2 2 $(PP)cocococo22.nc
-	$(CC) CocoQuanto.rb 1 2 $(PP)cocoquanto12.nc
-	$(CC) CocoQuanto_pre.rb 1 2 $(PP)cocoquanto12_pre.nc
+
 	$(CC) CocoStrip_darrin.rb 4 2 $(PP)cocostrip42.nc
 	$(CC) PlumBot.rb $(PP)plumbot.nc 
 	$(CC) Plumbutt.rb 1 2 $(PP)plumbutt12.nc 
@@ -83,7 +84,7 @@ clean:
 
 jomp:CC=-ruby -W0
 jomp:PP= | perl "./mmmaker.pl" > I:/
-jomp:PP= | perl "./mmmaker.pl" > ../temp/
+#jomp:PP= | perl "./mmmaker.pl" > ../temp/
 jomp:main
 
 
