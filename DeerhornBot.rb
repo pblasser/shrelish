@@ -76,6 +76,10 @@ a_screw(dx(7.850000),dy(2.750000))
 a_ground(dx(8.450000),dy(2.750000))
 a_ground(dx(9.550000),dy(2.750000))
 jak_dc(dx(7.100000),dy(3.000000))
+
+#protect the output cap mod
+box(dx(7.75),dy(2.35),dx(7.45),dy(2.65),0,-0.125,1)
+
 a_screw(dx(9.550000),dy(-2.750000))
 end
 
