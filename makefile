@@ -2,13 +2,17 @@ CC=-ruby -d -W0
 PP= | perl "./mmbaker.pl" > ../ciatBASTL2021/
  
 main: clean
+	$(CC) ScrewSorter.rb $(PP)screwsorter.nc
 	#$(CC) Sunbeetle.rb 0 $(PP)sun_bot.nc	
 	#$(CC) Sunbeetle.rb 1 $(PP)sun_top.nc	
 	$(CC) CocoQuanto.rb 1 2 $(PP)cocoquanto12.nc
 	$(CC) CocoQuanto_pre.rb 1 2 $(PP)cocoquanto12_pre.nc
-	$(CC) SolarGrassi.rb 0 $(PP)solargrassi0.nc
-	$(CC) SolarGrassi.rb 1 $(PP)solargrassi1.nc		
-	$(CC) SolarGrassiChub.rb 1 1 $(PP)solargrassichub0.nc	
+	$(CC) SolarGrassi.rb 1 0 $(PP)solargrassibass0.nc
+	$(CC) SolarGrassi.rb 0 0 $(PP)solargrassisoprano0.nc		
+	$(CC) SolarGrassi.rb 1 1 $(PP)solargrassibass1.nc
+	$(CC) SolarGrassi.rb 0 1 $(PP)solargrassisoprano1.nc		
+	$(CC) SolarGrassiChub.rb 0 $(PP)solargrassichub0.nc	
+	$(CC) SolarGrassiChub.rb 1 $(PP)solargrassichub1.nc	
 	
 	$(CC) SolarCICADA.rb 1 $(PP)solarcic.nc	
 	$(CC) SolarFlange.rb 1 $(PP)solarfla.nc	
@@ -35,11 +39,16 @@ main: clean
 	$(CC) Studworth.rb 1 1 2 $(PP)4mm_studworth11_bot.nc
 	$(CC) Studworth.rb 2 1 1 $(PP)4mm_studworth21_top.nc
 	$(CC) Studworth.rb 2 1 2 $(PP)4mm_studworth21_bot.nc
+	$(CC) Studworth.rb 2 2 1 $(PP)4mm_studworth22_top.nc
+	$(CC) Studworth.rb 2 2 2 $(PP)4mm_studworth22_bot.nc
+
 	$(CC) Interojoke.rb grassi mocante $(PP)igm.nc
 	$(CC) Interojoke.rb grassi $(PP)ig.nc
 	$(CC) Interojoke.rb mocante $(PP)im.nc
 	$(CC) Tocante.rb 2 1 1 $(PP)tocante21_top.nc
 	$(CC) Tocante.rb 2 1 2 $(PP)tocante21_bot.nc
+	$(CC) Tocante.rb 2 2 1 $(PP)tocante22_top.nc
+	$(CC) Tocante.rb 2 2 2 $(PP)tocante22_bot.nc
 	$(CC) Shnth.rb 2 2 $(PP)shnth22.nc
 	$(CC) Barre_2mm.rb 5 2 $(PP)shbarre52.nc
 	$(CC) Barre_2mm.rb 5 2 2 $(PP)shbarre522.nc

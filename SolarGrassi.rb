@@ -16,13 +16,14 @@ class Shplorer < Jacksloon
  def dx(x)
   return @curxo+cmil(x)
  end
- def initialize(xarg)
+ def initialize(xarg,yarg)
   if xarg==1 then @width=19.5*2.0
   else @width=11.5*2.0 end
   if xarg==1 then @heigh=12.5/2.0
   else @heigh=11.5/2.0 end  
   @xarg = xarg
-  @depth = cmil(0.7)
+  @yarg=yarg
+  @depth = cmil(1.0)
   super(0, 0)
  end
 
@@ -42,30 +43,38 @@ class Shplorer < Jacksloon
   w = @width/4.0 
   x = w*2
   h = @heigh
-  drillus(dx(x-w),dy(-h),0,-0.15)
-  drillus(dx(x-w),dy(h),0,-0.15)
-  drillus(dx(x+w),dy(h),0,-0.15)
-  drillus(dx(x+w),dy(-h),0,-0.15)
-  box(dx(x-w),dy(-h),dx(x+w),dy(h),0,-0.125,1)
-  y =(5.9/2)
+  dd=-0.2
+
+
+  if (@yarg==0) then
+   drillus(dx(x-w),dy(-h),0,dd)
+   drillus(dx(x-w),dy(h),0,dd)
+   drillus(dx(x+w),dy(h),0,dd)
+   drillus(dx(x+w),dy(-h),0,dd)
+   box(dx(x-w),dy(-h),dx(x+w),dy(h),0,dd,2)
+   y =(5.9/2)
   #fox(dx(x-w),0-y,dx(x+w),y,-0.125,-0.25, 1)
-  if @xarg>0 then  
-    y =5.9/2
-  else y = 5.4/2 end
-  cw = w-0.3
-  tubo(dx(x-cw),dy(-y),cmil(0.3),-0.125,-0.25,1)
-  tubo(dx(x-cw),dy(y),cmil(0.3),-0.125,-0.25,1)
-  tubo(dx(x+cw),dy(y),cmil(0.3),-0.125,-0.25,1)
-  tubo(dx(x+cw),dy(-y),cmil(0.3),-0.125,-0.25,1)
-
-
-  #x = dx(x+w)
-  y = 0.5
-  if @xarg>0 then
-   fox(dx(x+w-4),0-y,dx(x+w-2),y,-0.125,-@depth, 3)
-  else 
-    fox(dx(x-1),0-y,dx(x+1),y,-0.125,-@depth, 3)
+   if @xarg>0 then  
+     y =5.9/2
+   else y = 5.4/2 end
+   cw = w-0.3
+   tubo(dx(x-cw),dy(-y),cmil(0.3),-0.125,-0.25,1)
+   tubo(dx(x-cw),dy(y),cmil(0.3),-0.125,-0.25,1)
+   tubo(dx(x+cw),dy(y),cmil(0.3),-0.125,-0.25,1)
+   tubo(dx(x+cw),dy(-y),cmil(0.3),-0.125,-0.25,1)
+   #x = dx(x+w)
+   y = 0.5
+   if @xarg>0 then
+    fox(dx(x+w-4),0-y,dx(x+w-2),y,-0.125,-@depth, 3)
+   else 
+     fox(dx(x-1),0-y,dx(x+1),y,-0.125,-@depth, 3)
+   end
   end
+  if (@yarg==1) then
+    drillus(dx(x),dy(0),0,-@depth)
+  end
+
+
   retrax 0.1
   skimtoPoint(dx(0),dy(0),0.1)
   nuz = 0
@@ -97,12 +106,12 @@ end
 $rimmer = 0.01
 
  xarg = 0
- $yarg = 0
+ yarg = 0
  unless ARGV[0].nil? then xarg = Integer(ARGV[0]) end
- unless ARGV[1].nil? then $yarg = Integer(ARGV[1]) end
-  broth = Shplorer.new(xarg)
+ unless ARGV[1].nil? then yarg = Integer(ARGV[1]) end
+  broth = Shplorer.new(xarg,yarg)
   broth.boxo()
- printf "G0 Z0.393701\n"
+ printf "G0 Z0.5\n"
  printf "G0 X0 Y0 \n"
 
 

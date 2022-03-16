@@ -20,5 +20,6 @@ while (<STDIN>){
 
  } print "\n"; 
 } 
+print "G0 Z10\n";
 print "M5 M30\n";
 

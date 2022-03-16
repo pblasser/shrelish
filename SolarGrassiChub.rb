@@ -6,7 +6,7 @@ require './Okuda.rb'
 #$bitwidth=0.001
 #$halfwidth=$bitwidth/2
 
-class Tocante < Jacksloon
+class Shplorer < Jacksloon
 #MARJ = 0.42
 @@lipp = 0.00
  def cmil(cm)
@@ -18,19 +18,19 @@ class Tocante < Jacksloon
  def dx(x)
   return @curxo+cmil(x)
  end
- def initialize(starx,stary)
+ def initialize(xarg)
   @width = 11
   @heigh = 11
   @depth = 0.8
-
-  super(starx,stary)
+  @xarg=xarg
+  super($halfwidth,0)
  end
 
  def boxo()  
   w = @width/2.0
   h = @heigh/2.0
   x = w 
-  if(@@numero==0) then
+  if(@xarg==0) then
    drillus(dx(w-4),dy(-4),0,-0.15)
    drillus(dx(x-4),dy(+4),0,-0.15)
    drillus(dx(x+4),dy(+4),0,-0.15)
@@ -46,8 +46,7 @@ class Tocante < Jacksloon
   else
    box(dx(w)-1.2,dy(-3),dx(w)+1.2,dy(3),0,-0.5,4)
   end
-    @@numero += 1
-  @@numero %= 2
+
   @curxo=dx(w)
   @myOkuda = Okuda.new(@curxo,@stary,cmil(@width)+$bitwidth,cmil(@heigh)+$bitwidth,0.02)
   @curxo=dx(w)
@@ -66,5 +65,12 @@ class Tocante < Jacksloon
 end
 $rimmer = 0.01
 
-stutterat(Tocante)
+ xarg = 0
+ unless ARGV[0].nil? then xarg = Integer(ARGV[0]) end
+
+  broth = Shplorer.new(xarg)
+  broth.boxo()
+  broth.ducabot()
+ printf "G0 Z0.5\n"
+ printf "G0 X0 Y0 \n"
 

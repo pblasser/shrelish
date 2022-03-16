@@ -47,7 +47,7 @@ class Tocante < Jacksloon
   drillus(fux(),0,0,-@depth)
   retrax(0.5)
     printf "G0 X0 Y0 \n"
-    printf("M 0 \n")#dwellus(60)
+    #printf("M 0 \n")#dwellus(60)
  end
  def boxo()
   dux(dx(0.5),dy(0),dx(1),dy(0),0,-0.15,1)
