@@ -44,7 +44,16 @@ class Shplorer < Jacksloon
    tubo(dx(w),dy(0),cmil(1.85),0,-0.25,2)
    pipe(dx(w),dy(0),0.4,0,-@depth)
   else
-   box(dx(w)-1.2,dy(-3),dx(w)+1.2,dy(3),0,-0.5,4)
+    spyrtub(dx(x-1),dy(1),0.08,0)
+
+   drillus(dx(x-4),dy(-2),0,-0.15)
+   drillus(dx(x-4),dy(+2),0,-0.15)
+   drillus(dx(x+4),dy(+2),0,-0.15)
+   drillus(dx(x+4),dy(-2),0,-0.15)
+   n = 7.2/2.0
+   box(dx(w-n),dy(-2.8),dx(w+n),dy(2.8),0,-0.5,4)
+   box(dx(w-n-1),dy(-1.6),dx(w-n),dy(1.6),0,-0.5,4)
+   box(dx(w+n),dy(-1.6),dx(w+n+1),dy(1.6),0,-0.5,4)
   end
 
   @curxo=dx(w)

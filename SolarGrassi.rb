@@ -23,7 +23,7 @@ class Shplorer < Jacksloon
   else @heigh=11.5/2.0 end  
   @xarg = xarg
   @yarg=yarg
-  @depth = cmil(1.0)
+  @depth = cmil(1.1)
   super(0, 0)
  end
 
@@ -44,7 +44,7 @@ class Shplorer < Jacksloon
   x = w*2
   h = @heigh
   dd=-0.2
-
+@curxo=-0.7
 
   if (@yarg==0) then
    drillus(dx(x-w),dy(-h),0,dd)
@@ -58,36 +58,37 @@ class Shplorer < Jacksloon
      y =5.9/2
    else y = 5.4/2 end
    cw = w-0.3
-   tubo(dx(x-cw),dy(-y),cmil(0.3),-0.125,-0.25,1)
-   tubo(dx(x-cw),dy(y),cmil(0.3),-0.125,-0.25,1)
-   tubo(dx(x+cw),dy(y),cmil(0.3),-0.125,-0.25,1)
-   tubo(dx(x+cw),dy(-y),cmil(0.3),-0.125,-0.25,1)
+   tubo(dx(x-cw),dy(-y),cmil(0.3),dd,dd-0.125,1)
+   tubo(dx(x-cw),dy(y),cmil(0.3),dd,dd-0.125,1)
+   tubo(dx(x+cw),dy(y),cmil(0.3),dd,dd-0.125,1)
+   tubo(dx(x+cw),dy(-y),cmil(0.3),dd,dd-0.125,1)
    #x = dx(x+w)
    y = 0.5
    if @xarg>0 then
     fox(dx(x+w-4),0-y,dx(x+w-2),y,-0.125,-@depth, 3)
    else 
-     fox(dx(x-1),0-y,dx(x+1),y,-0.125,-@depth, 3)
+     fox(dx(x-3),0-y,dx(x+3),y,-0.125,-@depth, 3)
    end
   end
   if (@yarg==1) then
-    drillus(dx(x),dy(0),0,-@depth)
+#    drillus(dx(x),dy(0),0,cmil(0.3),-@depth)
+    spyrtub(dx(x),dy(0),cmil(6.5/2.0),0)
   end
 
 
   retrax 0.1
-  skimtoPoint(dx(0),dy(0),0.1)
+ # skimtoPoint(dx(0),dy(0),0.1)
   nuz = 0
   tier = @depth / 3.0
   nuz -= tier
+  f=2*@yarg-1
+  parabol(-1,x,x,f)
   penetrate(nuz)
-parabol(-1,x,x,-1)
   while (nuz >= -@depth) do
-       
-       penetrate(nuz)
-   ducabot(x,x,-1)
-   ducabot(x,x-3.75,1)
-   parabol(-1,x,x,-1)
+   penetrate(nuz)
+   ducabot(x,x,f)
+   ducabot(x,x-3.75,-f)
+    parabol(-1,x,x,f)
    nuz -= tier
 
   end
