@@ -82,13 +82,13 @@ class Shplorer < Jacksloon
   tier = @depth / 3.0
   nuz -= tier
   f=2*@yarg-1
-  parabol(-1,x,x,f)
+  parabol(-1,x,x-3.75,f)
   penetrate(nuz)
   while (nuz >= -@depth) do
    penetrate(nuz)
-   ducabot(x,x,f)
-   ducabot(x,x-3.75,-f)
-    parabol(-1,x,x,f)
+   ducabot(x,-x,-f)
+   ducabot(x,-x+3.75,f)
+    parabol(-1,x,x-3.75,f)
    nuz -= tier
 
   end
