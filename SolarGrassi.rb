@@ -17,10 +17,10 @@ class Shplorer < Jacksloon
   return @curxo+cmil(x)
  end
  def initialize(xarg,yarg)
-  if xarg==1 then @width=19.5*2.0
-  else @width=11.5*2.0 end
-  if xarg==1 then @heigh=12.5/2.0
-  else @heigh=11.5/2.0 end  
+  if xarg==1 then @width=19.6*2.0
+  else @width=11.6*2.0 end
+  if xarg==1 then @heigh=12.6/2.0
+  else @heigh=11.6/2.0 end  
   @xarg = xarg
   @yarg=yarg
   @depth = cmil(1.1)
@@ -43,7 +43,7 @@ class Shplorer < Jacksloon
   w = @width/4.0 
   x = w*2
   h = @heigh
-  dd=-0.2
+  dd=-0.23
 @curxo=-0.7
 
   if (@yarg==0) then
@@ -57,22 +57,37 @@ class Shplorer < Jacksloon
    if @xarg>0 then  
      y =5.9/2
    else y = 5.4/2 end
-   cw = w-0.3
-   tubo(dx(x-cw),dy(-y),cmil(0.3),dd,dd-0.125,1)
-   tubo(dx(x-cw),dy(y),cmil(0.3),dd,dd-0.125,1)
-   tubo(dx(x+cw),dy(y),cmil(0.3),dd,dd-0.125,1)
-   tubo(dx(x+cw),dy(-y),cmil(0.3),dd,dd-0.125,1)
+   cw = w-0.5
+   tubo(dx(x-cw),dy(-y),cmil(0.5),dd,dd-0.125,1)
+   dux(dx(x-cw),dy(-y),dx(x-cw)+0.5,dy(-y),dd,dd-0.125,1)
+
+   tubo(dx(x-cw),dy(y),cmil(0.5),dd,dd-0.125,1)
+   dux(dx(x-cw),dy(+y),dx(x-cw)+0.5,dy(+y),dd,dd-0.125,1)
+
+   tubo(dx(x+cw),dy(y),cmil(0.5),dd,dd-0.125,1)
+   dux(dx(x+cw),dy(+y),dx(x+cw)-0.5,dy(+y),dd,dd-0.125,1)
+
+   tubo(dx(x+cw),dy(-y),cmil(0.5),dd,dd-0.125,1)
+   dux(dx(x+cw),dy(-y),dx(x+cw)-0.5,dy(-y),dd,dd-0.125,1)
+   
+   
+
+
+
+
+
+
    #x = dx(x+w)
    y = 0.5
    if @xarg>0 then
-    fox(dx(x+w-4),0-y,dx(x+w-2),y,-0.125,-@depth, 3)
+    fox(dx(x+w-4),0-y,dx(x+w-2),y,dd,-@depth, 2)
    else 
-     fox(dx(x-3),0-y,dx(x+3),y,-0.125,-@depth, 3)
+     fox(dx(x-3),0-y,dx(x+3),y,dd,-@depth, 2)
    end
   end
   if (@yarg==1) then
 #    drillus(dx(x),dy(0),0,cmil(0.3),-@depth)
-    spyrtub(dx(x),dy(0),cmil(6.5/2.0),0)
+    spyrtub(dx(x),dy(0),cmil(6.6/2.0),0)
   end
 
 
