@@ -17,10 +17,10 @@ class Shplorer < Jacksloon
   return @curxo+cmil(x)
  end
  def initialize(xarg,yarg)
-  if xarg==1 then @width=19.6*2.0
-  else @width=11.6*2.0 end
-  if xarg==1 then @heigh=12.6/2.0
-  else @heigh=11.6/2.0 end  
+  if xarg==1 then @width=19.55*2.0
+  else @width=11.55*2.0 end
+  if xarg==1 then @heigh=12.55/2.0
+  else @heigh=11.55/2.0 end  
   @xarg = xarg
   @yarg=yarg
   @depth = cmil(1.1)
