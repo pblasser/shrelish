@@ -97,7 +97,7 @@ class Shtar < Jacksloon
   fox(x-0.25,y-0.22,x+0.25,y+0.22,0,-@depth,2)
  end
  
- def plastique()
+ def plastique(h)
  @depth = 0.125
  $bitwidth = 2.0/25.4
  $halfwidth = $bitwidth/2
@@ -116,17 +116,17 @@ class Shtar < Jacksloon
   
   rite = 3.5
   rite = @sensorite
-    pipe(rite,2.4,0.125/2,0,plasthick)
-  onner(rite+0.2,2)
-  pipe(rite-0.3,2,0.1,0,-@depth)
-  pipe(rite+0.294,-(-2.5+1.349-0.1),0.1,0,plasthick)
+  pipe(rite,2.4,0.125/2,0,plasthick)
+  onner(rite+h*0.2,h*2)
+  pipe(rite-h*0.3,h*2,0.1,0,-@depth)
+  pipe(rite+h*0.294,-h*(-2.5+1.349-0.1),0.1,0,plasthick)
 
   
   pipe(rite,-2.4,0.125/2,0,plasthick)
-  usbadam(rite-0.2,-2)
-  beigers(rite+0.3,-2)
+  usbadam(rite-h*0.2,-h*2)
+  beigers(rite+h*0.3,-h*2)
   #trimmer
-  pipe(rite+0.419,-(3.775-2.5+0.1),0.1,0,plasthick)
+  pipe(rite+h*0.419,-h*(3.775-2.5+0.1),0.1,0,plasthick)
   
   
   tubo(rite,0,0.55,0,-0.035,1)
@@ -498,9 +498,14 @@ def dudderat(clasz)
 
  if process==2 then
   broth = clasz.new(-6,0)
-  broth.plastique()
-
+  broth.plastique(1)
  end
+
+ if process==3 then
+  broth = clasz.new(-6,0)
+  broth.plastique(-1)
+ end
+
 
   printf "G0 Z0.5\n"
   printf "G0 X0 Y0 \n"

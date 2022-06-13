@@ -25,6 +25,7 @@ main: clean
 	$(CC) Shtar.rb 0 $(PP)shtar_bot.nc	
 	$(CC) Shtar.rb 1 $(PP)shtar_top.nc	
 	$(CC) Shtar.rb 2 $(PP)shtar_pla.nc		
+	$(CC) Shtar.rb 3 $(PP)shtar_plarig.nc		
 
 	$(CC) MountBar.rb 4 1 $(PP)mounter.nc
 	$(CC) DeerhornBot.rb $(PP)deerbot.nc 
@@ -95,7 +96,7 @@ clean:
 
 jomp:CC=-ruby -W0
 jomp:PP= | perl "./mmmaker.pl" > I:/
-#jomp:PP= | perl "./mmmaker.pl" > ../temp/
+jomp:PP= | perl "./mmmaker.pl" > ../temp/
 jomp:main
 
 
