@@ -139,7 +139,7 @@ class Shtar < Jacksloon
   polka_itself(lambda(){|x,y| pipe(x,-y,0.125/2,0,plasthick)})
   
   y = (1.5)/2.0 #+ 0.05
-  y=0.77
+  y=0.78
   tarx = -5.2
  dend = -3.55 #-3.5 #+ $halfwidth
   fox(tarx,-y,dend,y,0,plasthick,2)

@@ -96,7 +96,7 @@ clean:
 
 jomp:CC=-ruby -W0
 jomp:PP= | perl "./mmmaker.pl" > I:/
-jomp:PP= | perl "./mmmaker.pl" > ../temp/
+#jomp:PP= | perl "./mmmaker.pl" > ../temp/
 jomp:main
 
 

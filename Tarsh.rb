@@ -218,7 +218,8 @@ s=1
  
  def nex()
  y = (1.5-$bitwidth)/2.0
- fatnessbogey = 0.02 #0.03
+ fatnessbogey = 0.023 #0.03
+ #currently hacked. should be 0.02. and 0.03 in plast
  y = 0.75+fatnessbogey-$halfwidth
  incro = y/6.0
  starx = -5.9
