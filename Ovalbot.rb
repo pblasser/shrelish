@@ -1,13 +1,14 @@
 
-require './Dude.rb'
-require './stubefunks.rb'
+require './Oval.rb'
 
-class Stuberon < Dude
+$bitwidth = 0.125
+$halfwidth = $bitwidth/2
+
+class Ovalbot < Oval
  def initialize(n,z)
     @depth=0.8
   super(n,z)
  end
- 
  
  def loz(z)
  #7.6->7.3, 2.3->2.1
@@ -84,6 +85,4 @@ class Stuberon < Dude
 
  def ducatop() end
 end
-
-stutterat(Stuberon)
-
+dudderat(Ovalbot)

@@ -2,6 +2,12 @@ CC=-ruby -d -W0
 PP= | perl "./mmbaker.pl" > ../ciatBASTL2021/
  
 main: clean
+
+	$(CC) Ovalbot.rb $(PP)ovalbot.nc 
+	$(CC) Ovaltop.rb JOHNSON STUBER $(PP)ovalstuber.nc 
+	$(CC) Ovaltop.rb SPESAL FYRALL $(PP)ovalspesalfyral.nc 
+	$(CC) Ovaltop.rb SPESAL SRINE $(PP)ovalspesalsrine.nc 
+
 	$(CC) ScrewSorter.rb $(PP)boltsorter.nc
 	#$(CC) Sunbeetle.rb 0 $(PP)sun_bot.nc	
 	#$(CC) Sunbeetle.rb 1 $(PP)sun_top.nc	
@@ -33,9 +39,7 @@ main: clean
 	$(CC) DeerhornTop_pre.rb 2 2 0 $(PP)deerwing22_pre.nc 
 	$(CC) DeerhornTop.rb 2 2 $(PP)deermidl22.nc 
 	$(CC) DeerhornTop.rb 2 2 0 $(PP)deerwing22.nc 
-	$(CC) Dudebot.rb $(PP)ovalbot.nc
-	$(CC) Dudetop.rb JOHNSON FYRALL $(PP)fyrall_banana.nc 
-	$(CC) Dudetop.rb JOHNSON SRINE $(PP)srine_banana.nc 
+
 	$(CC) Studworth.rb 1 1 1 $(PP)4mm_studworth11_top.nc
 	$(CC) Studworth.rb 1 1 2 $(PP)4mm_studworth11_bot.nc
 	$(CC) Studworth.rb 2 1 1 $(PP)4mm_studworth21_top.nc
@@ -84,9 +88,7 @@ main: clean
 	$(CC) RolzTop.rb 5 2 $(PP)rotop52.nc 
 	$(CC) RolzTop.rb 5 2 3 $(PP)rotop523.nc 
 
-	$(CC) Stuberbot.rb $(PP)stuberbot.nc 
-	$(CC) Stubertop.rb JOHNSON $(PP)stuber_banana.nc 
-	$(CC) Stubertop.rb STUDS $(PP)stuber_studs.nc 
+
  
 clean:
 	-rm *.nc
@@ -96,7 +98,7 @@ clean:
 
 jomp:CC=-ruby -W0
 jomp:PP= | perl "./mmmaker.pl" > I:/
-#jomp:PP= | perl "./mmmaker.pl" > ../temp/
+jomp:PP= | perl "./mmmaker.pl" > ../temp/
 jomp:main
 
 
