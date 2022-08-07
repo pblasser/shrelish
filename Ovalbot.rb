@@ -17,7 +17,7 @@ class Ovalbot < Oval
   star = ova(xx,yy,0)
   skimtoPoint(star[0],star[1],0.1)
   numzegs=64.0
-  while (yy > 0.09) do
+  while (yy > 0) do
    for i in 0..numzegs 
     here = ova(xx,yy,i/numzegs)
     cutoPointDeepo(here[0],here[1],z)

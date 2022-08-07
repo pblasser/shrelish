@@ -145,7 +145,7 @@ end
   elsif @nodes=="STUDS" then
   spyrtub(x,y,0.05,0)
   elsif @nodes=="SPESAL" then
-   spyrtub(x,y,3.0/25.4,0)
+   spyrtub(x,y,3.2/25.4,0)
 
   else johnson(x,y) end
  end
