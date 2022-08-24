@@ -102,6 +102,8 @@ require './Oval.rb'
  tubo(x,y,0.35,0,-0.12,2)
  spyrtub(x,y,1.5,0)
 end
+
+
  
  def balpsQMET(x,y,t) 
   

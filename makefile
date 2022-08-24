@@ -7,7 +7,7 @@ main: clean
 	$(CC) Ovaltop.rb JOHNSON STUBER $(PP)ovalstuber.nc 
 	$(CC) Ovaltop.rb SPESAL FYRALL $(PP)ovalspesalfyral.nc 
 	$(CC) Ovaltop.rb SPESAL SRINE $(PP)ovalspesalsrine.nc 
-
+	$(CC) OvalNobButts.rb $(PP)ovalnobs.nc 
 	$(CC) ScrewSorter.rb $(PP)boltsorter.nc
 	#$(CC) Sunbeetle.rb 0 $(PP)sun_bot.nc	
 	#$(CC) Sunbeetle.rb 1 $(PP)sun_top.nc	
