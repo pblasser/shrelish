@@ -2,7 +2,8 @@ CC=-ruby -d -W0
 PP= | perl "./mmbaker.pl" > ../ciatBASTL2021/
  
 main: clean
-
+	$(CC) MountBar.rb 4 1 $(PP)mounter.nc
+	$(CC) MountBarMini.rb 4 1 $(PP)mountermini.nc
 	$(CC) Ovalbot.rb $(PP)ovalbot.nc 
 	$(CC) Ovaltop.rb JOHNSON STUBER $(PP)ovalstuber.nc 
 	$(CC) Ovaltop.rb SPESAL FYRALL $(PP)ovalspesalfyral.nc 
@@ -33,7 +34,7 @@ main: clean
 	$(CC) Shtar.rb 2 $(PP)shtar_pla.nc		
 	$(CC) Shtar.rb 3 $(PP)shtar_plarig.nc		
 
-	$(CC) MountBar.rb 4 1 $(PP)mounter.nc
+
 	$(CC) DeerhornBot.rb $(PP)deerbot.nc 
 	$(CC) DeerhornTop_pre.rb 2 2 $(PP)deermidl22_pre.nc 
 	$(CC) DeerhornTop_pre.rb 2 2 0 $(PP)deerwing22_pre.nc 
@@ -97,8 +98,12 @@ clean:
 	-rm ciatBASTL2021/*.nc
 
 jomp:CC=-ruby -W0
-jomp:PP= | perl "./mmmaker.pl" > I:/
+#jomp:PP= | perl "./mmmaker.pl" > I:/
 jomp:PP= | perl "./mmmaker.pl" > ../temp/
 jomp:main
 
+thump:CC=-ruby -W0
+thump:PP= | perl "./mmmaker.pl" > I:/
+#thump:PP= | perl "./mmmaker.pl" > ../temp/
+thump:main
 
