@@ -100,7 +100,7 @@ screw(dx(5.750000),dy(-0.5))
   unless ARGV[2].nil? then @@numero = Integer(ARGV[2]) end
  end
 end
-$rimmer = 0.01
+$rimmer = 0.005
 
 
 

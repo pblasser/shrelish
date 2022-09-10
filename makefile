@@ -86,8 +86,8 @@ main: clean
 	$(CC) Quamat_2mm.rb 3 2 $(PP)quamat32.nc 
 	$(CC) Quamat_2mm.rb 3 2 2 $(PP)quamat322.nc 
 	$(CC) RolzBot.rb $(PP)robot.nc 
-	$(CC) RolzTop.rb 5 2 $(PP)rotop52.nc 
-	$(CC) RolzTop.rb 5 2 3 $(PP)rotop523.nc 
+	$(CC) RolzTop_2mm.rb 5 2 $(PP)rotop52.nc 
+	$(CC) RolzTop_2mm.rb 5 2 3 $(PP)rotop523.nc 
 
 
  
