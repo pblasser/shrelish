@@ -94,7 +94,7 @@ main: clean
 clean:
 	-rm *.nc
 	-rm I:/*.nc
-#	-rm ../temp/*.nc
+	-rm ../temp/*.nc
 	-rm ciatBASTL2021/*.nc
 
 jomp:CC=-ruby -W0
