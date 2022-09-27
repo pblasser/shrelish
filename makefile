@@ -1,7 +1,15 @@
 CC=-ruby -d -W0
-PP= | perl "./mmbaker.pl" > ../ciatBASTL2021/
+DD=../ciatBASTL2021/
+PP= | perl "./mmbaker.pl" > $(DD)
+GTEN="G21G90G92.1\nG10L20P0X0Y0Z0"
+GDOZ="G21G90G92.1\nG0Z10\nG0X0Y0"
+
+
+
  
 main: clean
+	echo -e $(GTEN) > $(DD)G10.nc
+	echo -e $(GDOZ) > $(DD)G00.nc
 	$(CC) MountBar.rb 4 1 $(PP)mounter.nc
 	$(CC) MountBarMini.rb 4 1 $(PP)mountermini.nc
 	$(CC) Ovalbot.rb $(PP)ovalbot.nc 
@@ -90,6 +98,7 @@ main: clean
 	$(CC) RolzTop_2mm.rb 5 2 3 $(PP)rotop523.nc 
 
 
+
  
 clean:
 	-rm *.nc
@@ -98,12 +107,12 @@ clean:
 	-rm ciatBASTL2021/*.nc
 
 jomp:CC=-ruby -W0
-#jomp:PP= | perl "./mmmaker.pl" > I:/
-jomp:PP= | perl "./mmmaker.pl" > ../temp/
+jomp:DD=../temp/
+jomp:PP= | perl "./mmmaker.pl" > $(DD)
 jomp:main
 
 thump:CC=-ruby -W0
-thump:PP= | perl "./mmmaker.pl" > I:/
-#thump:PP= | perl "./mmmaker.pl" > ../temp/
+thump:DD=I:/
+thump:PP= | perl "./mmmaker.pl" > $(DD)
 thump:main
 

@@ -5,6 +5,7 @@
 #print "desc xpos ypos rota tobo\n";
 #my $endor = "";
 print "G90 G21 G17\n";
+print "G92.1\n";
 print "S1000 M3\n";
 print "G4 P1\n";
 #print "G0 X0 Y0 Z12.7\n";
