@@ -31,7 +31,7 @@ class PlumPott < Jacksloon
   resin(x+(sig*arr[0][1]),y+(sig*arr[0][0]))
   arr.each{|rr| cutoPointSpesal(x+(sig*rr[1]),y+(sig*rr[0]))}
   #skimtoPoint(x+(sig*arr[0][1]),
-             y+(sig*arr[0][0]),0.1)
+  #          y+(sig*arr[0][0]),0.1)
   #penetrate(@@engravedeep)
   #resin(x+(sig*arr[0][1]),y+(sig*arr[0][0]))
   #arr.each{|rr| cutoPointSpesal(x+(sig*rr[1]),y+(sig*rr[0]))}

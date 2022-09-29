@@ -15,7 +15,7 @@ while (<STDIN>){
   
  if ($1=~/([XYZIJKF])(\S+)/) {
   #my $mm = sprintf("%.3f",$2 * 25.4);
-  my $mm = int($2*25.4*100+0.5) / 100;
+  my $mm = int($2*25.4*1000+0.5) / 1000;
   print ("$1$mm") if ($redundo{"$1"}!=$mm);
   $redundo{"$1"}=$mm;
   $redundo{"I"}=0;
