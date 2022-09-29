@@ -10,6 +10,14 @@ GDOZ="G21G90G92.1\nG0Z10\nG0X0Y0"
 main: clean
 	echo -e $(GTEN) > $(DD)G10.nc
 	echo -e $(GDOZ) > $(DD)G00.nc
+ 
+	$(CC) PlumBot.rb $(PP)plumbot.nc 
+	$(CC) Plumbutt.rb 1 2 $(PP)plummidl12.nc 
+	$(CC) Plumbutt_pre.rb 1 2 $(PP)plummidl12_pre.nc 
+	$(CC) Plumsteam.rb 1 2 $(PP)plumsteam12.nc 
+	$(CC) Plumdeerboo.rb 2 2 $(PP)plumdeer22.nc 
+	$(CC) Plumdeer_pre.rb 2 2 $(PP)plumdeer22_pre.nc 
+ 
 	$(CC) MountBar.rb 4 1 $(PP)mounter.nc
 	$(CC) MountBarMini.rb 4 1 $(PP)mountermini.nc
 	$(CC) Ovalbot.rb $(PP)ovalbot.nc 
@@ -70,12 +78,7 @@ main: clean
 	$(CC) CocoCoco.rb 2 2 $(PP)cocoloop22.nc
 
 	$(CC) CocoStrip_darrin.rb 4 2 $(PP)cocostrip42.nc
-	$(CC) PlumBot.rb $(PP)plumbot.nc 
-	$(CC) Plumbutt.rb 1 2 $(PP)plummidl12.nc 
-	$(CC) Plumbutt_pre.rb 1 2 $(PP)plummidl12_pre.nc 
-	$(CC) Plumsteam.rb 1 2 $(PP)plumsteam12.nc 
-	$(CC) Plumdeerboo.rb 2 2 $(PP)plumdeer22.nc 
-	$(CC) Plumdeer_pre.rb 2 2 $(PP)plumdeer22_pre.nc 
+
 	$(CC) Sidrax.rb $(PP)sidbot.nc 
 	$(CC) Sidbar_2mm.rb 5 2 $(PP)sidbar52.nc 
 	$(CC) Sidbar_2mm.rb 5 2 3 $(PP)sidbar523.nc 
@@ -100,10 +103,7 @@ main: clean
 
 
 clean:
-	-rm *.nc
-	-rm I:/*.nc
-	-rm ../temp/*.nc
-	-rm ciatBASTL2021/*.nc
+	-rm $(DD)*.nc
 
 jomp:CC=-ruby -W0
 jomp:DD=../temp/
@@ -114,4 +114,10 @@ thump:CC=-ruby -W0
 thump:DD=I:/
 thump:PP= | perl "./mmmaker.pl" > $(DD)
 thump:main
+
+
+thumpe:CC=-ruby -W0
+thumpe:DD=E:/
+thumpe:PP= | perl "./mmmaker.pl" > $(DD)
+thumpe:main
 

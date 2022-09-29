@@ -7,14 +7,35 @@ require './Jacksloon.rb'
 class PlumPott < Jacksloon 
  @@engravedeep = -0.05
  def initialize(starx, stary)
+  @resinx=0
+  @resiny=0
   super(starx, stary)
  end
+
+ def resin(x,y)
+    @resinx=x
+  @resiny=y
+ end
+ def cutoPointSpesal(x,y)
+  pyth = ((x-@resinx)**2 + (y-@resiny)**2)**0.5
+  if pyth>0.04 then
+  printf "G1 X%5.4f Y%5.4f\n", x, y #@@feedrate
+  resin(x,y)
+  end
+ end
+ 
  def organoPHORM(arr,x,y,sig)
   skimtoPoint(x+(sig*arr[0][1]),
              y+(sig*arr[0][0]),0.1)
   penetrate(@@engravedeep)
-  arr.each{|rr| cutoPoint(x+(sig*rr[1]),y+(sig*rr[0]))}
-  arr.reverse_each{|rr| cutoPoint(x+(sig*rr[1]),y+(sig*rr[0]))}
+  resin(x+(sig*arr[0][1]),y+(sig*arr[0][0]))
+  arr.each{|rr| cutoPointSpesal(x+(sig*rr[1]),y+(sig*rr[0]))}
+  #skimtoPoint(x+(sig*arr[0][1]),
+             y+(sig*arr[0][0]),0.1)
+  #penetrate(@@engravedeep)
+  #resin(x+(sig*arr[0][1]),y+(sig*arr[0][0]))
+  #arr.each{|rr| cutoPointSpesal(x+(sig*rr[1]),y+(sig*rr[0]))}
+  #arr.reverse_each{|rr| cutoPointSpesal(x+(sig*rr[1]),y+(sig*rr[0]))}
   retrax(0.1)
  end
 

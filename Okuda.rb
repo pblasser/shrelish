@@ -37,13 +37,37 @@ class Hydrogen < Nucleus
   euler=Complex.polar(r,Math::PI*theta)
   return [euler.real,euler.imag]
  end
+
+  
  def arcElectron(momentum,zd)
-  numsegs = Integer(momentum*@roundel*16+4)
+   numsegs = Integer(momentum*@roundel*16+4)
   numsegs = 32
   for i in 1..numsegs do
    cut
    @theta += momentum/numsegs
    @nuz += zd/numsegs
+  end
+end
+
+ def arcElectron(momentum,zd)
+   deepo = @nuz
+  if @nuz < @zdepth then
+   deepo = @zdepth
+  end
+  oilstart=polaron(@roundel,@theta)
+  cut
+  @theta+=momentum
+  oilend=polaron(@roundel,@theta)
+  if momentum>0 then 
+  printf "G3 X%5.4f Y%5.4f I%5.4f J%5.4f Z%5.4f\n",
+    @xcentre+@nux+oilend[0], @ycentre+@nuy+oilend[1], 
+    -oilstart[0], -oilstart[1],
+    deepo
+  else
+     printf "G2 X%5.4f Y%5.4f I%5.4f J%5.4f Z%5.4f\n",
+    @xcentre+@nux+oilend[0], @ycentre+@nuy+oilend[1], 
+    oilstart[0], oilstart[1],
+    deepo  
   end
  end
 end
