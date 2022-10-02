@@ -180,7 +180,7 @@ class Bot
    x+r, y, x, y, z
   else
    printf "G2 X%5.4f Y%5.4f I%5.4f J%5.4f Z%5.4f\n", 
-   x+r, y, -r, 0, z
+   x+r, y, r, 0, z
   end
  end
  
@@ -189,8 +189,12 @@ class Bot
   skimtoPoint(x+r,y,0.1)
   penetrate(s)
   z = s
-  incro = 0.15 
+  incro = 0.125/2.0
   while z > (e - incro) do
+   z -= incro
+   ee = z   
+   if (z < e) then ee = e-0.001 end
+   arc(x,y,ee,-r)
    z -= incro
    ee = z   
    if (z < e) then ee = e-0.001 end
@@ -203,7 +207,9 @@ class Bot
  @@twiddle = 0.001
  def drawzcirque(x,y,r,z)
   cutoPoint(x+r,y)
+  arc(x,y,z-@@twiddle,-r)
   arc(x,y,z-@@twiddle,r)
+  
   @@twiddle=@@twiddle*(-1.0)
 
  end
