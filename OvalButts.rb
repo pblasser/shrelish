@@ -11,12 +11,15 @@ require './Ovaltop.rb'
  def boxo
   #curno = 1.5
   #while curno<=14.5 do
-  balpsMET(1.5,-1.25,0)
-  balpsMET(3.1,1.25,0)
-  balpsMET(4.7,-1.25,0)
-  balpsMET(6.3,1.25,0)
+  #balpsMET(1.5,-1.25,0)
+  #balpsMET(3.1,1.25,0)
+  #balpsMET(4.7,-1.25,0)
+  #balpsMET(6.3,1.25,0)
   #curno = curno + 1.5
-  #bomron(curno,1.5)
+  omronish(0.5,0.5)
+  omronish(0.5,-0.5)
+  omronish(1.5,0.5)
+  omronish(1.5,-0.5)
   #  bomron(curno,-1.5)
 	#curno= curno +1.5
   #end
