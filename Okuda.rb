@@ -406,6 +406,67 @@ class Okuda < Hydrogen
   @@feedrate = 40
   end
  end
+
+ def bokchoytwomo(depth,climb,xsegs,ysegs,topnuys,botnuys)
+  retrax 0.1
+  @zdepth = depth
+  printf "G0 X%5.4f Y%5.4f Z%5.4f\n",# F%d\n", 
+   @xcentre+@wchub, @ycentre-@hchub, 0.1
+  @okudanuk += climb/2.0 
+  #depth -= 0.1
+  @tiers = Integer(depth / 0.12) 
+  while (@nuz >= depth) do
+   @nuz -= depth / @tiers
+   for i in 1..4 do
+    oiler=polaron(Math.sqrt(2),@okudanuk)
+    @nux = oiler[0]*(@wchub-@roundel)
+    @nuy = oiler[1]*(@hchub-@roundel)
+    #@nuz -= 0.05
+    @@feedrate = 30
+    arcElectron(climb/2.0,0)
+    @okudanuk += climb/2.0 
+    euler=polaron(Math.sqrt(2),@okudanuk)
+    euler[0] -= oiler[0]
+    euler[1] -= oiler[1]
+    if i == 1 or i == 3 then numzegs=xsegs end
+  if i == 2 or i == 4 then numzegs=ysegs end
+    for j in 1..numzegs 
+     @oscacc += 1
+     trank = (@oscacc % 2) * 2 - 1
+     @@feedrate = 35  - trank*5
+     @nux += euler[0]*(@wchub-@roundel)/numzegs
+     @nuy += euler[1]*(@hchub-@roundel)/numzegs
+     if i == 1 then 
+    topnuys.each{|rr| 
+     if j == rr[0] then 
+      @nuy -= 2/25.4 end
+     if j == rr[1] then 
+      @nuy += 2/25.4 end
+       }
+   end
+     if i == 3 then 
+    botnuys.each{|rr| 
+     if j == rr[0] then 
+      @nuy += 2/25.4 end
+     if j == rr[1] then 
+      @nuy -= 2/25.4 end
+       }
+   end
+     @nuz += 0.2 * trank 
+   if @nuz < depth then
+    cutt(@nux - euler[0]*(@wchub-@roundel)/(2*numzegs),
+     @nuy - euler[1]*(@hchub-@roundel)/(2*numzegs),
+     depth)
+    if j != numzegs then
+    cutt(@nux + euler[0]*(@wchub-@roundel)/(2*numzegs),
+     @nuy + euler[1]*(@hchub-@roundel)/(2*numzegs),
+     depth) end
+   else cut end
+    end 
+   end
+  @@feedrate = 40
+  end
+ end
  
  
  def bok(depth,climb)
