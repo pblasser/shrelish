@@ -407,6 +407,38 @@ class Okuda < Hydrogen
   end
  end
 
+ def arcElectronTwomo(momentum,zd)
+   deepo = @nuz
+  #if @nuz < @zdepth then
+  # deepo = @zdepth
+  #end
+  oilstart=polaron(@roundel,@theta)
+  
+  #cut
+    oiler = polaron(@roundel,@theta)
+  deepo = @nuz
+  #if @nuz < @zdepth then
+  # deepo = @zdepth
+  #end
+  printf "G1 X%5.4f Y%5.4f Z%5.4f\n",# F%d\n", 
+   @xcentre+@nux+oiler[0], @ycentre+@nuy+oiler[1], deepo
+
+  @theta+=momentum
+  oilend=polaron(@roundel,@theta)
+  if momentum>0 then 
+  printf "G3 X%5.4f Y%5.4f I%5.4f J%5.4f Z%5.4f\n",
+    @xcentre+@nux+oilend[0], @ycentre+@nuy+oilend[1], 
+    -oilstart[0], -oilstart[1],
+    deepo
+  else
+     printf "G2 X%5.4f Y%5.4f I%5.4f J%5.4f Z%5.4f\n",
+    @xcentre+@nux+oilend[0], @ycentre+@nuy+oilend[1], 
+    oilstart[0], oilstart[1],
+    deepo  
+  end
+ end
+
+
  def bokchoytwomo(depth,climb,xsegs,ysegs,topnuys,botnuys)
   retrax 0.1
   @zdepth = depth
@@ -423,7 +455,7 @@ class Okuda < Hydrogen
     @nuy = oiler[1]*(@hchub-@roundel)
     #@nuz -= 0.05
     @@feedrate = 30
-    arcElectron(climb/2.0,0)
+    arcElectronTwomo(climb/2.0,0)
     @okudanuk += climb/2.0 
     euler=polaron(Math.sqrt(2),@okudanuk)
     euler[0] -= oiler[0]
@@ -453,15 +485,13 @@ class Okuda < Hydrogen
        }
    end
      @nuz += 0.2 * trank 
-   if @nuz < depth then
-    cutt(@nux - euler[0]*(@wchub-@roundel)/(2*numzegs),
-     @nuy - euler[1]*(@hchub-@roundel)/(2*numzegs),
-     depth)
-    if j != numzegs then
-    cutt(@nux + euler[0]*(@wchub-@roundel)/(2*numzegs),
-     @nuy + euler[1]*(@hchub-@roundel)/(2*numzegs),
-     depth) end
-   else cut end
+  oiler = polaron(@roundel,@theta)
+  deepo = @nuz
+  #if @nuz < @zdepth then
+  # deepo = @zdepth
+  #end
+  printf "G1 X%5.4f Y%5.4f Z%5.4f\n",# F%d\n", 
+   @xcentre+@nux+oiler[0], @ycentre+@nuy+oiler[1], deepo
     end 
    end
   @@feedrate = 40
