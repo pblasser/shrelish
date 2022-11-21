@@ -40,6 +40,8 @@ class BenjoBot < Jacksloon
  def boxo()
   @curxo += MARJ
   @curxo += $halfwidth
+
+
   KYCON5P(0,0,180)
 alpspot(30,20,135)
 screw(44,6,0)
@@ -65,10 +67,13 @@ JOHNSON(-44,50,0)
 KOBICONDC(-15,100,-90)
 JOHNSON(44,50,0)
 box(dx(40),dy(10),dx(-40),dy(90),0,-3.0/8,3)
+box(dx(40),dy(72),dx(15),dy(88),-3.0/8,-0.5,1)
+box(dx(-15),dy(72),dx(-40),dy(88),-3.0/8,-0.5,1)
 
   @curxo += @width/2
   @myOkuda = Okuda.new(@curxo,@stary,@width+MARJ*2+$bitwidth,@heigh+MARJ*2+$bitwidth,mm(8))
   @curxo += @width/2
+  
   
   @curxo += MARJ
     @curxo += $halfwidth
