@@ -12,6 +12,8 @@ main: clean
 	echo -e $(GDOZ) > $(DD)G00.nc
 	$(CC) BenjoBot.rb $(PP)BenjoBot.nc  
 	$(CC) BenjoTop.rb $(PP)BenjoTop.nc  
+	$(CC) BenjoTop8.rb $(PP)BenjoTop8.nc  
+	$(CC) BenjoTop9.rb $(PP)BenjoTop9.nc  
 	$(CC) SolarBenjChub.rb 0 $(PP)solbchb0.nc	
 	$(CC) SolarBenjChub.rb 1 $(PP)solbchb1.nc	
 	$(CC) PlumBot.rb $(PP)plumbot.nc 
