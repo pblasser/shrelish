@@ -88,6 +88,7 @@ main: clean
 
 	$(CC) Sidrax.rb $(PP)sidbot.nc 
 	$(CC) Sidbar_2mm.rb 5 2 $(PP)sidbar52.nc 
+	$(CC) Sidbar_2mm.rb 5 1 $(PP)sidbar51.nc 
 	$(CC) Sidbar_2mm.rb 5 2 3 $(PP)sidbar523.nc 
 	$(CC) Sidbar_2mm.rb 5 2 0 0 $(PP)sidbar5200.nc
 	$(CC) Sidbar_2mm.rb 5 2 0 5 $(PP)sidbar52leftmoon.nc
