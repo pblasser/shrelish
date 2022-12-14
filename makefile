@@ -78,6 +78,7 @@ main: clean
 	$(CC) Tocante.rb 2 2 1 $(PP)tocante22_top.nc
 	$(CC) Tocante.rb 2 2 2 $(PP)tocante22_bot.nc
 	$(CC) Shnth.rb 2 2 $(PP)shnth22.nc
+	$(CC) Shnth.rb 1 1 $(PP)shnth11.nc
 	$(CC) Barre_2mm.rb 5 2 $(PP)shbarre52.nc
 	$(CC) Barre_2mm.rb 5 2 2 $(PP)shbarre522.nc
 	$(CC) CocoBot.rb $(PP)cocobot.nc
