@@ -19,7 +19,7 @@ class PlumPott < Jacksloon
  def cutoPointSpesal(x,y)
   pyth = ((x-@resinx)**2 + (y-@resiny)**2)**0.5
   if pyth>0.04 then
-  printf "G1 X%5.4f Y%5.4f\n", x, y #@@feedrate
+  printf "G1 X%5.5f Y%5.5f\n", x, y #@@feedrate
   resin(x,y)
   end
  end
@@ -209,10 +209,10 @@ class PlumPott < Jacksloon
   lx = r*Math.cos(2 * lth * Math::PI)
   
   if $DEBUG then
-   printf "G3 X%5.4f Y%5.4f I%5.4f J%5.4f Z%5.4f\n", 
+   printf "G3 X%5.5f Y%5.5f I%5.5f J%5.5f Z%5.5f\n", 
    x+xx, y+yy, x, y, z
   else
-   printf "G3 X%5.4f Y%5.4f I%5.4f J%5.4f Z%5.4f\n", 
+   printf "G3 X%5.5f Y%5.5f I%5.5f J%5.5f Z%5.5f\n", 
    x+xx, y+yy, -lx, -ly, z
   end
  end

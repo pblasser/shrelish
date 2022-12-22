@@ -12,7 +12,7 @@ attr_accessor :batdepth
   NUMSEGS = 32
  def cutoPointDeepo(x,y,z)
   if z < -@depth then z = -@depth end
-  printf "G1 X%5.4f Y%5.4f Z%5.4f\n", x, y, z
+  printf "G1 X%5.5f Y%5.5f Z%5.5f\n", x, y, z
  end
   def johnson(x,y)
   spyrtub(x,y,5.0/32,0.15/32)
@@ -20,10 +20,10 @@ attr_accessor :batdepth
  end
   def yarc(x,y,z,r,s)
   if $DEBUG then
-   printf "G2 X%5.4f Y%5.4f I%5.4f J%5.4f Z%5.4f\n", 
+   printf "G2 X%5.5f Y%5.5f I%5.5f J%5.5f Z%5.5f\n", 
    x+s, y-r, x+s, y, z
   else
-   printf "G2 X%5.4f Y%5.4f I%5.4f J%5.4f Z%5.4f\n", 
+   printf "G2 X%5.5f Y%5.5f I%5.5f J%5.5f Z%5.5f\n", 
    x+s, y-r, 0, -r, z
   end
  end
@@ -40,14 +40,14 @@ attr_accessor :batdepth
    ee = z   
    if (z < -@depth) then ee = -@depth end
    yarc(x,y,ee,r,stretch)
-   #printf "G2 X%5.4f Y%5.4f I%5.4f J%5.4f Z%5.4f\n", x+stretch, y-r, 0, -r, ee, @@feedrate
+   #printf "G2 X%5.5f Y%5.5f I%5.5f J%5.5f Z%5.5f\n", x+stretch, y-r, 0, -r, ee, @@feedrate
    cutoPointDeepo(x-stretch,y-r,ee)
    z -= incro
    ee = z   
    if (z < -@depth) then ee = -@depth end
    
    yarc(x,y,ee,-r,-stretch)
-   #printf "G2 X%5.4f Y%5.4f I%5.4f J%5.4f Z%5.4f\n", x-stretch, y+r, 0, r, ee, @@feedrate
+   #printf "G2 X%5.5f Y%5.5f I%5.5f J%5.5f Z%5.5f\n", x-stretch, y+r, 0, r, ee, @@feedrate
    cutoPointDeepo(x+stretch,y+r,ee)
   end
   
@@ -109,10 +109,10 @@ end
 def drawzarc(x,y,r,z)
   cutoPoint(x+r,y)
   if $DEBUG then
-  printf "G3 X%5.4f Y%5.4f I%5.4f J%5.4f, Z%5.4f\n", 
+  printf "G3 X%5.5f Y%5.5f I%5.5f J%5.5f, Z%5.5f\n", 
   x-r, y, x, y, z
   else
-  printf "G3 X%5.4f Y%5.4f I%5.4f J%5.4f, Z%5.4f\n", 
+  printf "G3 X%5.5f Y%5.5f I%5.5f J%5.5f, Z%5.5f\n", 
   x-r, y, -r, 0, z
   end
  end

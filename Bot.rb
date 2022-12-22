@@ -52,26 +52,26 @@ class Bot
  end
 
  def retrax(z)
-  printf "G0 Z%5.4f\n",z
+  printf "G0 Z%5.5f\n",z
  end
  def retract
   retrax(0.1)
  end
  def penetrate(z)
-  printf "G1 Z%5.4f\n", z #@@pentrate
+  printf "G1 Z%5.5f\n", z #@@pentrate
  end
  def cutoPoint(x,y)
-  printf "G1 X%5.4f Y%5.4f\n", x, y #@@feedrate
+  printf "G1 X%5.5f Y%5.5f\n", x, y #@@feedrate
  end
  def skimtoPoint(x,y,z)
   retrax(z)
-  printf "G0 X%5.4f Y%5.4f\n", x, y
+  printf "G0 X%5.5f Y%5.5f\n", x, y
  end
  def gotoPoint(x,y)
   skimtoPoint(x,y,0.1)
  end
  def dwellus(tparm)
-  printf "G4 P%5.4f \n",tparm
+  printf "G4 P%5.5f \n",tparm
  end
  def drillus(x,y,zstart,zdepth)
   skimtoPoint(x,y,zstart+0.1)
@@ -176,10 +176,10 @@ class Bot
 
  def arc(x,y,z,r)
   if $DEBUG then
-   printf "G2 X%5.4f Y%5.4f I%5.4f J%5.4f Z%5.4f\n", 
+   printf "G2 X%5.5f Y%5.5f I%5.5f J%5.5f Z%5.5f\n", 
    x+r, y, x, y, z
   else
-   printf "G2 X%5.4f Y%5.4f I%5.4f J%5.4f Z%5.4f\n", 
+   printf "G2 X%5.5f Y%5.5f I%5.5f J%5.5f Z%5.5f\n", 
    x+r, y, r, 0, z
   end
  end

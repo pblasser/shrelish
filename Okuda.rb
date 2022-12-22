@@ -24,13 +24,13 @@ class Hydrogen < Nucleus
   if @nuz < @zdepth then
    deepo = @zdepth
   end
-  printf "G1 X%5.4f Y%5.4f Z%5.4f\n",# F%d\n", 
+  printf "G1 X%5.5f Y%5.5f Z%5.5f\n",# F%d\n", 
    @xcentre+@nux+oiler[0], @ycentre+@nuy+oiler[1], deepo
  end
  def cutt(x,y,z)
   oiler = polaron(@roundel,@theta)
   
-  printf "G1 X%5.4f Y%5.4f Z%5.4f\n",# F%d\n", 
+  printf "G1 X%5.5f Y%5.5f Z%5.5f\n",# F%d\n", 
    @xcentre+x+oiler[0], @ycentre+y+oiler[1], z
  end
  def polaron(r,theta)
@@ -59,12 +59,12 @@ end
   @theta+=momentum
   oilend=polaron(@roundel,@theta)
   if momentum>0 then 
-  printf "G3 X%5.4f Y%5.4f I%5.4f J%5.4f Z%5.4f\n",
+  printf "G3 X%5.5f Y%5.5f I%5.5f J%5.5f Z%5.5f\n",
     @xcentre+@nux+oilend[0], @ycentre+@nuy+oilend[1], 
     -oilstart[0], -oilstart[1],
     deepo
   else
-     printf "G2 X%5.4f Y%5.4f I%5.4f J%5.4f Z%5.4f\n",
+     printf "G2 X%5.5f Y%5.5f I%5.5f J%5.5f Z%5.5f\n",
     @xcentre+@nux+oilend[0], @ycentre+@nuy+oilend[1], 
     oilstart[0], oilstart[1],
     deepo  
@@ -88,13 +88,13 @@ class Okuda < Hydrogen
   super(oiler[0]*(@wchub-r),oiler[1]*(@hchub-r),0,r,0)
  end
  def retrax(z)
-  printf "G0 Z%5.4f\n",z
+  printf "G0 Z%5.5f\n",z
  end
  
  def bokcho(depth,climb,xsegs,ysegs)
   retrax 0.1
   @zdepth = depth
-  printf "G0 X%5.4f Y%5.4f Z%5.4f\n",# F%d\n", 
+  printf "G0 X%5.5f Y%5.5f Z%5.5f\n",# F%d\n", 
    @xcentre+@wchub, @ycentre-@hchub, 0.1, @@feedrate
   @okudanuk += climb/2.0 
   #depth -= 0.1
@@ -153,7 +153,7 @@ class Okuda < Hydrogen
  def bokchoy(depth,climb,xsegs,ysegs)
   retrax 0.1
   @zdepth = depth
-  printf "G0 X%5.4f Y%5.4f Z%5.4f\n",# F%d\n", 
+  printf "G0 X%5.5f Y%5.5f Z%5.5f\n",# F%d\n", 
    @xcentre+@wchub, @ycentre-@hchub, 0.1
    @okudanuk = -climb/4.0     ###############??????????
   @okudanuk += climb/2.0 
@@ -206,7 +206,7 @@ class Okuda < Hydrogen
   def bokchoy(depth,climb,xsegs,ysegs)
   retrax 0.1
   @zdepth = depth
-  printf "G0 X%5.4f Y%5.4f Z%5.4f\n",# F%d\n", 
+  printf "G0 X%5.5f Y%5.5f Z%5.5f\n",# F%d\n", 
    @xcentre-(climb*@wchub), @ycentre-(climb*@hchub), 0.1
   #@okudanuk -= climb/2.0 
   
@@ -275,7 +275,7 @@ class Okuda < Hydrogen
   def bokchoy_barcrisper(depth,climb,xsegs,ysegs)
   retrax 0.1
   @zdepth = depth
-  printf "G0 X%5.4f Y%5.4f Z%5.4f\n",# F%d\n", 
+  printf "G0 X%5.5f Y%5.5f Z%5.5f\n",# F%d\n", 
    @xcentre+(climb*@wchub), @ycentre-(climb*@hchub), 0.1
   #@okudanuk -= climb/2.0 
   
@@ -349,7 +349,7 @@ class Okuda < Hydrogen
  def bokchoydeluxe(depth,climb,xsegs,ysegs,topnuys,botnuys)
   retrax 0.1
   @zdepth = depth
-  printf "G0 X%5.4f Y%5.4f Z%5.4f\n",# F%d\n", 
+  printf "G0 X%5.5f Y%5.5f Z%5.5f\n",# F%d\n", 
    @xcentre+@wchub, @ycentre-@hchub, 0.1
   @okudanuk += climb/2.0 
   #depth -= 0.1
@@ -420,18 +420,18 @@ class Okuda < Hydrogen
   #if @nuz < @zdepth then
   # deepo = @zdepth
   #end
-  printf "G1 X%5.4f Y%5.4f Z%5.4f\n",# F%d\n", 
+  printf "G1 X%5.5f Y%5.5f Z%5.5f\n",# F%d\n", 
    @xcentre+@nux+oiler[0], @ycentre+@nuy+oiler[1], deepo
 
   @theta+=momentum
   oilend=polaron(@roundel,@theta)
   if momentum>0 then 
-  printf "G3 X%5.4f Y%5.4f I%5.4f J%5.4f Z%5.4f\n",
+  printf "G3 X%5.5f Y%5.5f I%5.5f J%5.5f Z%5.5f\n",
     @xcentre+@nux+oilend[0], @ycentre+@nuy+oilend[1], 
     -oilstart[0], -oilstart[1],
     deepo
   else
-     printf "G2 X%5.4f Y%5.4f I%5.4f J%5.4f Z%5.4f\n",
+     printf "G2 X%5.5f Y%5.5f I%5.5f J%5.5f Z%5.5f\n",
     @xcentre+@nux+oilend[0], @ycentre+@nuy+oilend[1], 
     oilstart[0], oilstart[1],
     deepo  
@@ -442,7 +442,7 @@ class Okuda < Hydrogen
  def bokchoytwomo(depth,climb,xsegs,ysegs,topnuys,botnuys)
   retrax 0.1
   @zdepth = depth
-  printf "G0 X%5.4f Y%5.4f Z%5.4f\n",# F%d\n", 
+  printf "G0 X%5.5f Y%5.5f Z%5.5f\n",# F%d\n", 
    @xcentre+@wchub, @ycentre-@hchub, 0.1
   @okudanuk += climb/2.0 
   #depth -= 0.1
@@ -490,7 +490,7 @@ class Okuda < Hydrogen
   #if @nuz < @zdepth then
   # deepo = @zdepth
   #end
-  printf "G1 X%5.4f Y%5.4f Z%5.4f\n",# F%d\n", 
+  printf "G1 X%5.5f Y%5.5f Z%5.5f\n",# F%d\n", 
    @xcentre+@nux+oiler[0], @ycentre+@nuy+oiler[1], deepo
     end 
    end
@@ -501,7 +501,7 @@ class Okuda < Hydrogen
  
  def bok(depth,climb)
   retrax 0.1
-  printf "G0 X%5.4f Y%5.4f Z%5.4f\n",# F%d\n", 
+  printf "G0 X%5.5f Y%5.5f Z%5.5f\n",# F%d\n", 
    @xcentre+@wchub, @ycentre-@hchub, 0.1
   @okudanuk += climb/2.0 
   #depth -= 0.1
