@@ -42,15 +42,15 @@ class Barre < PlumPott
   
   #barstop
   tier = -0.045
-  bronx(endor-midx+0.433,@stary-@heighchub,
-  endor-0.325,@stary+@heighchub,0,tier,1,
-  0.1)
+  #bronxx0.1
+  box(endor-midx+0.433,@stary-@heighchub,
+  endor-0.325,@stary+@heighchub,0,tier,1)
   
   #lensbox
   tier = -0.210
-  bronx(@curxo+0.325,@stary-@heighchub,
-  endor-midx+0.433,@stary+@heighchub,0,tier,2,
-  0.1)
+  #bronx
+  box(@curxo+0.325,@stary-@heighchub,
+  endor-midx+0.433,@stary+@heighchub,0,tier,2)
   
   if @@numero < 2 then signo = -0.2 
   else signo = 0.2 end
