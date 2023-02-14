@@ -14,6 +14,7 @@ MARJ = 0.05
   @magic = 0.023 #for the weird clockwise alignment!
   @magic = 0
   super(starx, stary)
+  @magic = 0
  end
 
  def dx(x)
