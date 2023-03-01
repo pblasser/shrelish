@@ -13,7 +13,8 @@ main: clean
 	$(CC) BenjoBot.rb $(PP)BenjoBot.nc  
 
 	$(CC) BenjoTop9.rb $(PP)BenjoTop9.nc  
-	$(CC) BenjoGoldTop63.rb 2 1 $(PP)BenjoGT6321.nc  
+	$(CC) BenjoGoldTop63.rb 2 1 $(PP)BenjoGT6321.nc
+	$(CC) BenjoGoldTop93.rb 2 1 $(PP)BenjoGT9321.nc  
 	$(CC) SolarBenjChub.rb 0 $(PP)solbchb0.nc	
 	$(CC) SolarBenjChub.rb 1 $(PP)solbchb1.nc	
 	$(CC) PlumBot.rb $(PP)plumbot.nc 
