@@ -39,7 +39,8 @@ class BenjoTop < PlumPott
   tubo(dx(y),dy(x),0.33,0,-0.4,4)
  end
   def SMTLED(x,y)
- pipe(dx(y),dy(x),3.3/32,0,-@depth)
+   tubo(dx(y),dy(x),mm(2.5),0,-0.35,3)
+   pipe(dx(y),dy(x),mm(1),-0.35,-@depth)
 end
  def boxo()
   @curxo += MARJ
@@ -48,11 +49,11 @@ end
   screw(9,6,0)
   screw(-9,6,0)
   a_trimcap(0,10)
-  balpspot(7,40,15)
-  SMTLED(-2.5,44)
-  SMTLED(-8.5,44)
+  balpspot(7,40,-167)
+  SMTLED(-6,46)
+  SMTLED(-12,46)
 
-  JOHNSON(-5.5,37,0)
+  JOHNSON(-9,38,0)
   screw(-9,54,0)
   screw(9,54,0)
  
