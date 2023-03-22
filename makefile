@@ -25,7 +25,7 @@ main: clean
 	$(CC) Plumdeer_pre.rb 2 2 $(PP)plumdeer22_pre.nc 
  
 	$(CC) MountBar.rb 4 1 $(PP)mounter.nc
-	$(CC) MountBarMini.rb 4 1 $(PP)mountermini.nc
+	$(CC) MountBar3040.rb 4 1 $(PP)mounter3040.nc
 	$(CC) Ovalbot.rb $(PP)ovalbot.nc 
 	$(CC) Ovaltop.rb JOHNSON STUBER $(PP)ovalstuber.nc 
 	$(CC) Ovaltop.rb SPESAL FYRALL $(PP)ovalspesalfyral.nc 
