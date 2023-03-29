@@ -7,8 +7,8 @@ class BenjoTop < PlumPott
  MARJ = 2/25.4
 
  def initialize(starx, stary)
-  @width = mm(100)
-  @heigh = mm(100)
+  @width = mm(90)
+  @heigh = mm(90)
   @depth = 0.55
   super(starx, stary)
  end
@@ -65,31 +65,43 @@ class BenjoTop < PlumPott
  def boxo()
   @curxo += MARJ
   @curxo += $halfwidth
-  KYCON5P(0,0,180)
-balpspot(30,20,135)
-#swat(33.3333-50,33.3333,-45)
-screw(44,6,0)
-JOHNSON(44,30,0)
-balpspot(0,70,135)
-balpspot(30,80,135)
-JOHNSON(44,70,0)
-screw(44,94,0)
-JOHNSON(30,94,0)
-KYCONMINIJACK(15,100,0)
-balpspot(20,50,135)
-balpspot(0,30,135)
-balpspot(-20,50,135)
-JOHNSON(-44,70,0)
-screw(-44,94,0)
-JOHNSON(-30,94,0)
-balpspot(-30,80,135)
-balpspot(-30,20,135)
-screw(-44,6,0)
-JOHNSON(-30,6,0)
-JOHNSON(-44,30,0)
-JOHNSON(-44,50,0)
-KOBICONDC(-15,100,-90)
-JOHNSON(44,50,0)
+
+
+KYCON5P(0,0,180)
+screw(27,6,0)
+JOHNSON(39,9,0)
+balpspot(18,45,135)
+balpspot(0,27,135)
+JOHNSON(39,45,0)
+JOHNSON(39,27,0)
+balpspot(27,18,135)
+screw(-27,6,0)
+balpspot(-27,18,135)
+balpspot(-18,45,135)
+balpspot(-27,72,135)
+JOHNSON(-39,63,0)
+JOHNSON(-39,45,0)
+JOHNSON(-39,27,0)
+JOHNSON(-39,9,0)
+balpspot(27,72,135)
+screw(27,84,0)
+balpspot(0,63,135)
+KOBICONDC(-13,90,-90)
+screw(-27,84,0)
+JOHNSON(-39,81,0)
+KYCONMINIJACK(13,90,0)
+JOHNSON(39,81,0)
+JOHNSON(39,63,0)
+
+
+
+
+
+
+
+
+
+
 
   @curxo += @width/2
   @myOkuda = Okuda.new(@curxo,@stary,@width+MARJ*2+$bitwidth,@heigh+MARJ*2+$bitwidth,mm(8))
