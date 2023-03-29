@@ -12,7 +12,7 @@ main: clean
 	echo -e $(GDOZ) > $(DD)G00.nc
 	$(CC) BenjoBot.rb $(PP)BenjoBot.nc  
 
-	$(CC) BenjoTop9.rb $(PP)BenjoTop9.nc  
+	$(CC) BenjoTop.rb $(PP)BenjoTop.nc  
 	$(CC) BenjoGoldTop63.rb 2 1 $(PP)BenjoGT6321.nc
 	$(CC) BenjoGoldTop93.rb 2 1 $(PP)BenjoGT9321.nc  
 	$(CC) SolarBenjChub.rb 0 $(PP)solbchb0.nc	
