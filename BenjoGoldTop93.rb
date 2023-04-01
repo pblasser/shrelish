@@ -46,14 +46,18 @@ end
   @curxo += MARJ
   @curxo += $halfwidth
   @curxo += mm(15)
+  mirror = @@numero % 2 *2 -1
   screw(9,6,0)
   screw(-9,6,0)
   a_trimcap(0,10)
-  balpspot(7,40,-167)
-  SMTLED(-6,46)
-  SMTLED(-12,46)
+  balpspot(7*mirror,40,-167)
+  SMTLED(-6*mirror,46)
+  SMTLED(-12*mirror,46)
 
-  JOHNSON(-9,38,0)
+  JOHNSON(-9*mirror,38,0)
+  dux(dx(51),dy(5),dx(51),dy(-5),0,-0.125,1)
+  #box(dx(40),dy(5),dx(52),dy(-5),-0.125,-0.25,1)
+
   screw(-9,54,0)
   screw(9,54,0)
  
@@ -66,6 +70,7 @@ end
   @curxo += mm(15)
   @curxo += MARJ
     @curxo += $halfwidth
+    @@numero += 1
   return @curxo
  end
  def ducabot
