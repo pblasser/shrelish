@@ -4,7 +4,7 @@ require './Okuda.rb'
  MARJ = 2/25.4
 class BenjoBot < Jacksloon
  
-
+ @@lipp = MARJ
 
  def initialize(starx, stary)
   @width = mm(90)
@@ -39,7 +39,7 @@ class BenjoBot < Jacksloon
  end
  def boxo()
   @curxo+= MARJ
-  #@curxo += $halfwidth
+  @curxo += $halfwidth
 
 tubo(dx(74-45),dy(32),mm(5),0,-0.25,2)
 
@@ -81,7 +81,7 @@ box(dx(-10),dy(63),dx(-35),dy(80),-0.125,-4.0/8,3)
   
   
   @curxo += MARJ
-    #@curxo += $halfwidth
+    @curxo += $halfwidth
   return @curxo
  end
  def ducabot
@@ -164,6 +164,10 @@ def mm(x) return x/25.4 end
 def dudderat()
  argument = 0
  cursorx = $halfwidth
+ into = Integer(ARGV[0]) rescue nil
+ if into  then
+  return stutterat(BenjoBot)
+ end
  while  (ARGV[argument].nil?) ==false
   argvor = String(ARGV[argument])
   if argvor=="benjolin" then

@@ -1,10 +1,13 @@
 
 require './PlumPott.rb'
 require './Okuda.rb'
+MARJ = 2/25.4
 
 class BenjoTop < PlumPott
  
- MARJ = 2/25.4
+ 
+ @@lipp = MARJ
+
 
  def initialize(starx, stary)
   @width = mm(90)
@@ -41,27 +44,7 @@ class BenjoTop < PlumPott
  def screw(x,y,r)
   looscrew(dx(y),dy(x))
  end
- def swat(x,y,r)
-  r=-r
-  rotabox(dx(y),dy(x),mm(11),mm(7),r)
-  gotoPoint(dx(y),dy(x))
-  penetrate(mm(-2.5))
-  rotaframe(dx(y),dy(x),mm(14),mm(10),r)
-  penetrate(mm(-5))
-  rotaframe(dx(y),dy(x),mm(14),mm(10),r)
-    penetrate(mm(-7.5))
-  rotaframe(dx(y),dy(x),mm(14),mm(10),r)
 
-  penetrate(mm(-2.5))
-  rotaframe(dx(y),dy(x),mm(17),mm(13),r)
-    penetrate(mm(-5))
-  rotaframe(dx(y),dy(x),mm(17),mm(13),r)
-
-  penetrate(mm(-2.5))
-  rotaframe(dx(y),dy(x),mm(20),mm(16),r)
-
-  retract
- end 
  def boxo()
   @curxo += MARJ
   @curxo += $halfwidth
@@ -117,7 +100,7 @@ JOHNSON(39,63,0)
   @myOkuda.bokchoy(-@depth,1.0,16,16)
  end
  def duxo
-  @curxo += $bitwidth
+  #@curxo += $bitwidth
   return @curxo
  end
 end
