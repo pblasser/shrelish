@@ -10,8 +10,8 @@ GDOZ="G21G90G92.1\nG0Z10\nG0X0Y0"
 main: clean
 	echo -e $(GTEN) > $(DD)G10.nc
 	echo -e $(GDOZ) > $(DD)G00.nc
-	$(CC) BenjoBot.rb $(PP)BenjoBot.nc  
-
+	$(CC) BenjoBot.rb gold benjolin gold $(PP)BenjBotGBG.nc  
+	$(CC) BenjoBot.rb benjolin $(PP)BenjBotB.nc  
 	$(CC) BenjoTop.rb $(PP)BenjoTop.nc  
 	$(CC) BenjoGoldTop63.rb 2 1 $(PP)BenjoGT6321.nc
 	$(CC) BenjoGoldTop93.rb 2 1 $(PP)BenjoGT9321.nc  

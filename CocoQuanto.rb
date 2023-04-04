@@ -33,6 +33,10 @@ class Qunt < PlumPott
  def JOHNSON(x,y,r) 
   johnson(x,y)
  end
+def swdpst(x,y,theta)
+  rotabox(x,y,0.37,0.25,theta) 
+  spyrtub(x,y,0.135,0)
+ end
  def omron(x,y,r) end
  def cutoPoint3d(x,y,z)
   printf "G1 X%5.3f Y%5.3f Z%5.3f\n", x, y, z

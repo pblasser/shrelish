@@ -33,6 +33,9 @@ class Qunt < PlumPott
  def JOHNSON(x,y,r) 
   johnson(x,y)
  end
+  def swdpst(x,y,theta)
+  rotabox(x,y,0.37,0.25,theta) 
+ end
  def omron(x,y,r) end
  def bomron(x,y)
   spyrtub(dx(x),dy(-y),1.0/14,0)

@@ -41,7 +41,7 @@ class Bot
  @@numero = 0
  @@deepana = -0.25
  
- 
+
  def initialize(starx, stary)
   @heighchub = @heigh / 2.0 
   @duxulate =Integer(@depth / TIERATE)
