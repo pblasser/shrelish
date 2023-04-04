@@ -36,6 +36,7 @@ class Qunt < PlumPott
 def swdpst(x,y,theta)
   rotabox(x,y,0.37,0.25,theta) 
   spyrtub(x,y,0.135,0)
+  tubo(x,y,0.157,0,-2/25.4,1)
  end
  def omron(x,y,r) end
  def cutoPoint3d(x,y,z)
