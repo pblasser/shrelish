@@ -41,7 +41,7 @@ class BenjoBot < Jacksloon
   @curxo+= MARJ
   #@curxo += $halfwidth
 
-
+tubo(dx(74-45),dy(32),mm(5),0,-0.25,2)
 
 
 
@@ -117,7 +117,7 @@ class GoldBot < Jacksloon
   tubo(dx(x),dy(y),mm(4),0,-0.25,2)
  end
   def brass(x,y,r)
-  tubo(dx(x),dy(y),mm(4),0,-0.25,2)
+  tubo(dx(x),dy(y),0.14,0,-0.25,2)
  end
  def screw(x,y,r)
   screw = -0.16
@@ -137,7 +137,8 @@ class GoldBot < Jacksloon
   JOHNSON(15-mirr*9,38,0)
   box(dx(28),dy(10),dx(2),dy(50),0,-1.0/8,1)
   box(dx(19),dy(40),dx(11),dy(52),0,-2.0/8,2)
-
+  box(dx(7*mirr+21),dy(24),dx(7*mirr+9),dy(36),-0.125,-4.0/8,3)
+  
   @curxo += @width/2
   @myOkuda = Okuda.new(@curxo,@stary,@width+MARJ*2+$bitwidth,@heigh+MARJ*2+$bitwidth,mm(8))
   @curxo += @width/2
