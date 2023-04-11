@@ -11,10 +11,20 @@ main: clean
 	echo -e $(GTEN) > $(DD)G10.nc
 	echo -e $(GDOZ) > $(DD)G00.nc
 	$(CC) BenjoBot.rb gold benjolin gold $(PP)BenjBotGBG.nc  
-	$(CC) BenjoBot.rb benjolin $(PP)BenjBotB.nc  
+	#$(CC) BenjoBot.rb benjolin $(PP)BenjBotB.nc  
+	$(CC) BenjoBot.rb 1 1 $(PP)BenjBot11.nc  
+	$(CC) BenjoBot.rb 1 2 $(PP)BenjBot12.nc  
+	$(CC) BenjoBot.rb 1 3 $(PP)BenjBot13.nc  
 	$(CC) BenjoBot.rb 2 2 $(PP)BenjBot22.nc  
-	$(CC) BenjoTop.rb $(PP)BenjoTop.nc  
-	$(CC) BenjoTop.rb 2 2 $(PP)BenjoTop22.nc  
+	$(CC) BenjoBot.rb 2 3 $(PP)BenjBot23.nc  
+	$(CC) BenjoBot.rb 2 4 $(PP)BenjBot24.nc  
+	#$(CC) BenjoTop.rb $(PP)BenjoTop.nc  
+	$(CC) BenjoTop.rb 1 1 $(PP)BenjoTop11.nc 
+	$(CC) BenjoTop.rb 1 2 $(PP)BenjoTop12.nc 
+	$(CC) BenjoTop.rb 1 3 $(PP)BenjoTop13.nc  
+	$(CC) BenjoTop.rb 2 2 $(PP)BenjoTop22.nc 
+	$(CC) BenjoTop.rb 2 3 $(PP)BenjoTop23.nc 
+	$(CC) BenjoTop.rb 2 4 $(PP)BenjoTop24.nc  
 	$(CC) BenjoPinker.rb $(PP)BenjoPinker.nc  
 	$(CC) BenjoGoldTop63.rb 2 1 $(PP)BenjoGT6321.nc
 	$(CC) BenjoGoldTop93.rb 2 1 $(PP)BenjoGT9321.nc  
