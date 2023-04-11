@@ -117,8 +117,8 @@ end
   omronish(x,y)
   x=dx(x)
   
-  tubo(x,-y,0.125,0,-0.333,3)
-  spyrtub(x,-y,1.0/14,0)
+  tubo(x,-y,0.25,0,-0.333,3)
+  spyrtub(x,-y,0.2,0)
  end
 def eights(x,y)
 x = dx(x)

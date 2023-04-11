@@ -417,9 +417,9 @@ class Okuda < Hydrogen
   #cut
     oiler = polaron(@roundel,@theta)
   deepo = @nuz
-  #if @nuz < @zdepth then
-  # deepo = @zdepth
-  #end
+  if @nuz < @zdepth then
+   deepo = @zdepth
+  end
   printf "G1 X%5.5f Y%5.5f Z%5.5f\n",# F%d\n", 
    @xcentre+@nux+oiler[0], @ycentre+@nuy+oiler[1], deepo
 
@@ -487,9 +487,9 @@ class Okuda < Hydrogen
      @nuz += 0.2 * trank 
   oiler = polaron(@roundel,@theta)
   deepo = @nuz
-  #if @nuz < @zdepth then
-  # deepo = @zdepth
-  #end
+  if @nuz < @zdepth then
+   deepo = @zdepth
+  end
   printf "G1 X%5.5f Y%5.5f Z%5.5f\n",# F%d\n", 
    @xcentre+@nux+oiler[0], @ycentre+@nuy+oiler[1], deepo
     end 
