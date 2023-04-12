@@ -50,12 +50,12 @@ main: clean
 	#$(CC) Sunbeetle.rb 1 $(PP)sun_top.nc	
 	$(CC) CocoQuanto.rb 1 2 $(PP)cocomidl12.nc
 	$(CC) CocoQuanto_pre.rb 1 2 $(PP)cocomidl12_pre.nc
-	$(CC) SolarGrassi.rb 1 0 $(PP)solgrb0.nc
-	$(CC) SolarGrassi.rb 0 0 $(PP)solgrso0.nc		
-	$(CC) SolarGrassi.rb 1 1 $(PP)solgrbs1.nc
-	$(CC) SolarGrassi.rb 0 1 $(PP)solgrs1.nc		
-	$(CC) SolarGrassiChub.rb 0 $(PP)solgrchb0.nc	
-	$(CC) SolarGrassiChub.rb 1 $(PP)solgrchb1.nc	
+	$(CC) SolarGrassi_weak.rb 1 0 $(PP)solgrb0.nc
+	$(CC) SolarGrassi_weak.rb 0 0 $(PP)solgrso0.nc		
+	$(CC) SolarGrassi_weak.rb 1 1 $(PP)solgrbs1.nc
+	$(CC) SolarGrassi_weak.rb 0 1 $(PP)solgrs1.nc		
+#	$(CC) SolarGrassiChub.rb 0 $(PP)solgrchb0.nc	
+#	$(CC) SolarGrassiChub.rb 1 $(PP)solgrchb1.nc	
 	
 	#$(CC) SolarCICADA.rb 1 $(PP)solarcic.nc	
 	#$(CC) SolarFlange.rb 1 $(PP)solarfla.nc	
