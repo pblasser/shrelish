@@ -30,6 +30,8 @@ main: clean
 	$(CC) BenjoGoldTop93.rb 2 1 $(PP)BenjoGT9321.nc  
 	$(CC) SolarBenjChub.rb 0 $(PP)solbchb0.nc	
 	$(CC) SolarBenjChub.rb 1 $(PP)solbchb1.nc	
+	$(CC) SolarBenjPane.rb 0 $(PP)solbpan0.nc	
+	$(CC) SolarBenjPane.rb 1 $(PP)solbpan1.nc	
 	$(CC) PlumBot.rb $(PP)plumbot.nc 
 	$(CC) Plumbutt.rb 1 2 $(PP)plummidl12.nc 
 	$(CC) Plumbutt_pre.rb 1 2 $(PP)plummidl12_pre.nc 

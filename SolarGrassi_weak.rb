@@ -23,12 +23,14 @@ class Shplorer < Jacksloon
   else @heigh=11.55/2.0 end  
   @xarg = xarg
   @yarg=yarg
-  @depth = cmil(1.1)
+
+  @depth = 0.55#cmil(1.1)
   super(0, 0)
  end
 
+ @@fatty = 4.25
  def parabol(x,m,w,s)
-   y = s*2*(x**2-4.25)
+   y = s*2*(x**2-@@fatty)
    cutoPoint(dx(m-s*x*w),dy(y))
  end
  def ducabot(m,w,s) 
@@ -39,6 +41,21 @@ class Shplorer < Jacksloon
   end
  end
 
+#   ducabot(x,-x-1,-f)
+#   ducabot(x,-x-5,f)
+#    parabol(-1,x,x+5,f)
+
+
+  def ducabot(m,w,s) 
+   y=s*2*(1-@@fatty)
+   x=m-s*w
+   #parabol(-1,@width/2.0,w,s)
+      cutoPoint(dx(@width/2.0+s*w),dy(y))
+
+   printf "G3 X%5.5f Y%5.5f I%5.5f J%5.5f\n", 
+   dx(x), dy(y), cmil(-s*w), -s*cmil(-w**2/4-1)
+  end
+
  def boxo() 
   w = @width/2.0
   x = w
@@ -46,7 +63,7 @@ class Shplorer < Jacksloon
   dd=-0.23
 @curxo=-0.7
 @curxo=1
-
+  @stary=cmil(1-@yarg*2)/3.14
   if (@yarg==0) then
    drillus(dx(x-w),dy(-h),0,dd)
    drillus(dx(x-w),dy(h),0,dd)
@@ -90,12 +107,12 @@ class Shplorer < Jacksloon
 #    drillus(dx(x),dy(0),0,cmil(0.3),-@depth)
     spyrtub(dx(x),dy(0),cmil(6.6/2.0),0)
   end
-
+  @stary=0
 
   retrax 0.1
  # skimtoPoint(dx(0),dy(0),0.1)
   nuz = 0
-  tier = @depth / 3.0
+  tier = @depth / 4.0
   nuz -= tier
   f=2*@yarg-1
   parabol(-1,x,x+5,f)

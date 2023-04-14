@@ -21,9 +21,9 @@ class Shplorer < PlumPott
   return @curxo+mm(x)
  end
  def initialize(xarg)
-  @width = 110
-  @heigh = 120
-  @depth = 0.55
+  @width = 135
+  @heigh = 300
+  @depth = mm(7)
   @xarg=xarg
   super($halfwidth,0)
  end
@@ -54,47 +54,7 @@ class Shplorer < PlumPott
   w = @width/2.0
   h = @heigh/2.0
   x = w 
-  if(@xarg==0) then
-   drillus(dx(w-40),dy(-40),0,-0.25)
-   drillus(dx(x-40),dy(+40),0,-0.25)
-   drillus(dx(x+40),dy(+40),0,-0.25)
-   drillus(dx(x+40),dy(-40),0,-0.25)
-   for i in 0..5 do
-    x = dx(w+30*Math.cos(2*i*Math::PI/6))
-    y = dy(30*Math.sin(2*i*Math::PI/6))
-    pipe(x,y,0.4,0,-@depth)
-   end
-   #pipe(dx(w),dy(0),cmil(1.85),0,-@depth)
-   tubo(dx(w),dy(0),cmil(1.85),0,-0.25,2)
-   pipe(dx(w),dy(0),0.4,0,-@depth)
-  else
-    @curxo=dx(10)
-KYCON5P(0,0,180)
-screw(27,6,0)
-JOHNSON(39,9,0)
-balpspot(18,45,135)
-balpspot(0,27,135)
-JOHNSON(39,45,0)
-JOHNSON(39,27,0)
-balpspot(27,18,135)
-screw(-27,6,0)
-balpspot(-27,18,135)
-balpspot(-18,45,135)
-balpspot(-27,72,135)
-JOHNSON(-39,63,0)
-JOHNSON(-39,45,0)
-JOHNSON(-39,27,0)
-JOHNSON(-39,9,0)
-balpspot(27,72,135)
-screw(27,84,0)
-balpspot(0,63,135)
-KOBICONDC(-13,90,-90)
-screw(-27,84,0)
-JOHNSON(-39,81,0)
-KYCONMINIJACK(13,90,0)
-JOHNSON(39,81,0)
-JOHNSON(39,63,0)
-  end
+
 
   @curxo=@starx+mm(w)
   @myOkuda = Okuda.new(@curxo,@stary,mm(@width)+$bitwidth,mm(@heigh)+$bitwidth,0.02)
@@ -105,7 +65,7 @@ JOHNSON(39,63,0)
  def ducatop
  end
  def ducabot
-  @myOkuda.bokchoydeluxe(-@depth,1.0,10,10, [], [])
+  @myOkuda.bokchoydeluxe(-@depth,1.0,10,30, [], [])
  end
  def duxo
   @curxo += $bitwidth
