@@ -30,38 +30,13 @@ class Shplorer < Jacksloon
  end
 
  @@fatty = 4.25
- def parabol(x,m,w,s)
-   y = s*2*(x**2-@@fatty)
-   cutoPoint(dx(m-s*x*w),dy(y))
- end
- def ducabot(m,w,s) 
-  numzegs=64
-  for i in -numzegs..numzegs 
-   x = i/Float(numzegs)
-   parabol(x,m,w,s)
-  end
- end
 
-#   ducabot(x,-x-1,-f)
-#   ducabot(x,-x-5,f)
-#    parabol(-1,x,x+5,f)
-
-
-  def ducabot(m,w,s) 
-   y=s*2*(1-@@fatty)
-   x=m-s*w
-   #parabol(-1,@width/2.0,w,s)
-      cutoPoint(dx(@width/2.0+s*w),dy(y))
-
-   printf "G3 X%5.5f Y%5.5f I%5.5f J%5.5f\n", 
-   dx(x), dy(y), cmil(-s*w), -s*cmil(-w**2/4-1)
-  end
 
  def boxo() 
   w = @width/2.0
   x = w
   h = @heigh
-  dd=-0.23
+  dd=-0.25
 @curxo=-0.7
 @curxo=1
  @stary=cmil(1-@yarg*2)/6.28
@@ -110,22 +85,27 @@ class Shplorer < Jacksloon
   end
   @stary=0
 
-  retrax 0.1
- # skimtoPoint(dx(0),dy(0),0.1)
-  nuz = 0
-  tier = @depth / 4.0
-  nuz -= tier
-  f=2*@yarg-1
-  parabol(-1,x,x+3,f)
-  penetrate(nuz)
-  while (nuz >= -@depth) do
-   penetrate(nuz)
-   ducabot(x,-x-1,-f)
-   ducabot(x,-x-3,f)
-    parabol(-1,x,x+3,f)
-   nuz -= tier
+  
+  ss=-2*@yarg+1
+  ff=cmil(6.5)*ss
+  mi=cmil(x+1)*ss
+  ma=cmil(x+3)*ss
+  puff=1.2
+  ptoo=puff*2
+  psqu=puff**2
+  mih=cmil((x+1)**2/ptoo-psqu/ptoo)
+  mah=cmil((x+3)**2/ptoo-psqu/ptoo)
+  Curxuda.new(
 
-  end
+   cmil(w)+@curxo,0,@depth,
+   [#[-ma,ff],
+   [-mi,-ff],
+   [mi,-ff,-mih],
+   [ma,ff],
+   [-ma,ff,-mah]
+   ]).bok()
+
+
 
   @curxo += x*2
   return @curxo

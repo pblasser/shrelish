@@ -15,48 +15,55 @@ class Shplorer < PlumPott
 
   def mm(i) return i/25.4 end
  def dy(y)
-  return @stary+mm(-y)
+  return @stary+mm(y)
  end
  def dx(x)
   return @curxo+mm(x)
  end
  def initialize(xarg)
-  @width = 135
-  @heigh = 300
+  
+   @width = 135
+    @xarg=xarg
+    if (@xarg==0) then
+  @heigh = 250
+   else @heigh = 270
+   end
   @depth = mm(7)
-  @xarg=xarg
+
   super($halfwidth,0)
  end
 
- def KYCON5P(x,y,r)
-  
-  #shallot(dx(y),dy(x),1)
+ def JAX(x,y)
+  tubo(x,y,mm(12.7),0,mm(-2),1)
+  spyrtub(x,y,mm(6),0)
+
  end
- def KYCONMINIJACK(x,y,r)
-  #shallot(dx(y),dy(x),-1)
+ def POW(x,y)
+  spyrtub(x,y,mm(6.35),0)
  end
- def KOBICONDC(x,y,r)
-  #shallot(dx(y),dy(x),-1)
+ def POT(x,y)
+  tubo(x,y,mm(7.12),0,mm(-2),1)
+  spyrtub(x,y,mm(3.6),0)
  end
- def JOHNSON(x,y,r)
-  johnson(dx(y),dy(x))
- end
- def balpspot(x,y,r) 
-  r=r
-  alpspot(dx(y),dy(x),180+r)
- end
- def screw(x,y,r)
-  drillus(dx(y),dy(x),0,-0.25)
+
+ def screw(x,y)
+  spyrtub(x,y,mm(1.5),0)
  end
 
 
  def boxo()  
   w = @width/2.0
   h = @heigh/2.0
-  x = w 
 
 
+  
   @curxo=@starx+mm(w)
+    if (@xarg==0) then
+    JAX(dx(-42),dy(-100))
+    JAX(dx(-14),dy(-100))
+      POW(dx(14),dy(-100))
+        POT(dx(42),dy(-100))
+      end
   @myOkuda = Okuda.new(@curxo,@stary,mm(@width)+$bitwidth,mm(@heigh)+$bitwidth,0.02)
   @curxo=dx(w)
   return  @curxo

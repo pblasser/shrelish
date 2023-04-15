@@ -10,6 +10,11 @@ GDOZ="G21G90G92.1\nG0Z10\nG0X0Y0"
 main: clean
 	echo -e $(GTEN) > $(DD)G10.nc
 	echo -e $(GDOZ) > $(DD)G00.nc
+	$(CC) Curxuda.rb $(PP)curxo.nc  
+	$(CC) SolarGrassi_curx.rb 1 0 $(PP)solgrb0.nc
+	$(CC) SolarGrassi_curx.rb 0 0 $(PP)solgrso0.nc	
+	$(CC) SolarGrassi_curx.rb 1 1 $(PP)solgrbs1.nc
+	$(CC) SolarGrassi_curx.rb 0 1 $(PP)solgrs1.nc	
 	$(CC) BenjoBot.rb gold benjolin gold $(PP)BenjBotGBG.nc  
 	#$(CC) BenjoBot.rb benjolin $(PP)BenjBotB.nc  
 	$(CC) BenjoBot.rb 1 1 $(PP)BenjBot11.nc  
@@ -52,10 +57,7 @@ main: clean
 	#$(CC) Sunbeetle.rb 1 $(PP)sun_top.nc	
 	$(CC) CocoQuanto.rb 1 2 $(PP)cocomidl12.nc
 	$(CC) CocoQuanto_pre.rb 1 2 $(PP)cocomidl12_pre.nc
-	$(CC) SolarGrassi_weak.rb 1 0 $(PP)solgrb0.nc
-	$(CC) SolarGrassi_weak.rb 0 0 $(PP)solgrso0.nc		
-	$(CC) SolarGrassi_weak.rb 1 1 $(PP)solgrbs1.nc
-	$(CC) SolarGrassi_weak.rb 0 1 $(PP)solgrs1.nc		
+	
 #	$(CC) SolarGrassiChub.rb 0 $(PP)solgrchb0.nc	
 #	$(CC) SolarGrassiChub.rb 1 $(PP)solgrchb1.nc	
 	
