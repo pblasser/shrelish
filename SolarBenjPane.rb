@@ -5,7 +5,8 @@ require './Okuda.rb'
 
 #$bitwidth=0.001
 #$halfwidth=$bitwidth/2
-
+PAINSWITCH=0
+PAINSWITCH=Integer(ARGV[2]) or 0
 class Shplorer < PlumPott
 #MARJ = 0.42
 @@lipp = 0.00
@@ -20,17 +21,17 @@ class Shplorer < PlumPott
  def dx(x)
   return @curxo+mm(x)
  end
- def initialize(xarg)
+ def initialize(starx,stary)
   
-   @width = 135
-    @xarg=xarg
+   @width = mm(140)
+    @xarg=PAINSWITCH
     if (@xarg==0) then
-  @heigh = 250
-   else @heigh = 270
+  @heigh = mm(30)
+   else @heigh = mm(270)
    end
   @depth = mm(7)
-
-  super($halfwidth,0)
+  
+  super(starx,stary)
  end
 
  def JAX(x,y)
@@ -57,22 +58,23 @@ class Shplorer < PlumPott
 
 
   
-  @curxo=@starx+mm(w)
+  @curxo=@starx+w
     if (@xarg==0) then
-    JAX(dx(-42),dy(-100))
-    JAX(dx(-14),dy(-100))
-      POW(dx(14),dy(-100))
-        POT(dx(42),dy(-100))
+    JAX(dx(-42),dy(-00))
+    JAX(dx(-14),dy(-00))
+      POW(dx(14),dy(-00))
+        POT(dx(42),dy(-00))
       end
-  @myOkuda = Okuda.new(@curxo,@stary,mm(@width)+$bitwidth,mm(@heigh)+$bitwidth,0.02)
-  @curxo=dx(w)
+  @myOkuda = Okuda.new(@curxo,@stary,@width+$bitwidth,@heigh+$bitwidth,0.02)
+  @curxo=@curxo+w
   return  @curxo
 
  end
  def ducatop
  end
  def ducabot
-  @myOkuda.bokchoydeluxe(-@depth,1.0,10,30, [], [])
+  #chubb=Integer()
+  @myOkuda.bokchoydeluxe(-@depth,1.0,20,@heigh.round*4, [], [])
  end
  def duxo
   @curxo += $bitwidth
@@ -82,11 +84,5 @@ end
 $rimmer = 0.01
 
  xarg = 0
- unless ARGV[0].nil? then xarg = Integer(ARGV[0]) end
-
-  broth = Shplorer.new(xarg)
-  broth.boxo()
-  broth.ducabot()
- printf "G0 Z0.5\n"
- printf "G0 X0 Y0 \n"
-
+$rimmer = 0.01
+stutterat(Shplorer) 
