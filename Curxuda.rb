@@ -35,6 +35,11 @@ class Curxuda < Bot
     zilch = $bitwidth
     for i in 0..len do
      zilch*=-1
+     if(z==-@depth) then
+      j=i-0.5#+(zilch*3)
+      if (j<0)then j=0 end
+      cutt(@curx+dx*j/len,@cury+dy*j/len,z)
+     end
      cutt(@curx+dx*i/len,@cury+dy*i/len,z+zilch)
     end
    end
@@ -56,6 +61,7 @@ class Curxuda < Bot
  end
 
 
+
  def bok()
   skimtoPoint(@curx+@starx,@cury+@stary,0.1)
   deepo=-0 
@@ -64,7 +70,9 @@ class Curxuda < Bot
    @arr.each {|a|
     seg(a,deepo)
    }
-   seg(@arr[0],deepo)
+
+    seg(@arr[0],deepo)
+
    deepo = deepo- decro  
   end
  end

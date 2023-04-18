@@ -27,7 +27,7 @@ class Shplorer < PlumPott
     @xarg=PAINSWITCH
     if (@xarg==0) then
   @heigh = mm(30)
-   else @heigh = mm(270)
+   else @heigh = mm(250)
    end
   @depth = mm(7)
   
@@ -48,7 +48,8 @@ class Shplorer < PlumPott
  end
 
  def screw(x,y)
-  spyrtub(x,y,mm(1.5),0)
+  #spyrtub(x,y,mm(1.5),0)
+  drillus(x,y,0,-@depth)
  end
 
 
@@ -64,7 +65,12 @@ class Shplorer < PlumPott
     JAX(dx(-14),dy(-00))
       POW(dx(14),dy(-00))
         POT(dx(42),dy(-00))
-      end
+    else
+      screw(dx(-123/2),dy(220/2))
+       screw(dx(123/2),dy(-220/2))
+        screw(dx(-123/2),dy(-220/2))
+         screw(dx(123/2),dy(220/2))
+        end
   @myOkuda = Okuda.new(@curxo,@stary,@width+$bitwidth,@heigh+$bitwidth,0.02)
   @curxo=@curxo+w
   return  @curxo
