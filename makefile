@@ -10,6 +10,10 @@ GDOZ="G21G90G92.1\nG0Z10\nG0X0Y0"
 main: clean
 	echo -e $(GTEN) > $(DD)G10.nc
 	echo -e $(GDOZ) > $(DD)G00.nc
+	$(CC) BenjoGoldTopBeaner.rb  $(PP)solgold.nc  	
+	$(CC) SolarGrassi_curx.rb 2 0 $(PP)solbbox0.nc
+	#$(CC) SolarGrassi_curx.rb 0 0 $(PP)solgrso0.nc	
+	$(CC) SolarGrassi_curx.rb 2 1 $(PP)solbbox1.nc
 	$(CC) SolarGrassi_curx.rb 1 0 $(PP)solbox0.nc
 	#$(CC) SolarGrassi_curx.rb 0 0 $(PP)solgrso0.nc	
 	$(CC) SolarGrassi_curx.rb 1 1 $(PP)solbox1.nc
