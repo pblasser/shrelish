@@ -44,7 +44,7 @@ class Shplorer < Jacksloon
     xxx=@xarg or 1
 
    for i in 1..xxx do
-    @curxo=1+cmil((i-1)*20)+cmil((xxx-1)*10)
+    @curxo=1+cmil((i-1)*21)+cmil((xxx-1)*9)
     drillus(dx(x-w),dy(-h),0,dd)
     drillus(dx(x-w),dy(h),0,dd)
     drillus(dx(x+w),dy(h),0,dd)
@@ -68,12 +68,6 @@ class Shplorer < Jacksloon
     tubo(dx(x+cw),dy(-y),cmil(0.5),dd,dd-0.125,1)
     dux(dx(x+cw),dy(-y),dx(x+cw)-0.5,dy(-y),dd,dd-0.125,1)
    
-   
-
-
-
-
-
 
    #x = dx(x+w)
    y = 0.5
@@ -83,7 +77,7 @@ class Shplorer < Jacksloon
      fox(dx(x-3),0-y,dx(x+3),y,dd,-@depth, 2)
    end
  end
-  @curxo-=cmil((xxx-1)*10)
+  @curxo-=cmil((xxx-1)*11)
   end
   if (@yarg==1) then
 #    drillus(dx(x),dy(0),0,cmil(0.3),-@depth)

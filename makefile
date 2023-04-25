@@ -39,7 +39,7 @@ main: clean
 	$(CC) SolarBenjChub.rb 0 $(PP)solchb0.nc	
 	$(CC) SolarBenjChub.rb 1 $(PP)solchb1.nc	
 	$(CC) SolarBenjPane.rb 4 1 0 $(PP)solpan4.nc	
-	$(CC) SolarBenjPane.rb 1 2 1 $(PP)solpan1.nc	
+	$(CC) SolarBenjPane.rb 1 1 1 $(PP)solpan1.nc	
 	$(CC) PlumBot.rb $(PP)plbot.nc 
 	$(CC) Plumbutt.rb 1 2 $(PP)plmid12.nc 
 	$(CC) Plumbutt_pre.rb 1 2 $(PP)plmid12_.nc 

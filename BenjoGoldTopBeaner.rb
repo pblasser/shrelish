@@ -48,6 +48,7 @@ end
   #@curxo += MARJ
   @curxo += $halfwidth
   box(dx(0),dy(15),dx(15),dy(-15),0,-mm(8),4)
+  drillus(dx(17/2),0,0,-@depth)
   @curxo += mm(40)
 
   mirror = @@numero % 2 *2 -1
@@ -73,6 +74,7 @@ end
 
   @curxo += mm(40)
   box(dx(-15),dy(15),dx(0),dy(-15),0,-mm(8),4)
+  drillus(dx(-17/2),0,0,-@depth)
   #@curxo += MARJ
     @curxo += $halfwidth
     @@numero += 1

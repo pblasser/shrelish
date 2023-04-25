@@ -61,10 +61,13 @@ class Shplorer < PlumPott
   
   @curxo=@starx+w
     if (@xarg==0) then
+      screw(dx(-123/2),dy(0))
+
     JAX(dx(-42),dy(-00))
     JAX(dx(-14),dy(-00))
       POW(dx(14),dy(-00))
         POT(dx(42),dy(-00))
+        screw(dx(123/2),dy(0))
     else
       screw(dx(-123/2),dy(220/2))
        screw(dx(123/2),dy(-220/2))
