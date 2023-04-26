@@ -48,8 +48,9 @@ class Shplorer < PlumPott
  end
 
  def screw(x,y)
-  #spyrtub(x,y,mm(1.5),0)
-  drillus(x,y,0,-@depth)
+  #pipe(x,y,1.0/14,0,-@depth)
+  spyrtub(x,y,1/14.0,0)
+  #drillus(x,y,0,-@depth)
  end
 
 
@@ -61,18 +62,20 @@ class Shplorer < PlumPott
   
   @curxo=@starx+w
     if (@xarg==0) then
-      screw(dx(-123/2),dy(0))
+      #screw(dx(-123/2),dy(0))
 
     JAX(dx(-42),dy(-00))
     JAX(dx(-14),dy(-00))
       POW(dx(14),dy(-00))
         POT(dx(42),dy(-00))
-        screw(dx(123/2),dy(0))
+        #screw(dx(123/2),dy(0))
     else
-      screw(dx(-123/2),dy(220/2))
-       screw(dx(123/2),dy(-220/2))
-        screw(dx(-123/2),dy(-220/2))
-         screw(dx(123/2),dy(220/2))
+      for i in -4..4
+       screw(dx(-123/2),dy(220*i/8))
+       screw(dx(123/2),dy(220*i/8))
+      end
+        #screw(dx(-123/2),dy(-220/2))
+         #screw(dx(123/2),dy(220/2))
         end
   @myOkuda = Okuda.new(@curxo,@stary,@width+$bitwidth,@heigh+$bitwidth,0.02)
   @curxo=@curxo+w

@@ -39,7 +39,9 @@ class BenjoTop < PlumPott
   tubo(dx(y),dy(x),0.33,0,-0.4,4)
  end
   def SMTLED(x,y)
- pipe(dx(y),dy(x),3.3/32,0,-@depth)
+   tubo(dx(y),dy(x),mm(4),0,-0.05,1)
+   tubo(dx(y),dy(x),mm(2.7),0.05,-0.35,3)
+   drillus(dx(y),dy(x),-0.35,-@depth)
 end
  def boxo()
   @curxo += MARJ
