@@ -9,7 +9,7 @@ class BenjoTop < PlumPott
 
  def initialize(starx, stary)
   @width = mm(140)
-  @heigh = mm(30)
+  @heigh = mm(34)
   @depth = 0.55
   super(starx, stary)
  end
@@ -48,7 +48,7 @@ end
  def boxo()
   #@curxo += MARJ
   @curxo += $halfwidth
-  box(dx(0),dy(15),dx(15),dy(-15),0,-mm(8),4)
+  box(dx(0),dy(17),dx(15),dy(-17),0,-mm(8),4)
   drillus(dx(17/2),0,0,-@depth)
   @curxo += mm(40)
 
@@ -74,7 +74,7 @@ end
   @curxo += mm(30)
 
   @curxo += mm(40)
-  box(dx(-15),dy(15),dx(0),dy(-15),0,-mm(8),4)
+  box(dx(-15),dy(17),dx(0),dy(-17),0,-mm(8),4)
   drillus(dx(-17/2),0,0,-@depth)
   #@curxo += MARJ
     @curxo += $halfwidth
