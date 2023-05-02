@@ -25,9 +25,11 @@ class Mounter < Jacksloon
  def boxo()
   #spyrtub(dx(4),dy(0),cmil(0.420),0)
   #spyrtub(dx(32),dy(0),cmil(0.420),0)
-  tubo(dx(3),dy(0),cmil(0.8),0,-0.25,2)
+  box(dx(0),dy(-1.2),dx(4),dy(1.2),0,-0.375,3)
+ #tubo(dx(3),dy(0),cmil(0.8),0,-0.25,2)
   spyrtub(dx(3),dy(0),cmil(0.35),0)
-  tubo(dx(30),dy(0),cmil(0.8),0,-0.25,2)
+  box(dx(29),dy(-1.2),dx(33),dy(1.2),0,-0.375,3)  
+  #tubo(dx(30),dy(0),cmil(0.8),0,-0.25,2)
   spyrtub(dx(30),dy(0),cmil(0.35),0)
   @curxo += @width /2
   @myOkuda = Okuda.new(@curxo,@stary,@width+$bitwidth,@heigh+$bitwidth,cmil(1.2))

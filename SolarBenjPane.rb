@@ -45,12 +45,13 @@ class Shplorer < PlumPott
  def POT(x,y)
   tubo(x,y,mm(7.12),0,mm(-2),1)
   spyrtub(x,y,mm(3.6),0)
+  spyrtub(x,y-mm(8.5),1/14.0,0)
  end
 
  def screw(x,y)
   #pipe(x,y,1.0/14,0,-@depth)
-  spyrtub(x,y,1/14.0,0)
-  #drillus(x,y,0,-@depth)
+  #spyrtub(x,y,1/14.0,0)
+  drillus(x,y,0,-@depth)
  end
 
 
