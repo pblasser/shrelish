@@ -14,7 +14,8 @@ class Shplorer < PlumPott
   return cm/2.54
  end
 
-  def mm(i) return i/25.4 end
+ def mm(i) return i/25.4 end
+ def unmm(i) return i*25.4 end
  def dy(y)
   return @stary+mm(y)
  end
@@ -25,9 +26,9 @@ class Shplorer < PlumPott
   
    @width = mm(140)
     @xarg=PAINSWITCH
-    if (@xarg==0) then
-  @heigh = mm(30)
-   else @heigh = mm(250)
+    if (@xarg==0) then @heigh = mm(30)
+   elsif (@xarg==1) then @heigh = mm(250)
+   elsif (@xarg==2) then @heigh = mm(194)
    end
   @depth = mm(7)
   
@@ -72,8 +73,8 @@ class Shplorer < PlumPott
         #screw(dx(123/2),dy(0))
     else
       for i in -4..4
-       screw(dx(-123/2),dy(220*i/8))
-       screw(dx(123/2),dy(220*i/8))
+       screw(dx(-123/2),dy((unmm(@heigh)-30)*i/8))
+       screw(dx(123/2),dy((unmm(@heigh)-30)*i/8))
       end
         #screw(dx(-123/2),dy(-220/2))
          #screw(dx(123/2),dy(220/2))

@@ -10,7 +10,7 @@ GDOZ="G21G90G92.1\nG0Z10\nG0X0Y0"
 main: clean
 	echo -e $(GTEN) > $(DD)G10.nc
 	echo -e $(GDOZ) > $(DD)G00.nc
-	$(CC) BenjoGoldTopBeaner.rb  $(PP)solgold.nc  	
+	$(CC) BenjoGoldTopBeaner.rb 2 1 $(PP)solgol21.nc  	
 	$(CC) SolarGrassi_curx.rb 2 0 $(PP)solbbox0.nc
 	#$(CC) SolarGrassi_curx.rb 0 0 $(PP)solgrso0.nc	
 	$(CC) SolarGrassi_curx.rb 2 1 $(PP)solbbox1.nc
@@ -40,6 +40,7 @@ main: clean
 	$(CC) SolarBenjChub.rb 1 $(PP)solchb1.nc	
 	$(CC) SolarBenjPane.rb 4 1 0 $(PP)solpan4.nc	
 	$(CC) SolarBenjPane.rb 1 1 1 $(PP)solpan1.nc	
+	$(CC) SolarBenjPane.rb 1 2 2 $(PP)solpan2.nc	
 	$(CC) PlumBot.rb $(PP)plbot.nc 
 	$(CC) Plumbutt.rb 1 2 $(PP)plmid12.nc 
 	$(CC) Plumbutt_pre.rb 1 2 $(PP)plmid12_.nc 
