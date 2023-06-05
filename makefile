@@ -10,6 +10,8 @@ GDOZ="G21G90G92.1\nG0Z10\nG0X0Y0"
 main: clean
 	echo -e $(GTEN) > $(DD)G10.nc
 	echo -e $(GDOZ) > $(DD)G00.nc
+	$(CC) NEMAStump.rb $(PP)znema.nc
+	$(CC) NEMAbirch.rb $(PP)zbirch.nc	
 	$(CC) BenjoGoldTopBeaner.rb 2 1 $(PP)solgol21.nc  	
 	$(CC) SolarGrassi_curx.rb 2 0 $(PP)solbbox0.nc
 	#$(CC) SolarGrassi_curx.rb 0 0 $(PP)solgrso0.nc	
@@ -49,7 +51,7 @@ main: clean
 	$(CC) Plumdeer_pre.rb 2 2 $(PP)pldir22_.nc 
  
 	$(CC) MountBar.rb 4 1 $(PP)mnt6040.nc
-	$(CC) MountBar3040.rb 4 1 $(PP)mnt3040.nc
+	$(CC) MountBar3040.rb 6 1 $(PP)mnt3040.nc
 	$(CC) Ovalbot.rb $(PP)ovalbot.nc 
 	$(CC) Ovaltop.rb JOHNSON STUBER $(PP)ovalst.nc 
 	$(CC) Ovaltop.rb SPESAL FYRALL $(PP)ovalfy.nc 
