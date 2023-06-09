@@ -20,7 +20,7 @@ main: clean
 	#$(CC) SolarGrassi_curx.rb 0 0 $(PP)solgrso0.nc	
 	$(CC) SolarGrassi_curx.rb 1 1 $(PP)solbox1.nc
 	#$(CC) SolarGrassi_curx.rb 0 1 $(PP)solgrs1.nc	
-	$(CC) BenjoBot.rb gold benjolin gold $(PP)BBotGBG.nc  
+	$(CC) BenjoBot.rb gold benjolin gold $(PP)BGBot.nc  
 	#$(CC) BenjoBot.rb benjolin $(PP)BenjBotB.nc  
 	$(CC) BenjoBot.rb 1 1 $(PP)BBot11.nc  
 	$(CC) BenjoBot.rb 1 2 $(PP)BBot12.nc  
@@ -37,7 +37,7 @@ main: clean
 	$(CC) BenjoTop.rb 2 4 $(PP)BTop24.nc  
 	#$(CC) BenjoPinker.rb $(PP)BPinker.nc  
 	#$(CC) BenjoGoldTop63.rb 2 1 $(PP)BenjoGT6321.nc
-	$(CC) BenjoGoldTop93.rb 2 1 $(PP)Bgold1.nc  
+	$(CC) BenjoGoldTop93.rb 5 2 $(PP)Bgold52.nc  
 	$(CC) SolarBenjChub.rb 0 $(PP)solchb0.nc	
 	$(CC) SolarBenjChub.rb 1 $(PP)solchb1.nc	
 	$(CC) SolarBenjPane.rb 4 1 0 $(PP)solpan4.nc	
