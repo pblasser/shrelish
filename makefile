@@ -70,7 +70,7 @@ main: clean
 	#$(CC) SolarCICADA.rb 1 $(PP)solarcic.nc	
 	#$(CC) SolarFlange.rb 1 $(PP)solarfla.nc	
 	
-	#$(CC) Tarsh.rb 1 $(PP)tarsh.nc	
+	$(CC) Tarsh.rb 1 $(PP)tarsh.nc	
 	#$(CC) Shneck.rb 1 1 1 $(PP)shneck11_bot.nc	
 	#$(CC) Shneck.rb 1 1 2 $(PP)shneck11_top.nc	
 	#$(CC) Shneck.rb 2 1 1 $(PP)shneck21_bot.nc	
