@@ -20,7 +20,8 @@ main: clean
 	#$(CC) SolarGrassi_curx.rb 0 0 $(PP)solgrso0.nc	
 	$(CC) SolarGrassi_curx.rb 1 1 $(PP)solbox1.nc
 	#$(CC) SolarGrassi_curx.rb 0 1 $(PP)solgrs1.nc	
-	$(CC) BenjoBot.rb gold benjolin gold $(PP)BGBot.nc  
+	$(CC) BenjoGoldBot.rb 2 2 $(PP)BGBot22.nc  
+	$(CC) BenjoGoldBot.rb 1 1 $(PP)BGBot11.nc  
 	#$(CC) BenjoBot.rb benjolin $(PP)BenjBotB.nc  
 	$(CC) BenjoBot.rb 1 1 $(PP)BBot11.nc  
 	$(CC) BenjoBot.rb 1 2 $(PP)BBot12.nc  
