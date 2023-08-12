@@ -10,6 +10,7 @@ GDOZ="G21G90G92.1\nG0Z10\nG0X0Y0"
 main: clean
 	echo -e $(GTEN) > $(DD)G10.nc
 	echo -e $(GDOZ) > $(DD)G00.nc
+	$(CC) Shtar.rb 2 $(PP)shtar_pla.nc
 	$(CC) NEMAStump.rb $(PP)znema.nc
 	$(CC) NEMAbirch.rb $(PP)zbirch.nc	
 	$(CC) BenjoGoldTopBeaner.rb 2 1 $(PP)solgol21.nc  	

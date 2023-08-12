@@ -142,6 +142,7 @@ class Shtar < Jacksloon
   y=0.78
   tarx = -5.2
  dend = -3.55 #-3.5 #+ $halfwidth
+ dend = -3.48 #for tarsh with extendo neck
   fox(tarx,-y,dend,y,0,plasthick,2)
   
       slott = 0.125# - $bitwidth
