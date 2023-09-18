@@ -388,6 +388,7 @@ def stutterat(clasz)
  end
  printf "G0 Z0.5\n"
  printf "G0 X0 Y0 \n"
+ return curxo
 end
 
 
@@ -414,6 +415,7 @@ def nummerat(clasz,num)
  end
  printf "G0 Z0.5\n"
  printf "G0 X0 Y0 \n"
+ return curxo
 end
 
 

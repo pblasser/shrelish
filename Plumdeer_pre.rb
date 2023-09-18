@@ -47,7 +47,8 @@ tubo(dx(2234),dy(0.703),0.33,0,-0.4,4)
  end
 end
 $rimmer = 0.01
-stutterat(Plumdeer)
+lastx=stutterat(Plumdeer)
 Plumdeer.new(0,0).drillus(0,0,0,-0.55)
+Plumdeer.new(0,0).drillus(lastx,0,0,-0.55)
 printf "G0 Z0.5\n"
 printf "G0 X0 Y0\n"

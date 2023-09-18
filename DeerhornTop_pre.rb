@@ -116,12 +116,13 @@ else
  
 end
 unless ARGV[3].nil?  then 
- nummerat(Deerorg, Integer(ARGV[3]))
+ lastx=nummerat(Deerorg, Integer(ARGV[3]))
  else
- stutterat(Deerorg) 
+ lastx=stutterat(Deerorg) 
 end
 
 Deerorg.new(0,0).drillus(0,0,0,-0.55)
+Deerorg.new(0,0).drillus(lastx,0,0,-0.55)
 printf "G0 Z0.5\n"
 printf "G0 X0 Y0\n"
 

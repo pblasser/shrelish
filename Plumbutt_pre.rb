@@ -46,7 +46,8 @@ class Plumbutt < PlumPott
  end
 end
 $rimmer = 0.01
-stutterat(Plumbutt)
+lastx=stutterat(Plumbutt)
 Plumbutt.new(0,0).drillus(0,0,0,-0.55)
+Plumbutt.new(0,0).drillus(lastx,0,0,-0.55)
 printf "G0 Z0.5\n"
 printf "G0 X0 Y0\n"
