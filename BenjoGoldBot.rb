@@ -14,7 +14,7 @@ class BenjoGoldBot < Jacksloon
  MARJ = 2/25.4
 @@numero = 0
  def initialize(starx, stary)
-  @width = mm(32+94+32)
+  @width = mm(34+94+34)
   @heigh = mm(90)
   @depth = 0.8 #0.75
   
@@ -60,24 +60,32 @@ class BenjoGoldBot < Jacksloon
   return @curxo
  end
  def boxo()
+  xard = @curxo
   @curxo += MARJ
+
   @curxo += $halfwidth
   boxolo()
   @curxo += mm(30)
+  @curxo += MARJ
+  @curxo += MARJ
   dux(@curxo-mm(20),@stary-mm(9),@curxo+mm(20),@stary-mm(9),0,-0.25,2)
   
   @curxo -= $halfwidth
   @curxo = BenjoBot.new(@curxo,@stary).boxo()
   @curxo -= $halfwidth
-  dux(@curxo-mm(20),@stary-mm(9),@curxo+mm(20),@stary-mm(9),0,-0.25,2)
 
+
+  @curxo += MARJ
+  dux(@curxo-mm(20),@stary-mm(9),@curxo+mm(20),@stary-mm(9),0,-0.25,2)  
+  @curxo += MARJ
   boxolo()
   @curxo += mm(30)
   @curxo += MARJ
 
-  @myOkuda = Okuda.new(@curxo-mm(32+47),@stary,@width+$bitwidth,@heigh+MARJ*2+$bitwidth,mm(8))
-
   @curxo += $halfwidth
+  xard=@curxo-xard
+  @myOkuda = Okuda.new(@curxo-xard/2,@stary,xard,@heigh+MARJ*2+$bitwidth,mm(8))
+
   return @curxo
 
 
