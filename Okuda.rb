@@ -270,6 +270,76 @@ class Okuda < Hydrogen
 
   end
  end
+
+
+
+   def bokchoytiers(depth,climb,xsegs,ysegs,tiers)
+  retrax 0.1
+  @zdepth = depth
+  printf "G0 X%5.5f Y%5.5f Z%5.5f\n",# F%d\n", 
+   @xcentre-(climb*@wchub), @ycentre-(climb*@hchub), 0.1
+  #@okudanuk -= climb/2.0 
+  
+  #   @okudanuk = -climb/4.0     ###############??????????
+  #@okudanuk += climb/2.0 
+  if climb==1 then @theta = -0.5
+  else @theta = 0 end
+  
+  #@theta = 0.5 + climb/2.0 
+  #depth -= 0.1
+  @tiers = tiers 
+  while (@nuz >= depth) do
+   @nuz -= depth / @tiers
+   for i in 1..4 do
+    
+    oiler=polaron(Math.sqrt(2),@okudanuk)
+    @nux = oiler[0]*(@wchub-@roundel)
+    @nuy = oiler[1]*(@hchub-@roundel)
+    #@nuz -= 0.05
+    @@feedrate = 30
+  if @barscape and i==2 and @nuz < -0.4 then
+     oldnose = @nuz 
+   @nuz=0
+   arcElectron(climb/2.0,0)
+   @nuz = oldnose
+  else
+    arcElectron(climb/2.0,0)
+  end
+
+    @okudanuk += climb/2.0 
+    euler=polaron(Math.sqrt(2),@okudanuk)
+    euler[0] -= oiler[0]
+    euler[1] -= oiler[1]
+    if i == 1 or i == 3 then numzegs=ysegs end #flipt these guys
+  if i == 2 or i == 4 then numzegs=xsegs end
+    for j in 1..numzegs 
+     @oscacc += 1
+     trank = (@oscacc % 2) * 2 - 1
+     @@feedrate = 35  - trank*5
+     @nux += euler[0]*(@wchub-@roundel)/numzegs
+     @nuy += euler[1]*(@hchub-@roundel)/numzegs
+     #if i == 1 then 
+     # if j == 2 then 
+     #  @nuy -= 0.05 end
+     # if j == 11 then
+     #  @nuy += 0.05
+     # end
+     #end
+     @nuz += 0.2 * trank 
+   if @nuz < depth then
+    cutt(@nux - euler[0]*(@wchub-@roundel)/(2*numzegs),
+     @nuy - euler[1]*(@hchub-@roundel)/(2*numzegs),
+     depth)
+    if j != numzegs then
+    cutt(@nux + euler[0]*(@wchub-@roundel)/(2*numzegs),
+     @nuy + euler[1]*(@hchub-@roundel)/(2*numzegs),
+     depth) end
+   else cut end
+    end 
+   end
+
+  end
+ end
  
  
   def bokchoy_barcrisper(depth,climb,xsegs,ysegs)
