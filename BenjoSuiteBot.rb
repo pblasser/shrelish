@@ -1,17 +1,15 @@
 
-require './Bot.rb'
-def stutterat(clasz)
-end
-
-require './BenjoBot.rb'
+require './Jacksloon.rb'
+require './Okuda.rb'
 
  MARJ = 2/25.4
  $yobelow=2
 
 
-class BenjoGoldBot < Jacksloon
+class BenjoSuiteBot < Jacksloon
  
  MARJ = 2/25.4
+ @@lipp=MARJ
 @@numero = 0
  def initialize(arvg, starx, stary)
   @argvor = arvg
@@ -19,6 +17,7 @@ class BenjoGoldBot < Jacksloon
   @heigh = mm(90)
   @depth = 0.8 #0.75
   @dronx = 30 #for dx
+  @drony = 45
   super(starx, stary)
  end
  def mm(i) return i/25.4 end
@@ -26,10 +25,18 @@ class BenjoGoldBot < Jacksloon
   return @curxo + mm(@dronx-x) 
  end
  def dy(y)
-  return @stary + mm(y-30)
+  return @stary + mm(y-@drony)
  end
 
-
+ def KYCON5P(x,y,r)
+  kyconsterupsidedown(dx(x),dy(y))
+ end
+ def KYCONMINIJACK(x,y,r)
+  kyconster(dx(x),dy(y))
+ end
+  def KOBICONDC(x,y,r)
+  kobiconn(dx(x),dy(y))
+ end
  def JOHNSON(x,y,r)
   tubo(dx(x),dy(y),mm(4),0,-0.25,2)
  end
@@ -42,8 +49,9 @@ class BenjoGoldBot < Jacksloon
  end
 
 
- def boxobo()
+ def boxopo()
   @dronx=45
+  @drony = 45
   KYCON5P(0,0,180)
   screw(27,6,0)
   JOHNSON(39,9,0)
@@ -63,13 +71,16 @@ class BenjoGoldBot < Jacksloon
   JOHNSON(39,63,0)
   box(dx(35),dy(10),dx(-35),dy(80),0,-$yobelow/8.0,$yobelow)
   box(dx(-10),dy(63),dx(-35),dy(80),-0.125,-4.0/8,3)
+  @dronx=90
  end
 
  def boxolo()
   @dronx=30
+  @drony = 30
   mirr = 1
   if @@numero > 0
    then mirr = -1 end
+  
   screw(15+mirr*9,54,0)
   brass(15-mirr*9,54,0)
   brass(15+mirr*9,6,0)
@@ -80,55 +91,54 @@ class BenjoGoldBot < Jacksloon
   box(dx(7*mirr+21),dy(24),dx(7*mirr+9),dy(36),-0.125,-4.0/8,3)
   @@numero += 1
  end
+ def boxoxo()
+  @dronx=20
+  @drony = 45
+screw(14,6,0)
+screw(6,84,0)
+JOHNSON(15.14426,79.93885,-9)
+JOHNSON(14.99449,67.91418,-9)
+JOHNSON(15.19957,56.02736,-9)
+JOHNSON(8.99351,44.73316,-9)
+JOHNSON(5.48542,33.21215,-9)
+tubo(dx(7.29127),dy(14.66214),mm(7),0,-0.125,1)
+  box(dx(18),dy(10),dx(2),dy(80),0,-$yobelow/8.0,$yobelow)
+
+  #box(dx(19),dy(40),dx(11),dy(52),0,-2.0/8,2)
+  #box(dx(7+21),dy(24),dx(7+9),dy(36),-0.125,-4.0/8,3)
+ end
  def boxo()
   xard = @curxo
   @curxo += $halfwidth
+  arx = @argvor.size
+  ar = 0
+ @argvor.downcase.each_char { |ch| 
   @curxo += MARJ
-
-
- argvor.downcase.each_char { |ch| 
   if (ch=="g") then
-
-  elsif (ch=="b") then
-    
+   boxolo()
+  elsif (ch=="p") then
+   boxopo()
   elsif (ch=="s") then
-
+   boxoxo()
   end
   @curxo += mm(@dronx)
-  puts ch 
-
+  ar+=1
+  @curxo += MARJ
+  if (ar < arx) then 
+   dux(@curxo-mm(20),@stary-mm(9),@curxo+mm(20),@stary-mm(9),0,-0.25,2)
+  end
+  @curxo += MARJ
 
  }
-
-  boxolo()
-  
-  @curxo += MARJ
-  @curxo += MARJ
-  dux(@curxo-mm(20),@stary-mm(9),@curxo+mm(20),@stary-mm(9),0,-0.25,2)
-  
-
-  @curxo = BenjoBot.new(@curxo,@stary).boxo()
-
-
-
-  @curxo += MARJ
-  dux(@curxo-mm(20),@stary-mm(9),@curxo+mm(20),@stary-mm(9),0,-0.25,2)  
-  @curxo += MARJ
-  boxolo()
-  @curxo += mm(30)
-  @curxo += MARJ
-
-  @curxo += $halfwidth
-  xard=@curxo-xard
-  @myOkuda = Okuda.new(@curxo-xard/2,@stary,xard,@heigh+MARJ*2+$bitwidth,mm(8))
-
-  return @curxo
-
-
+ @curxo -= MARJ
+ @curxo += $halfwidth
+ xard=@curxo-xard
+ @myOkuda = Okuda.new(@curxo-xard/2,@stary,xard,@heigh+MARJ*2+$bitwidth,mm(8))
+ return @curxo
  end
  def ducabot
   topnuys = [[3,10]]
-  botnuys = [[4,9]]
+  botnuys = [[3,10]]
   @myOkuda.bokchoytwomo(-0.78,1.0,12,12,topnuys,botnuys)
  end
  def duxo
@@ -137,38 +147,22 @@ class BenjoGoldBot < Jacksloon
 end
 
 
-
-def mm(x) return x/25.4 end
-  $rimmer=0.01
-
-
-
-
-def dudderat()
- argvor = String(ARGV[0])
-
-
- printf "G0 Z0.5\n"
- printf "G0 X0 Y0 \n"
-end
-
-
-$rimmer = 0.01
-def stutterat(clasz)
+$rimmer=0.01
+def dudderat(clasz)
  arvg = String(ARGV[0]).downcase
  xarg = yarg = 1
  unless ARGV[1].nil? then yarg = Integer(ARGV[1]) end
  unless ARGV[2].nil? then xarg = Integer(ARGV[2]) end
- broth = clasz.new(0,0).getBrot + $rimmer
+ broth = clasz.new(arvg,0,0).getBrot + $rimmer
  curyop = (yarg-1)*broth
  curxo = 0
  #cursorx = $halfwidth
- mystuff = clasz.new(curxo,0)
+ mystuff = clasz.new(arvg,curxo,0)
  for i in 1..xarg do
   if i == 1 then mystuff.numerize end
   curyo = curyop
   for j in 1..yarg do
-   mystuff = clasz.new(curxo,curyo)
+   mystuff = clasz.new(arvg,curxo,curyo)
    mystuff.boxo()
    mystuff.ducabot()
    curyo -= broth*2
@@ -181,7 +175,4 @@ def stutterat(clasz)
 end
 
 
-dudderat()
-
-
-#stutterat(BenjoGoldBot)
+dudderat(BenjoSuiteBot)
