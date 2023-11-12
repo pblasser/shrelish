@@ -12,6 +12,7 @@ class BenjoSuiteBot < Jacksloon
  @@lipp=MARJ
 @@numero = 0
  def initialize(arvg, starx, stary)
+  @supress=false
   @argvor = arvg
   @width = mm(34+94+34)
   @heigh = mm(90)
@@ -63,7 +64,9 @@ class BenjoSuiteBot < Jacksloon
   JOHNSON(-39,27,0)
   JOHNSON(-39,9,0)
   screw(27,84,0)
-  KOBICONDC(-13,90,-90)
+  #todo check number of gs and put jack to the far right
+  if (@supress) then KOBICONDC(-13,90,-90) end
+  @supress = true
   screw(-27,84,0)
   JOHNSON(-39,81,0)
   KYCONMINIJACK(13,90,0)
@@ -94,14 +97,20 @@ class BenjoSuiteBot < Jacksloon
  def boxoxo()
   @dronx=20
   @drony = 45
-screw(14,6,0)
+
+
+  screw(14,6,0)
+JOHNSON(5.55227,33.34637,-9)
+
+JOHNSON(14.99318,55.62656,-9)
+JOHNSON(14.99449,67.91418,-9)
 screw(6,84,0)
 JOHNSON(15.14426,79.93885,-9)
-JOHNSON(14.99449,67.91418,-9)
-JOHNSON(15.19957,56.02736,-9)
 JOHNSON(8.99351,44.73316,-9)
-JOHNSON(5.48542,33.21215,-9)
-tubo(dx(7.29127),dy(14.66214),mm(7),0,-0.125,1)
+
+
+
+tubo(dx(7.37512),dy(15.84292),mm(7),0,-0.125,1)
   box(dx(18),dy(10),dx(2),dy(80),0,-$yobelow/8.0,$yobelow)
 
   #box(dx(19),dy(40),dx(11),dy(52),0,-2.0/8,2)
@@ -137,9 +146,11 @@ tubo(dx(7.29127),dy(14.66214),mm(7),0,-0.125,1)
  return @curxo
  end
  def ducabot
-  topnuys = [[3,10]]
-  botnuys = [[3,10]]
-  @myOkuda.bokchoytwomo(-0.78,1.0,12,12,topnuys,botnuys)
+  a=Integer(@argvor.size/2+1)
+  topnuys = [[3*a,9*a+1]]
+  botnuys = [[3*a,9*a+1]]
+
+  @myOkuda.bokchoytwomo(-0.78,1.0,12*a,12,topnuys,botnuys)
  end
  def duxo
   return @curxo
