@@ -38,9 +38,9 @@ class NobNob < PlumPott
 
  def joff(x,y,r)
 
- box(x-mm(5.0),y-mm(2.0),x+mm(5.0),y+mm(2.0),0,-mm(1.0),1)
+ #box(x-mm(5.0),y-mm(2.0),x+mm(5.0),y+mm(2.0),0,-mm(1.0),1)
  drillus(x,y,0,-@depth)
- turbojoff(x,y,@width,0,-mm(2.0),1)
+ #turbojoff(x,y,@width,0,-mm(2.0),1)
   spyrtub(x,y,@width,0.001)
 end
  def boxo()

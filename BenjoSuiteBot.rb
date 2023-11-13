@@ -13,6 +13,8 @@ class BenjoSuiteBot < Jacksloon
 @@numero = 0
  def initialize(arvg, starx, stary)
   @supress=false
+    @arp=0
+  @narp=0
   @argvor = arvg
   @width = mm(34+94+34)
   @heigh = mm(90)
@@ -53,6 +55,7 @@ class BenjoSuiteBot < Jacksloon
  def boxopo()
   @dronx=45
   @drony = 45
+  @narp+=1
   KYCON5P(0,0,180)
   screw(27,6,0)
   JOHNSON(39,9,0)
@@ -65,8 +68,7 @@ class BenjoSuiteBot < Jacksloon
   JOHNSON(-39,9,0)
   screw(27,84,0)
   #todo check number of gs and put jack to the far right
-  if (@supress) then KOBICONDC(-13,90,-90) end
-  @supress = true
+  if (@narp==@arp) then KOBICONDC(-13,90,-90) end
   screw(-27,84,0)
   JOHNSON(-39,81,0)
   KYCONMINIJACK(13,90,0)
@@ -121,6 +123,10 @@ tubo(dx(7.37512),dy(15.84292),mm(7),0,-0.125,1)
   @curxo += $halfwidth
   arx = @argvor.size
   ar = 0
+
+ @argvor.downcase.each_char { |ch|  
+  if (ch=="p") then @arp+=1 end
+ }
  @argvor.downcase.each_char { |ch| 
   @curxo += MARJ
   if (ch=="g") then
