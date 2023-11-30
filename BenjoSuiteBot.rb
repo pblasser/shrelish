@@ -10,7 +10,7 @@ class BenjoSuiteBot < Jacksloon
  
  MARJ = 2/25.4
  @@lipp=MARJ
-@@numero = 0
+@@mirero = 0
  def initialize(arvg, starx, stary)
   @supress=false
     @arp=0
@@ -83,7 +83,7 @@ class BenjoSuiteBot < Jacksloon
   @dronx=30
   @drony = 30
   mirr = 1
-  if @@numero > 0
+  if @@mirero > 0
    then mirr = -1 end
   
   screw(15+mirr*9,54,0)
@@ -94,7 +94,7 @@ class BenjoSuiteBot < Jacksloon
   box(dx(28),dy(10),dx(2),dy(50),0,-$yobelow/8.0,$yobelow)
   box(dx(19),dy(40),dx(11),dy(52),0,-2.0/8,2)
   box(dx(7*mirr+21),dy(24),dx(7*mirr+9),dy(36),-0.125,-4.0/8,3)
-  @@numero += 1
+  @@mirero += 1
  end
  def boxoxo()
   @dronx=20

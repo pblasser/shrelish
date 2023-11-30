@@ -74,7 +74,8 @@ attr_accessor :batdepth
 def kobiconn(x,y)
  nowchub = (0.367/2)
  box(x+nowchub,y-0.5,x+nowchub+$bitwidth,y-0.3,0,-0.211,2)
- box(x-nowchub,y-0.75,x+nowchub,y+$halfwidth,0,-0.41,3)#june23 made 433 back to 4
+ box(x-nowchub,y-0.75,x+nowchub,y+$halfwidth,0,-0.433,3)#june23 made 433 back to 4
+ #december 2023 made 4 back to 433
 end
 def adamusb(x,y)
   nowchub = 0.25 #adamusb
