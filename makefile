@@ -11,7 +11,9 @@ main: clean
 	echo -e $(GTEN) > $(DD)G10.nc
 	echo -e $(GDOZ) > $(DD)G00.nc
 	$(CC) Shtar.rb 2 $(PP)shtar_pla.nc
-	#$(CC) NobFiver.rb $(PP)znobf.nc
+	$(CC) NobFiver.rb 50 $(PP)znobf50.nc
+	$(CC) NobFiver.rb 30 $(PP)znobf30.nc
+	$(CC) NobFiver.rb 20 $(PP)znobf20.nc
 	$(CC) GRBLARD.rb $(PP)zgrblard.nc
 	$(CC) Thumbpiano1.rb $(PP)zthumb.nc
 	$(CC) NEMAStump.rb $(PP)znema.nc

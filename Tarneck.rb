@@ -214,7 +214,7 @@ def boxo
   drillus(p-2.3+3,0.4+@stary,0,-0.6)
   drillus(p-2.3+3,-0.4+@stary,0,-0.6)
   
-  nex(p,0.125+(1.0/30.0))#1/8 to 5/16-1/16 out of inch is 5/8 
+  nex(p,0.125+(1.0/60.0))#1/8 to 5/16-1/16 out of inch is 5/8 
   #so decrete top dip 1/16 ideally but give file room
   dux(chock,-dock+@stary,chock,dock+@stary,0,-(7.0/8.0),7)
  end 

@@ -6,8 +6,8 @@ $halfwidth = $bitwidth/2.0
 class NobNob < PlumPott
  MARJ = 0.05 #0.25
  @@numero = 0
- def initialize(starx, stary)
-  @width = mm(50.0)
+ def initialize(starx, stary, dia)
+  @width = mm(dia)
   @heigh = @width
   @depth = mm(5.2)
   @@lipp = 0.0
@@ -41,7 +41,7 @@ class NobNob < PlumPott
  #box(x-mm(5.0),y-mm(2.0),x+mm(5.0),y+mm(2.0),0,-mm(1.0),1)
  drillus(x,y,0,-@depth)
  #turbojoff(x,y,@width,0,-mm(2.0),1)
-  spyrtub(x,y,@width,0.001)
+  spyrtub(x,y,@width+$halfwidth,0.001)
 end
  def boxo()
  joff(0,0,@width)
@@ -54,4 +54,11 @@ end
  def duxo
  return 0 end
 end
-stutterat(NobNob)
+
+
+ yarg =  50
+ unless ARGV[0].nil? then yarg = Integer(ARGV[0]) end
+ broth = NobNob.new(0,0,yarg)
+   broth.boxo()
+ printf "G0 Z0.5\n"
+ printf "G0 X0 Y0 \n"
