@@ -46,25 +46,26 @@ end
  def boxo()
   @curxo += MARJ
   @curxo += $halfwidth
-  @curxo += mm(15)
+
   mirror = @@numero % 2 *2 -1
-  screw(9,6,0)
-  screw(-9,6,0)
-  a_trimcap(0,10)
-  balpspot(7*mirror,40,-167*mirror)
-  SMTLED(-6*mirror,46)
-  SMTLED(-12*mirror,46)
-
-  JOHNSON(-9*mirror,38,0)
-  dux(dx(51),dy(5),dx(51),dy(-5),0,-0.125,1)
-  #box(dx(40),dy(5),dx(52),dy(-5),-0.125,-0.25,1)
-
-  screw(-9,54,0)
-  screw(9,54,0)
- 
 
 
-  @curxo += mm(30)
+
+screw(-9,6,0)
+balpspot(7*mirror,55,-167*mirror)
+SMTLED(-12*mirror,51)
+a_trimcap(0,25)
+SMTLED(-6*mirror,51)
+JOHNSON(-9*mirror,59,0)
+screw(-9,84,0)
+screw(9,84,0)
+screw(9,6,0)
+
+
+
+
+
+  @curxo += mm(45)
   @myOkuda = Okuda.new(@curxo,@stary,@width+MARJ*2+$bitwidth,@heigh+MARJ*2+$bitwidth,mm(8))
   @curxo += mm(30)
 
