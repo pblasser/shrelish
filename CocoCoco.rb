@@ -17,7 +17,7 @@ class Coco < PlumPott
  @@engravedeep = -0.05
   @width = 6
   @heigh = 2.5
-  @depth = 0.55
+
   @@lipp = 0.0
   @zstep = 4
   super(starx, stary)

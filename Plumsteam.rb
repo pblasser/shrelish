@@ -33,7 +33,7 @@ class Plumsteam < PlumPott
  def initialize(starx, stary)
   @width = 6
   @heigh = 6-0.05
-  @depth = 0.55
+
   @@lipp = 0.0
   @zstep = 4
   super(starx, stary)

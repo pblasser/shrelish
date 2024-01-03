@@ -7,7 +7,7 @@ require './stubefunks.rb'
  $halfwidth = $bitwidth/2
 class Stuberon < PlumPott
  def initialize(n)
-   @depth=0.55
+
    @zstep = 4
   @nodes = n
   @nux = 0

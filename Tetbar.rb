@@ -10,7 +10,7 @@ MARJ = 0.05 #0.25
    
   @width = 5.0
   @heigh = 1.12  #####wasz 1.1
-  @depth = 0.55 #phor .5
+
   @@lipp = 0.0
   super(starx, stary)
  end

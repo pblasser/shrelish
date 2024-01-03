@@ -12,7 +12,7 @@ class Deerorg < PlumPott
  def initialize(starx, stary)
   @width = 6
   @heigh = 3.7
-  @depth = 0.55
+
   @@lipp = 0.1 #was lipp zero
   @zstep = 4
   @dzary = 0

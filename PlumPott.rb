@@ -9,6 +9,7 @@ class PlumPott < Jacksloon
  def initialize(starx, stary)
   @resinx=0
   @resiny=0
+
   super(starx, stary)
  end
 
@@ -217,26 +218,31 @@ class PlumPott < Jacksloon
   end
  end
  
- 
+ def dz(z)
+  if z<-@depth then return -@depth end
+  return z
+ end
  
  
  def alpspot(x,y,theta) 
-  drillus(x,y,0,-@depth)
+  #drillus(x,y,0,-@depth)
+  skimtoPoint(x,y,0.1)
   retract()
   z=0
   incro = (Float(@depth) / Float(@zstep)) 
   incro /= 4.0
   theta = Float(theta)/360
   while z>-@depth - incro do  
-   pyth(x,y,30.0/32.0+theta,0.33,z)
+   pyth(x,y,30.0/32.0+theta,0.33,dz(z))
    z-=incro
-   pyth(x,y,2.0/32.0+theta,0.33,z)
+   pyth(x,y,2.0/32.0+theta,0.33,dz(z))
    z-=incro
-   pyth(x,y,3.0/32.0+theta,0.3,z)
+   pyth(x,y,3.0/32.0+theta,0.3,dz(z))
    z-=incro
-   pyrc(x,y,29.0/32.0+theta,0.3,z,3.0/32+theta)
+   pyrc(x,y,29.0/32.0+theta,0.3,dz(z),3.0/32+theta)
    z-=incro
   end
+  pyth(x,y,30.0/32.0+theta,0.33,dz(z))
 end  
  
  

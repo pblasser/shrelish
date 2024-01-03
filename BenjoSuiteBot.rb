@@ -18,7 +18,7 @@ class BenjoSuiteBot < Jacksloon
   @argvor = arvg
   @width = mm(34+94+34)
   @heigh = mm(90)
-  @depth = 0.8 #0.75
+  @depth = 0.77 #0.75
   @dronx = 30 #for dx
   @drony = 45
   super(starx, stary)
@@ -95,6 +95,7 @@ class BenjoSuiteBot < Jacksloon
   box(dx(19),dy(40),dx(11),dy(52),0,-2.0/8,2)
   box(dx(7*mirr+21),dy(24),dx(7*mirr+9),dy(36),-0.125,-4.0/8,3)
   @@mirero += 1
+  @@mirero %= 2
  end
  def boxoxo()
   @dronx=20
@@ -156,7 +157,7 @@ tubo(dx(7.37512),dy(15.84292),mm(7),0,-0.125,1)
   topnuys = [[3*a,9*a+1]]
   botnuys = [[3*a,9*a+1]]
 
-  @myOkuda.bokchoytwomo(-0.78,1.0,12*a,12,topnuys,botnuys)
+  @myOkuda.bokchoytwomo(-0.77,1.0,12*a,12,topnuys,botnuys)
  end
  def duxo
   return @curxo

@@ -25,7 +25,6 @@ class Shplorer < Jacksloon
   @xarg = xarg
   @yarg=yarg
 
-  @depth = 0.55#cmil(1.1)
   super(0, 0)
  end
 

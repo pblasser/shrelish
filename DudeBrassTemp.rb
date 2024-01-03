@@ -4,7 +4,7 @@ require './Okuda.rb'
 
 class Duderon < Dude
  def initialize(n,z)
-    @depth=0.85
+
   super(n,z)
  end
 

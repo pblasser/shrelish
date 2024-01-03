@@ -10,7 +10,7 @@ class RolzTop < Jacksloon
  def initialize(starx, stary)
   @width = 6
   @heigh = 1.5 ###1.95 ####wasz 2!!!
-  @depth = 0.55
+
   @@lipp = 0.0
   @zstep = 4
   super(starx, stary)

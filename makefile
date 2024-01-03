@@ -11,28 +11,31 @@ main: clean
 	echo -e $(GTEN) > $(DD)G10.nc
 	echo -e $(GDOZ) > $(DD)G00.nc
 	$(CC) Shtar.rb 2 $(PP)shtar_pla.nc
-	$(CC) NobFiver.rb 50 $(PP)znobf50.nc
-	$(CC) NobFiver.rb 30 $(PP)znobf30.nc
-	$(CC) NobFiver.rb 20 $(PP)znobf20.nc
-	$(CC) GRBLARD.rb $(PP)zgrblard.nc
-	$(CC) Thumbpiano1.rb $(PP)zthumb.nc
-	$(CC) NEMAStump.rb $(PP)znema.nc
-	$(CC) NEMAbirch.rb $(PP)zbirch.nc	
-	$(CC) BenjoGoldTopBeaner.rb 2 1 $(PP)solgol21.nc  	
-	$(CC) SolarGrassi_curx.rb 2 0 $(PP)solbbox0.nc
+	#$(CC) NobFiver.rb 50 $(PP)znobf50.nc
+	#$(CC) NobFiver.rb 30 $(PP)znobf30.nc
+	#$(CC) NobFiver.rb 20 $(PP)znobf20.nc
+	#$(CC) GRBLARD.rb $(PP)zgrblard.nc
+	#$(CC) Thumbpiano1.rb $(PP)zthumb.nc
+	#$(CC) NEMAStump.rb $(PP)znema.nc
+	#$(CC) NEMAbirch.rb $(PP)zbirch.nc	
+	#$(CC) BenjoGoldTopBeaner.rb 2 1 $(PP)solgol21.nc  	
+	#$(CC) SolarGrassi_curx.rb 2 0 $(PP)solbbox0.nc
 	#$(CC) SolarGrassi_curx.rb 0 0 $(PP)solgrso0.nc	
-	$(CC) SolarGrassi_curx.rb 2 1 $(PP)solbbox1.nc
-	$(CC) SolarGrassi_curx.rb 1 0 $(PP)solbox0.nc
+	#$(CC) SolarGrassi_curx.rb 2 1 $(PP)solbbox1.nc
+	#$(CC) SolarGrassi_curx.rb 1 0 $(PP)solbox0.nc
 	#$(CC) SolarGrassi_curx.rb 0 0 $(PP)solgrso0.nc	
-	$(CC) SolarGrassi_curx.rb 1 1 $(PP)solbox1.nc
+	#$(CC) SolarGrassi_curx.rb 1 1 $(PP)solbox1.nc
 	#$(CC) SolarGrassi_curx.rb 0 1 $(PP)solgrs1.nc	
 	$(CC) BenjoSectionTop.rb 4 1 $(PP)Bsec41.nc  
+	$(CC) BenjoSectionTop.rb 4 2 $(PP)Bsec42.nc 
+	$(CC) BenjoSectionTop.rb 4 3 $(PP)Bsec43.nc 
 	$(CC) BenjoSuiteBot.rb gspsg 2 1 $(PP)gspsg21.nc  
+	$(CC) BenjoSuiteBot.rb gspsg 2 2 $(PP)gspsg22.nc  
 	$(CC) BenjoSuiteBot.rb gspsg 1 1 $(PP)gspsg11.nc  
-	$(CC) BenjoSuiteBot.rb gspspsg 2 2 $(PP)gspspsg22.nc  
-	$(CC) BenjoSuiteBot.rb gspspsg 1 1 $(PP)gspspsg11.nc  
-	$(CC) BenjoSuiteBot.rb p 1 1 $(PP)p11.nc  
-	$(CC) BenjoSuiteBot.rb gpg 2 2 $(PP)gpg22.nc  
+	#$(CC) BenjoSuiteBot.rb gspspsg 2 2 $(PP)gspspsg22.nc  
+	#$(CC) BenjoSuiteBot.rb gspspsg 1 1 $(PP)gspspsg11.nc  
+	#$(CC) BenjoSuiteBot.rb p 1 1 $(PP)p11.nc  
+	#$(CC) BenjoSuiteBot.rb gpg 2 2 $(PP)gpg22.nc  
 	#$(CC) BenjoBot.rb benjolin $(PP)BenjBotB.nc  
 	$(CC) BenjoBot.rb 1 1 $(PP)BBot11.nc  
 	$(CC) BenjoBot.rb 1 2 $(PP)BBot12.nc  
@@ -49,12 +52,14 @@ main: clean
 	$(CC) BenjoTop.rb 2 4 $(PP)BTop24.nc  
 	#$(CC) BenjoPinker.rb $(PP)BPinker.nc  
 	#$(CC) BenjoGoldTop63.rb 2 1 $(PP)BenjoGT6321.nc
-	$(CC) BenjoGoldTop93.rb 4 2 $(PP)Bgold42.nc  
-	$(CC) SolarBenjChub.rb 0 $(PP)solchb0.nc	
-	$(CC) SolarBenjChub.rb 1 $(PP)solchb1.nc	
-	$(CC) SolarBenjPane.rb 4 1 0 $(PP)solpan4.nc	
-	$(CC) SolarBenjPane.rb 1 1 1 $(PP)solpan1.nc	
-	$(CC) SolarBenjPane.rb 1 2 2 $(PP)solpan2.nc	
+	$(CC) BenjoGoldTop93.rb 4 2 $(PP)Bgold42.nc
+	$(CC) BenjoGoldTop93.rb 4 3 $(PP)Bgold43.nc  
+	#$(CC) BenjoGoldTop93.rb 4 4 $(PP)Bgold44.nc  
+	#$(CC) SolarBenjChub.rb 0 $(PP)solchb0.nc	
+	#$(CC) SolarBenjChub.rb 1 $(PP)solchb1.nc	
+	#$(CC) SolarBenjPane.rb 4 1 0 $(PP)solpan4.nc	
+	#$(CC) SolarBenjPane.rb 1 1 1 $(PP)solpan1.nc	
+	#$(CC) SolarBenjPane.rb 1 2 2 $(PP)solpan2.nc	
 	$(CC) PlumBot.rb $(PP)plbot.nc 
 	$(CC) Plumbutt.rb 1 2 $(PP)plmid12.nc 
 	$(CC) Plumbutt_pre.rb 1 2 $(PP)plmid12_.nc 
@@ -68,9 +73,9 @@ main: clean
 	$(CC) Ovaltop.rb JOHNSON STUBER $(PP)ovalst.nc 
 	$(CC) Ovaltop.rb SPESAL FYRALL $(PP)ovalfy.nc 
 	$(CC) Ovaltop.rb SPESAL SRINE $(PP)ovalsr.nc 
-	$(CC) OvalNobButts.rb $(PP)ovalno.nc 
-	$(CC) OvalButts.rb $(PP)ovalbu.nc 
-	$(CC) ScrewSorter.rb $(PP)boltsort.nc
+	#$(CC) OvalNobButts.rb $(PP)ovalno.nc 
+	#$(CC) OvalButts.rb $(PP)ovalbu.nc 
+	#$(CC) ScrewSorter.rb $(PP)boltsort.nc
 	#$(CC) Sunbeetle.rb 0 $(PP)sun_bot.nc	
 	#$(CC) Sunbeetle.rb 1 $(PP)sun_top.nc	
 	$(CC) CocoQuanto.rb 1 2 $(PP)comid12.nc
@@ -82,13 +87,13 @@ main: clean
 	#$(CC) SolarCICADA.rb 1 $(PP)solarcic.nc	
 	#$(CC) SolarFlange.rb 1 $(PP)solarfla.nc	
 	
-	$(CC) Tarsh.rb 1 $(PP)tarsh.nc	
+	#$(CC) Tarsh.rb 1 $(PP)tarsh.nc	
 	#$(CC) Shneck.rb 1 1 1 $(PP)shneck11_bot.nc	
 	#$(CC) Shneck.rb 1 1 2 $(PP)shneck11_top.nc	
 	#$(CC) Shneck.rb 2 1 1 $(PP)shneck21_bot.nc	
 	#$(CC) Shneck.rb 2 1 2 $(PP)shneck21_top.nc	
-	$(CC) Tarneck.rb 2 1 1 $(PP)tarn21_.nc	
-	$(CC) Tarneck.rb 2 1 2 $(PP)tarn21.nc	
+	#$(CC) Tarneck.rb 2 1 1 $(PP)tarn21_.nc	
+	#$(CC) Tarneck.rb 2 1 2 $(PP)tarn21.nc	
 	#$(CC) Shtar.rb 0 $(PP)shtar_bot.nc	
 	#$(CC) Shtar.rb 1 $(PP)shtar_top.nc	
 	#$(CC) Shtar.rb 2 $(PP)shtar_pla.nc		

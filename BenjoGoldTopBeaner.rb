@@ -10,7 +10,7 @@ class BenjoTop < PlumPott
  def initialize(starx, stary)
   @width = mm(140)
   @heigh = mm(34)
-  @depth = 0.55
+
   super(starx, stary)
  end
  def mm(i) return i/25.4 end

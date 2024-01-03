@@ -7,7 +7,7 @@ class Sidmatrix < Jacksloon
  def initialize(starx, stary)
   @width = 5.0
   @heigh = 1.95 ###1.95 ####wasz 2!!!
-  @depth = 0.55
+
   @@lipp = 0.0
   @zstep = 4
   super(starx, stary)

@@ -12,7 +12,7 @@ class Deerorg < PlumPott
   @width = 6
   
   @heigh = $aoxo_switch 
-  @depth = 0.55
+
   @@lipp = 0 #0.1 #was lipp zero
   @zstep = 4
   @dzary = 0

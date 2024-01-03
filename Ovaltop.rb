@@ -6,7 +6,7 @@ require './Oval.rb'
 
  class Ovaltop < Oval
  def initialize(n,z)
-   @depth=0.55
+
    @zstep = 4
   super(n,z)
  end

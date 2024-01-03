@@ -13,7 +13,7 @@ class Plumdeer < PlumPott
   @width = 6
   @heigh = 3.25
   @heigh -= 0.05
-  @depth = 0.55
+
   @@lipp = 0.0
   @zstep = 4
   super(starx, stary)

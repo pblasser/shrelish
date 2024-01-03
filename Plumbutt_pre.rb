@@ -15,7 +15,7 @@ class Plumbutt < PlumPott
  def initialize(starx, stary)
   @width = 6
   @heigh = 6.95 ###1.95 ####wasz 2!!!
-  @depth = 0.55
+
   @@lipp = 0.0
   @zstep = 4
   super(starx, stary)

@@ -23,7 +23,7 @@ class Shplorer < PlumPott
  def initialize(xarg)
   @width = 110
   @heigh = 127
-  @depth = 0.55
+
   @xarg=xarg
   super($halfwidth,0)
  end

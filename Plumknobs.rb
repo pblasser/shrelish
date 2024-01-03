@@ -12,7 +12,7 @@ class Plumknobs < PlumPott
  def initialize(starx, stary)
   @width = 0.75
   @heigh = 0.65
-  @depth = 0.55
+
   @@lipp = 0.0
   @zstep = 4
   super(starx, stary)
