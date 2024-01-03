@@ -3,7 +3,7 @@ require './Jacksloon.rb'
 require './Okuda.rb'
 
  MARJ = 2/25.4
- $yobelow=2
+ $yobelow=1
 
 
 class BenjoSuiteBot < Jacksloon
@@ -75,7 +75,7 @@ class BenjoSuiteBot < Jacksloon
   JOHNSON(39,81,0)
   JOHNSON(39,63,0)
   box(dx(35),dy(10),dx(-35),dy(80),0,-$yobelow/8.0,$yobelow)
-  box(dx(-10),dy(63),dx(-35),dy(80),-0.125,-4.0/8,3)
+  #box(dx(-10),dy(63),dx(-35),dy(80),-0.125,-4.0/8,3)
   @dronx=90
  end
 
@@ -86,10 +86,10 @@ class BenjoSuiteBot < Jacksloon
   if @@mirero > 0
    then mirr = -1 end
   
-  screw(15+mirr*9,54,0)
-  brass(15-mirr*9,54,0)
-  brass(15+mirr*9,6,0)
-  screw(15-mirr*9,6,0)
+  screw(15+mirr*9,84-15,0)
+  brass(15-mirr*9,84-15,0)
+  brass(15+mirr*9,6-15,0)
+  screw(15-mirr*9,6-15,0)
   JOHNSON(15-mirr*9,38,0)
   box(dx(28),dy(10),dx(2),dy(50),0,-$yobelow/8.0,$yobelow)
   box(dx(19),dy(40),dx(11),dy(52),0,-2.0/8,2)
@@ -112,9 +112,9 @@ JOHNSON(15.14426,79.93885,-9)
 JOHNSON(8.99351,44.73316,-9)
 
 
-
+yobel=2
 tubo(dx(7.37512),dy(15.84292),mm(7),0,-0.125,1)
-  box(dx(18),dy(10),dx(2),dy(80),0,-$yobelow/8.0,$yobelow)
+  box(dx(18),dy(10),dx(2),dy(80),0,-yobel/8.0,yobel)
 
   #box(dx(19),dy(40),dx(11),dy(52),0,-2.0/8,2)
   #box(dx(7+21),dy(24),dx(7+9),dy(36),-0.125,-4.0/8,3)
@@ -141,7 +141,7 @@ tubo(dx(7.37512),dy(15.84292),mm(7),0,-0.125,1)
   ar+=1
   @curxo += MARJ
   if (ar < arx) then 
-   dux(@curxo-mm(20),@stary-mm(9),@curxo+mm(20),@stary-mm(9),0,-0.25,2)
+   #dux(@curxo-mm(20),@stary-mm(9),@curxo+mm(20),@stary-mm(9),0,-0.25,2)
   end
   @curxo += MARJ
 
