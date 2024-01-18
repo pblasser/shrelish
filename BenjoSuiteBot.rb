@@ -85,14 +85,14 @@ class BenjoSuiteBot < Jacksloon
   mirr = 1
   if @@mirero > 0
    then mirr = -1 end
-  
+  yobel=2
   screw(15+mirr*9,84-15,0)
   brass(15-mirr*9,84-15,0)
   brass(15+mirr*9,6-15,0)
   screw(15-mirr*9,6-15,0)
   JOHNSON(15-mirr*9,38,0)
-  box(dx(28),dy(10),dx(2),dy(50),0,-$yobelow/8.0,$yobelow)
-  box(dx(19),dy(40),dx(11),dy(52),0,-2.0/8,2)
+  box(dx(28),dy(5),dx(2),dy(55),0,-yobel/8.0,yobel) #depth puff, cap puff
+  #box(dx(19),dy(40),dx(11),dy(52),0,-2.0/8,2)
   box(dx(7*mirr+21),dy(24),dx(7*mirr+9),dy(36),-0.125,-4.0/8,3)
   @@mirero += 1
   @@mirero %= 2
