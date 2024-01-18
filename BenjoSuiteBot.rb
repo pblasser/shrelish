@@ -74,7 +74,8 @@ class BenjoSuiteBot < Jacksloon
   KYCONMINIJACK(13,90,0)
   JOHNSON(39,81,0)
   JOHNSON(39,63,0)
-  box(dx(35),dy(10),dx(-35),dy(80),0,-$yobelow/8.0,$yobelow)
+    yobel=2
+  box(dx(35),dy(10),dx(-35),dy(80),0,-yobel/8.0,yobel)
   #box(dx(-10),dy(63),dx(-35),dy(80),-0.125,-4.0/8,3)
   @dronx=90
  end
