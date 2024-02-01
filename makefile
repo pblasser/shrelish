@@ -29,6 +29,7 @@ main: clean
 	$(CC) BenjoSectionTop.rb 4 1 $(PP)Bsec41.nc  
 	$(CC) BenjoSectionTop.rb 4 2 $(PP)Bsec42.nc 
 	$(CC) BenjoSectionTop.rb 4 3 $(PP)Bsec43.nc 
+	$(CC) BenjoSuiteBot.rb gspsg 1 1 $(PP)gspsg11.nc  
 	$(CC) BenjoSuiteBot.rb gspsg 2 1 $(PP)gspsg21.nc  
 	$(CC) BenjoSuiteBot.rb gspsg 2 2 $(PP)gspsg22.nc  
 	$(CC) BenjoSuiteBot.rb gspsg 1 1 $(PP)gspsg11.nc  
