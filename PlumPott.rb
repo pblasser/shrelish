@@ -368,10 +368,10 @@ end
  end 
  
  def parabolza(x,y,z,xx,yy)
-  
+  #feb24 was x12 y12 z10
   x/=12.0
-  y/=12.0
-  z/=10.0
+  y/=16.0
+  z/=13.0
   cutoPointz(xx+x,yy+y,(x**4)+8*(y**4)-z)
  end
  def shallot(x,y,xs)
