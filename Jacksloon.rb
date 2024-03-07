@@ -7,7 +7,8 @@ attr_accessor :batdepth
  @zstep = 4
  @magic = 0.023
  @bronk = 0.128
-   @depth = 0.537
+   @depth = 0.511
+   
   super(starx, stary)
  end
   NUMSEGS = 32
