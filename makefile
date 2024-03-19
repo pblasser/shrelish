@@ -56,8 +56,8 @@ main: clean
 	$(CC) BenjoGoldTop93.rb 4 2 $(PP)Bgold42.nc
 	$(CC) BenjoGoldTop93.rb 4 3 $(PP)Bgold43.nc  
 	#$(CC) BenjoGoldTop93.rb 4 4 $(PP)Bgold44.nc  
-	#$(CC) SolarBenjChub.rb 0 $(PP)solchb0.nc	
-	#$(CC) SolarBenjChub.rb 1 $(PP)solchb1.nc	
+	$(CC) SolarClikChub.rb 0 $(PP)solchb0.nc	
+	$(CC) SolarClikChub.rb 1 $(PP)solchb1.nc	
 	#$(CC) SolarBenjPane.rb 4 1 0 $(PP)solpan4.nc	
 	#$(CC) SolarBenjPane.rb 1 1 1 $(PP)solpan1.nc	
 	#$(CC) SolarBenjPane.rb 1 2 2 $(PP)solpan2.nc	
