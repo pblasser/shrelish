@@ -41,6 +41,11 @@ class Shplorer < PlumPott
 def omron_side(x,y,r)
   #shallot(dx(y),dy(x),-1)
  end
+
+ def omron(x,y,r)
+  fox(dx(y-7.5),dy(x+7.5),dx(y+7.5),dy(x-7.5),0,-@depth,4)
+ end
+
  def JOHNSON(x,y,r)
   johnson(dx(y),dy(x))
  end
@@ -80,6 +85,7 @@ end
     @curxo=dx(10)
 
 omron_side(13,0,0)
+omron(0,6.5,0)
 screw(27,6,0)
 balpspot(27,18,135)
 JOHNSON(39,9,0)
