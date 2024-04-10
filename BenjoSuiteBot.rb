@@ -51,7 +51,9 @@ class BenjoSuiteBot < Jacksloon
   drillus(dx(x),dy(y),0,screw)
  end
  def omron_side(x,y,r)
-   boxo(dx(x-3),dy(y+2),dx(x+3),dy(y+6),0,-mm(3),2)
+   box(dx(x+2.5),dy(y-2),dx(x-2.5),dy(y+6),0,-0.3,3)
+   box(dx(x+4),dy(y+3),dx(x-4),dy(y+10),0,-mm(8),3)
+
  end
  def omron(x,y,r)
  end
@@ -63,6 +65,11 @@ class BenjoSuiteBot < Jacksloon
 
 
  def boxoco()
+
+    @dronx=45
+  @drony = 45
+  @narp+=1
+
   omron_side(13,0,0)
 omron(0,6.5,0)
 screw(27,6,0)
@@ -95,6 +102,10 @@ JOHNSON(-39,9,0)
 KOBICONDC(-13,90,-90)
 KYCONMINIJACK(13,90,0)
 
+    yobel=2
+  box(dx(35),dy(10),dx(-35),dy(80),0,-yobel/8.0,yobel)
+  box(dx(-10),dy(63),dx(-35),dy(80),-0.125,-4.0/8,3)
+    @dronx=90
   end
 
 
@@ -172,9 +183,10 @@ tubo(dx(7.37512),dy(15.84292),mm(7),0,-0.125,1)
   @curxo += $halfwidth
   arx = @argvor.size
   ar = 0
-
+  @nuysio=3
  @argvor.downcase.each_char { |ch|  
   if (ch=="p") then @arp+=1 end
+
  }
  @argvor.downcase.each_char { |ch| 
   @curxo += MARJ
@@ -186,12 +198,14 @@ tubo(dx(7.37512),dy(15.84292),mm(7),0,-0.125,1)
    boxoxo()
   elsif (ch=="c") then
    boxoco()
-  end
+   @nuysio=1
+  
+else next end
   @curxo += mm(@dronx)
   ar+=1
   @curxo += MARJ
   if (ar < arx) then 
-   #dux(@curxo-mm(20),@stary-mm(9),@curxo+mm(20),@stary-mm(9),0,-0.25,2)
+   dux(@curxo-mm(20),@stary-mm(9),@curxo+mm(20),@stary-mm(9),0,-0.25,2)
   end
   @curxo += MARJ
 
@@ -204,8 +218,8 @@ tubo(dx(7.37512),dy(15.84292),mm(7),0,-0.125,1)
  end
  def ducabot
   a=Integer(@argvor.size/2+1)
-  topnuys = [[3*a,9*a+1]]
-  botnuys = [[3*a,9*a+1]]
+  topnuys = [[@nuysio*a,(12-@nuysio)*a+1]]
+  botnuys = [[@nuysio*a,(12-@nuysio)*a+1]]
 
   @myOkuda.bokchoytwomo(-0.77,1.0,12*a,12,topnuys,botnuys)
  end
