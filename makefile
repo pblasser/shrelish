@@ -26,6 +26,8 @@ main: clean
 	#$(CC) SolarGrassi_curx.rb 0 0 $(PP)solgrso0.nc	
 	#$(CC) SolarGrassi_curx.rb 1 1 $(PP)solbox1.nc
 	#$(CC) SolarGrassi_curx.rb 0 1 $(PP)solgrs1.nc	
+	$(CC) BenjoSuiteBot.rb pc 1 1 $(PP)pc11.nc  
+
 	$(CC) BenjoSectionTop.rb 4 1 $(PP)Bsec41.nc  
 	$(CC) BenjoSectionTop.rb 4 2 $(PP)Bsec42.nc 
 	$(CC) BenjoSectionTop.rb 4 3 $(PP)Bsec43.nc 

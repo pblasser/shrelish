@@ -50,6 +50,53 @@ class BenjoSuiteBot < Jacksloon
   screw = -0.16
   drillus(dx(x),dy(y),0,screw)
  end
+ def omron_side(x,y,r)
+   boxo(dx(x-3),dy(y+2),dx(x+3),dy(y+6),0,-mm(3),2)
+ end
+ def omron(x,y,r)
+ end
+ def balpspot(x,y,r)
+ end
+ def led(x,y,r)
+ end
+ 
+
+
+ def boxoco()
+  omron_side(13,0,0)
+omron(0,6.5,0)
+screw(27,6,0)
+balpspot(27,18,135)
+JOHNSON(39,9,0)
+balpspot(0,63,135)
+JOHNSON(0,84,0)
+balpspot(27,72,135)
+JOHNSON(39,81,0)
+screw(27,84,0)
+balpspot(-18,45,135)
+JOHNSON(-35.4209,42.87299,-6)
+JOHNSON(-38.86525,31.42022,-6)
+led(0,45,0)
+JOHNSON(-39,63,0)
+balpspot(-27,72,135)
+screw(-27,84,0)
+JOHNSON(-39,81,0)
+JOHNSON(-27.42719,33.60718,-6)
+balpspot(-27,18,135)
+screw(-27,6,0)
+omron_side(-13,0,0)
+balpspot(18,45,135)
+JOHNSON(35.14946,41.63133,10)
+JOHNSON(27.13615,32.93424,10)
+JOHNSON(38.70401,30.44284,10)
+JOHNSON(39,63,0)
+balpspot(0,27,135)
+JOHNSON(-39,9,0)
+KOBICONDC(-13,90,-90)
+KYCONMINIJACK(13,90,0)
+
+  end
+
 
 
  def boxopo()
@@ -137,6 +184,8 @@ tubo(dx(7.37512),dy(15.84292),mm(7),0,-0.125,1)
    boxopo()
   elsif (ch=="s") then
    boxoxo()
+  elsif (ch=="c") then
+   boxoco()
   end
   @curxo += mm(@dronx)
   ar+=1
