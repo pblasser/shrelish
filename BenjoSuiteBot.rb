@@ -56,6 +56,7 @@ class BenjoSuiteBot < Jacksloon
 
  end
  def omron(x,y,r)
+  box(dx(x+5),dy(y-5),dx(x-5),dy(y+5),0,-0.3,3)
  end
  def balpspot(x,y,r)
  end
