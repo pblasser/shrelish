@@ -187,7 +187,7 @@ tubo(dx(7.37512),dy(15.84292),mm(7),0,-0.125,1)
   @nuysio=3
  @argvor.downcase.each_char { |ch|  
   if (ch=="p") then @arp+=1 end
-
+if (ch=="c") then @arp+=1 end
  }
  @argvor.downcase.each_char { |ch| 
   @curxo += MARJ
