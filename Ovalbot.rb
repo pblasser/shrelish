@@ -6,8 +6,9 @@ $halfwidth = $bitwidth/2
 
 class Ovalbot < Oval
  def initialize(n,z)
-    @depth=0.8
+    
   super(n,z)
+  @depth=0.8
  end
  
  def loz(z)

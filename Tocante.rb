@@ -21,6 +21,7 @@ class Tocante < Jacksloon
   @heigh = cmil(8)
   @depth = 0.8
   super(starx, stary)
+  @depth = 0.8
  end
  def flip()
   w = 4.5#3
