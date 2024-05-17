@@ -10,6 +10,7 @@ MARJ = 0.05
   @heigh = 4
   @depth = 0.8
   super(starx, stary)
+  @depth = 0.8
  end
 
  def boxo()
