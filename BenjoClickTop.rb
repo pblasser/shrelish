@@ -66,8 +66,8 @@ end
   @curxo += MARJ
   @curxo += $halfwidth
 
-omron_side(13,0,0)
-omron(0,6.5,0)
+omron_side(15,0,0)
+omron_side(0,0,0)
 screw(27,6,0)
 balpspot(27,18,135)
 JOHNSON(39,9,0)
@@ -87,7 +87,7 @@ JOHNSON(-39,81,0)
 JOHNSON(-27.42719,33.60718,-6)
 balpspot(-27,18,135)
 screw(-27,6,0)
-omron_side(-13,0,0)
+omron_side(-15,0,0)
 balpspot(18,45,135)
 JOHNSON(35.14946,41.63133,10)
 JOHNSON(27.13615,32.93424,10)
