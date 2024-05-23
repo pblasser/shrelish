@@ -57,8 +57,8 @@ class BenjoSuiteBot < Jacksloon
  end
  def omron_side(x,y,r)
    box(dx(x+2.5),dy(y-2),dx(x-2.5),dy(y+6),0,-0.3,3)
-   box(dx(x+4),dy(y+3),dx(x-4),dy(y+10),0,-mm(8),3)
-
+   box(dx(x+4.5),dy(y+3),dx(x-4.5),dy(y+10),0,-mm(2),1)
+  box(dx(x+4.2),dy(y+3),dx(x-4.2),dy(y+10),-mm(2),-mm(8),2)
  end
  def omron(x,y,r)
   box(dx(x+5),dy(y-5),dx(x-5),dy(y+5),0,-0.3,3)

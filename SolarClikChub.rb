@@ -3,6 +3,7 @@
 require './PlumPott.rb'
 require './Okuda.rb'
 
+
 #$bitwidth=0.001
 #$halfwidth=$bitwidth/2
 
@@ -81,6 +82,14 @@ end
    #pipe(dx(w),dy(0),cmil(1.85),0,-@depth)
    tubo(dx(w),dy(0),cmil(1.85),0,-0.25,2)
    pipe(dx(w),dy(0),0.4,0,-@depth)
+  elsif (@xarg==2) then
+   tubo(dx(w),dy(0),cmil(3.5),0,-0.25,2)
+   for i in 0..5 do
+    x = dx(w+20*Math.cos(2*i*Math::PI/6))
+    y = dy(20*Math.sin(2*i*Math::PI/6))
+    pipe(x,y,0.3,0,-@depth)
+   end
+   pipe(dx(w),dy(0),0.3,0,-@depth)
   else
     @curxo=dx(10)
 

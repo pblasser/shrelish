@@ -7,7 +7,7 @@ attr_accessor :batdepth
  @zstep = 4
  @magic = 0.023
  @bronk = 0.128
-   @depth = 0.511
+   @depth = 0.522
    
   super(starx, stary)
  end
@@ -76,7 +76,7 @@ attr_accessor :batdepth
 def kobiconn(x,y)
  nowchub = (0.367/2)
  box(x+nowchub,y-0.5,x+nowchub+$bitwidth,y-0.3,0,-0.211,2)
- box(x-nowchub,y-0.75,x+nowchub,y+$halfwidth,0,-0.433,3)#june23 made 433 back to 4
+ box(x-nowchub,y-0.75,x+nowchub,y+$halfwidth,0,-0.433,4)#june23 made 433 back to 4
  #december 2023 made 4 back to 433
 end
 def adamusb(x,y)

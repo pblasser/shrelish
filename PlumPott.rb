@@ -392,7 +392,7 @@ end
   def microshallot(x,y,xs)
   skimtoPoint(x,y,0.1)
   signx = signy = 1
-  for k in 0..3 do
+  for k in 0..2 do
    for j in 0..12 do
     for i in -13..14 do
      parabolza(xs*j,signy*i,k,x,y)

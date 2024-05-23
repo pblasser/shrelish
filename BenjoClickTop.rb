@@ -37,7 +37,7 @@ class ClickTop < PlumPott
   shallot(dx(y),dy(x),-1)
  end
 def omron_side(x,y,r)
-  shallot(dx(y),dy(x),1)
+  microshallot(dx(y),dy(x),1)
  end
 
  def omron(x,y,r)
