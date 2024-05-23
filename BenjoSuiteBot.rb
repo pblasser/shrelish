@@ -205,7 +205,7 @@ if (ch=="c") then @arp+=1 end
    boxoxo()
   elsif (ch=="c") then
    boxoco()
-   @nuysio=1
+   if (ar>0) then @nuysio=1 end
   
 else next end
   @curxo += mm(@dronx)
