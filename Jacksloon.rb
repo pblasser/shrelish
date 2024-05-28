@@ -52,6 +52,7 @@ attr_accessor :batdepth
    #printf "G2 X%5.5f Y%5.5f I%5.5f J%5.5f Z%5.5f\n", x-stretch, y+r, 0, r, ee, @@feedrate
    cutoPointDeepo(x+stretch,y+r,ee)
   end
+  yarc(x,y,ee,r,stretch)
   
   #oldspyrtub(x,y,xr,yr)
    #pipe(x,y,xr,0,-@depth)

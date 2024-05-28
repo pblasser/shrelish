@@ -26,8 +26,7 @@ main: clean
 	#$(CC) SolarGrassi_curx.rb 0 0 $(PP)solgrso0.nc	
 	#$(CC) SolarGrassi_curx.rb 1 1 $(PP)solbox1.nc
 	#$(CC) SolarGrassi_curx.rb 0 1 $(PP)solgrs1.nc	
-	$(CC) BenjoSuiteBot.rb pc 1 1 $(PP)pc11.nc 
-	$(CC) BenjoSuiteBot.rb c 1 2 $(PP)c12.nc  
+  
 	$(CC) BenjoClickTop.rb 1 1 $(PP)Bclc11.nc
 	$(CC) BenjoSectionTop.rb 4 1 $(PP)Bsec41.nc  
 	$(CC) BenjoSectionTop.rb 4 2 $(PP)Bsec42.nc 
@@ -41,6 +40,25 @@ main: clean
 	#$(CC) BenjoSuiteBot.rb p 1 1 $(PP)p11.nc  
 	#$(CC) BenjoSuiteBot.rb gpg 2 2 $(PP)gpg22.nc  
 	#$(CC) BenjoBot.rb benjolin $(PP)BenjBotB.nc  
+	$(CC) BenjoBot.rb 1 1 $(PP)BBot11.nc  
+	$(CC) BenjoBot.rb 1 2 $(PP)BBot12.nc  
+	$(CC) BenjoBot.rb 1 3 $(PP)BBot13.nc  
+	$(CC) BenjoBot.rb 2 2 $(PP)BBot22.nc  
+	$(CC) BenjoBot.rb 2 3 $(PP)BBot23.nc  
+	$(CC) BenjoBot.rb 2 4 $(PP)BBot24.nc  
+
+	$(CC) BenjoSuiteBot.rb pc 1 1 $(PP)bcbot11.nc 
+	$(CC) BenjoSuiteBot.rb c 1 1 $(PP)clbot11.nc
+	$(CC) BenjoSuiteBot.rb c 1 2 $(PP)clbot12.nc
+	$(CC) BenjoSuiteBot.rb c 2 3 $(PP)clbot23.nc
+	$(CC) BenjoSuiteBot.rb c 2 4 $(PP)clbot24.nc
+
+
+	$(CC) BenjoClickTop.rb 1 1 $(PP)cltop11.nc
+	$(CC) BenjoClickTop.rb 1 2 $(PP)cltop12.nc
+	$(CC) BenjoClickTop.rb 2 3 $(PP)cltop23.nc
+	$(CC) BenjoClickTop.rb 2 4 $(PP)cltop24.nc
+
 	$(CC) BenjoBot.rb 1 1 $(PP)BBot11.nc  
 	$(CC) BenjoBot.rb 1 2 $(PP)BBot12.nc  
 	$(CC) BenjoBot.rb 1 3 $(PP)BBot13.nc  

@@ -138,36 +138,7 @@ class PlumPott < Jacksloon
   end
  end
  
-   def alpsdot(x,y,theta)
-   skimtoPoint(x,y,0.1)
-   #innerrad = 
 
-  outerrad = 3.55/25.4 - $halfwidth
-   i = 0
-   z = 0
-   deepak = -0.35
-   incro = (Float(-deepak) / Float(@zstep)) 
-   while z > deepak do
-    z -= incro / NUMSEGS
-    thetai = i % NUMSEGS
-    radioi = outerrad
-    if thetai < 6 then 
-     thetai = 7 
-    end
-    if thetai >26 then 
-     thetai = 25
-    end
-    thetai += theta*NUMSEGS/360
-    yy = radioi * Math.sin(2 * thetai * Math::PI / NUMSEGS)
-    xx = radioi * Math.cos(2 * thetai * Math::PI / NUMSEGS)
-    cutoPointDeepo(x+xx,y+yy,z)
-    i += 1
-   end
-   cutoPoint(x,y)
- end
- def alpsdot(x,y,theta)
-  drillus(x,y,0,-@depth)
- end
   def alpspot(x,y,theta)
   
    
@@ -223,6 +194,115 @@ class PlumPott < Jacksloon
   return z
  end
  
+
+    def alpsdot(x,y,theta)
+   skimtoPoint(x,y,0.1)
+   #innerrad = 
+
+  outerrad = 3.55/25.4 - $halfwidth
+   i = 0
+   z = 0
+   deepak = -0.35
+   incro = (Float(-deepak) / Float(@zstep)) 
+   while z > deepak do
+    z -= incro / NUMSEGS
+    thetai = i % NUMSEGS
+    radioi = outerrad
+    if thetai < 6 then 
+     thetai = 7 
+    end
+    if thetai >26 then 
+     thetai = 25
+    end
+    thetai += theta*NUMSEGS/360
+    yy = radioi * Math.sin(2 * thetai * Math::PI / NUMSEGS)
+    xx = radioi * Math.cos(2 * thetai * Math::PI / NUMSEGS)
+    cutoPointDeepo(x+xx,y+yy,z)
+    i += 1
+   end
+   cutoPoint(x,y)
+ end
+ def alpsdot(x,y,theta)
+  drillus(x,y,0,-@depth)
+ end
+ 
+  def alpsdot(x,y,theta)
+   skimtoPoint(x,y,0.1)
+   #innerrad = 
+
+  outerrad = 3.0/25.4 - $halfwidth #3.2!
+   i = 0
+   z = 0
+   deepak = -0.45
+   incro = (Float(-deepak) / Float(@zstep)) 
+   drepak = deepak - incro
+   while z > drepak do
+    z -= incro / NUMSEGS
+  zz = max(z,deepak)
+    thetai = i % NUMSEGS
+    radioi = outerrad
+    if thetai < 6 then 
+     thetai = 6 
+    end
+    if thetai >26 then 
+     thetai = 26
+    end
+    thetai += theta*NUMSEGS/360
+    yy = radioi * Math.sin(2 * thetai * Math::PI / NUMSEGS)
+    xx = radioi * Math.cos(2 * thetai * Math::PI / NUMSEGS)
+    cutoPointDeepo(x+xx,y+yy,zz)
+    i += 1
+   end
+   while z < 0 do
+    z += incro / NUMSEGS
+  zz = max(z,deepak)
+    thetai = i % NUMSEGS
+    radioi = outerrad
+    if thetai < 6 then 
+     thetai = 7 
+    end
+    if thetai >26 then 
+     thetai = 25
+    end
+    thetai += theta*NUMSEGS/360
+    yy = radioi * Math.sin(2 * thetai * Math::PI / NUMSEGS)
+    xx = radioi * Math.cos(2 * thetai * Math::PI / NUMSEGS)
+    cutoPointDeepo(x+xx,y+yy,zz)
+    i += 1
+   end
+
+ end
+ def alpsdot(x,y,theta) 
+  #drillus(x,y,0,-@depth)
+  skimtoPoint(x,y,0.1)
+  outerrad = 3.0/25.4 - $halfwidth #3.2!
+  deepak = -0.39
+  z=0
+  incro = (Float(-deepak) / Float(@zstep)) 
+  incro /= 3.0
+  theta = Float(theta)/360
+  drepak = deepak -incro
+   while z > drepak do
+    pyth(x,y,26.0/32.0+theta,outerrad,dz(z))
+    z-=incro
+    pyth(x,y,6.0/32.0+theta,outerrad,dz(z))
+    z-=incro
+    pyrc(x,y,26.0/32.0+theta,outerrad,dz(z),6.0/32+theta)
+    z-=incro
+  end
+  z+=incro
+     while z < 0 do
+    pyth(x,y,26.0/32.0+theta,outerrad,dz(z))
+    z+=incro
+    pyth(x,y,6.0/32.0+theta,outerrad,dz(z))
+    z+=incro
+    pyrc(x,y,26.0/32.0+theta,outerrad,dz(z),6.0/32+theta)
+    z+=incro
+  end
+  pyth(x,y,26.0/32.0+theta,outerrad,dz(z))
+end 
+
+
  
  def alpspot(x,y,theta) 
   #drillus(x,y,0,-@depth)
@@ -244,10 +324,22 @@ class PlumPott < Jacksloon
   end
   pyth(x,y,30.0/32.0+theta,0.33,dz(z))
 end  
+
+
+
+
+
+
+def alpspot_exp(x,y,theta) 
+  #drillus(x,y,0,-@depth)
+  skimtoPoint(x,y,0.1)
+  alpsdot(x,y,theta)
+  spyrtub(x,y,0.3,0.01)
+  pipe(x,y,0.33,0,-0.1)
+end  
  
  
- 
- 
+
  
  
  
