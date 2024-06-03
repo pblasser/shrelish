@@ -10,7 +10,7 @@ GDOZ="G21G90G92.1\nG0Z10\nG0X0Y0"
 main: clean
 	echo -e $(GTEN) > $(DD)G10.nc
 	echo -e $(GDOZ) > $(DD)G00.nc
-	$(CC) Shtar.rb 2 $(PP)shtar_pla.nc
+	#$(CC) Shtar.rb 2 $(PP)shtar_pla.nc
 	#$(CC) NobFiver.rb 50 $(PP)znobf50.nc
 	#$(CC) NobFiver.rb 30 $(PP)znobf30.nc
 	#$(CC) NobFiver.rb 20 $(PP)znobf20.nc
@@ -26,7 +26,8 @@ main: clean
 	#$(CC) SolarGrassi_curx.rb 0 0 $(PP)solgrso0.nc	
 	#$(CC) SolarGrassi_curx.rb 1 1 $(PP)solbox1.nc
 	#$(CC) SolarGrassi_curx.rb 0 1 $(PP)solgrs1.nc	
-  
+	$(CC) GrblespBot.rb 1 1 $(PP)grbot.nc
+	$(CC) GrblespTop.rb 1 1 $(PP)grtop.nc
 	$(CC) BenjoClickTop.rb 1 1 $(PP)Bclc11.nc
 	$(CC) BenjoSectionTop.rb 4 1 $(PP)Bsec41.nc  
 	$(CC) BenjoSectionTop.rb 4 2 $(PP)Bsec42.nc 
@@ -77,8 +78,8 @@ main: clean
 	$(CC) BenjoGoldTop93.rb 4 2 $(PP)Bgold42.nc
 	$(CC) BenjoGoldTop93.rb 4 3 $(PP)Bgold43.nc  
 	#$(CC) BenjoGoldTop93.rb 4 4 $(PP)Bgold44.nc  
-	$(CC) SolarClikChub.rb 0 $(PP)solchb0.nc	
-	$(CC) SolarClikChub.rb 1 $(PP)solchb1.nc	
+	#$(CC) SolarClikChub.rb 0 $(PP)solchb0.nc	
+	#$(CC) SolarClikChub.rb 1 $(PP)solchb1.nc	
 	#$(CC) SolarBenjPane.rb 4 1 0 $(PP)solpan4.nc	
 	#$(CC) SolarBenjPane.rb 1 1 1 $(PP)solpan1.nc	
 	#$(CC) SolarBenjPane.rb 1 2 2 $(PP)solpan2.nc	
