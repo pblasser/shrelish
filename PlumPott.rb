@@ -333,7 +333,8 @@ end
 def alpspot_exp(x,y,theta) 
   #drillus(x,y,0,-@depth)
   skimtoPoint(x,y,0.1)
-  alpsdot(x,y,theta)
+  #alpsdot(x,y,theta)
+  alpsdot(x,y,180)
   spyrtub(x,y,0.3,0.01)
   pipe(x,y,0.33,0,-0.1)
 end  

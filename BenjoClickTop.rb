@@ -49,7 +49,7 @@ def omron_side(x,y,r)
  end
  def balpspot(x,y,r) 
   r=r
-  alpspot(dx(y),dy(x),180+r)
+  alpspot_exp(dx(y),dy(x),180+r)
  end
  def screw(x,y,r)
   looscrew(dx(y),dy(x))

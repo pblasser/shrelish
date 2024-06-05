@@ -7,7 +7,7 @@ GDOZ="G21G90G92.1\nG0Z10\nG0X0Y0"
 
 
  
-main: clean
+main: 
 	echo -e $(GTEN) > $(DD)G10.nc
 	echo -e $(GDOZ) > $(DD)G00.nc
 	#$(CC) Shtar.rb 2 $(PP)shtar_pla.nc
@@ -28,14 +28,13 @@ main: clean
 	#$(CC) SolarGrassi_curx.rb 0 1 $(PP)solgrs1.nc	
 	$(CC) GrblespBot.rb 1 1 $(PP)grbot.nc
 	$(CC) GrblespTop.rb 1 1 $(PP)grtop.nc
-	$(CC) BenjoClickTop.rb 1 1 $(PP)Bclc11.nc
 	$(CC) BenjoSectionTop.rb 4 1 $(PP)Bsec41.nc  
 	$(CC) BenjoSectionTop.rb 4 2 $(PP)Bsec42.nc 
 	$(CC) BenjoSectionTop.rb 4 3 $(PP)Bsec43.nc 
 	$(CC) BenjoSuiteBot.rb gspsg 1 1 $(PP)gspsg11.nc  
 	$(CC) BenjoSuiteBot.rb gspsg 2 1 $(PP)gspsg21.nc  
 	$(CC) BenjoSuiteBot.rb gspsg 2 2 $(PP)gspsg22.nc  
-	$(CC) BenjoSuiteBot.rb gspsg 1 1 $(PP)gspsg11.nc  
+	#$(CC) BenjoSuiteBot.rb gspsg 1 1 $(PP)gspsg11.nc  
 	#$(CC) BenjoSuiteBot.rb gspspsg 2 2 $(PP)gspspsg22.nc  
 	#$(CC) BenjoSuiteBot.rb gspspsg 1 1 $(PP)gspspsg11.nc  
 	#$(CC) BenjoSuiteBot.rb p 1 1 $(PP)p11.nc  
@@ -182,16 +181,24 @@ clean:
 jomp:CC=-ruby -W0
 jomp:DD=../temp/
 jomp:PP= | perl "./mmmaker.pl" > $(DD)
+jomp:clean
 jomp:main
 
 thump:CC=-ruby -W0
 thump:DD=I:/
 thump:PP= | perl "./mmmaker.pl" > $(DD)
+thump:clean
 thump:main
 
 
 thumpe:CC=-ruby -W0
 thumpe:DD=E:/
 thumpe:PP= | perl "./mmmaker.pl" > $(DD)
+thumpe:clean
 thumpe:main
 
+
+zomp:CC=echo
+zomp:DD=../temp/
+zomp:PP= & curl -s -o nul http://bobby.local/upload -F upload=@../temp/
+zomp:main
