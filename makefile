@@ -12,10 +12,10 @@ main:
 	echo -e $(GDOZ) > $(DD)G00.nc
 	#$(CC) Shtar.rb 2 $(PP)shtar_pla.nc
 
-	$(CC) CafeBot.rb 1 2 $(PP)cabot12.nc
-	$(CC) CafeTop.rb CafeCafe 2 2 $(PP)cafe12.nc
-	$(CC) CafeTop.rb CafeQuantum 1 2 $(PP)caqu12.nc
-	$(CC) CafeTop.rb CafeTier 2 2 $(PP)cati12.nc
+	$(CC) CafeBot.rb  $(PP)cabot1.nc
+	$(CC) CafeTop.rb Digital_cafe  $(PP)cafe1.nc
+	$(CC) CafeTop.rb Quantum_experiment  $(PP)caqu1.nc
+	$(CC) CafeTop.rb Tier_horn  $(PP)cati1.nc
 	#$(CC) NobFiver.rb 50 $(PP)znobf50.nc
 	#$(CC) NobFiver.rb 30 $(PP)znobf30.nc
 	#$(CC) NobFiver.rb 20 $(PP)znobf20.nc
