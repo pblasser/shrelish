@@ -34,13 +34,15 @@ class CafeTop < PlumPott
   pipe(dx(x),dy(y),0.06,0,-@depth)
   tubo(dx(x),dy(y),0.27,0,-0.44,4)
  end
-  def a_led(x,y,r)
-   tubo(dx(x),dy(y),mm(4),0,-0.05,1)
-   tubo(dx(x),dy(y),mm(3),0.05,-0.35,3)
-   drillus(dx(x),dy(y),-0.35,-@depth)
+  def SMT0805LED(x,y,r)
+    a_punkt(x,y,r)
+   #tubo(dx(x),dy(y),mm(4),0,-0.05,1)
+   #tubo(dx(x),dy(y),mm(3),0.05,-0.35,3)
+   #drillus(dx(x),dy(y),-0.35,-@depth)
   end
-    def a_ledrgb(x,y,r)
-   a_led(x,y,r)
+
+    def SMT1616(x,y,r)
+   SMT0805LED(x,y,r)
   end
 def a_sidebutton(x,y,r)
   microshallot(dx(x),dy(y),1)
