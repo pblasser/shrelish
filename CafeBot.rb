@@ -31,10 +31,10 @@ MARJ = 0.42
   kobiconn(dx(x),dy(y))
  end
  def JOHNSON(x,y,r)
-    moony= 3.81*Math.cos(-r*Math::PI/180.0)
-  moonx=3.81*Math.sin(-r*Math::PI/180.0)
+   # moony= 3.81*Math.cos(-r*Math::PI/180.0)
+  #moonx=3.81*Math.sin(-r*Math::PI/180.0)
   tubo(dx(x),dy(y),mm(4),0,-0.25,2)
-  tubo(dx(x+moonx),dy(y+moony),mm(2),0,-0.25,2)
+  #tubo(dx(x+moonx),dy(y+moony),mm(2),0,-0.25,2)
 
   
  end
