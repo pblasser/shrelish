@@ -13,9 +13,9 @@ main:
 	#$(CC) Shtar.rb 2 $(PP)shtar_pla.nc
 
 	$(CC) CafeBot.rb  $(PP)cabot1.nc
-	$(CC) CafeTop.rb Digital_cafe  $(PP)cafe1.nc
-	$(CC) CafeTop.rb Quantum_experiment  $(PP)caqu1.nc
-	$(CC) CafeTop.rb Tier_horn  $(PP)cati1.nc
+	$(CC) CafeTop.rb Digital_cafe 2 1  $(PP)cafe21.nc
+	$(CC) CafeTop.rb Quantum_experiment   $(PP)caqu1.nc
+	$(CC) CafeTop.rb Tier_horn  2 1 $(PP)cati21.nc
 	#$(CC) NobFiver.rb 50 $(PP)znobf50.nc
 	#$(CC) NobFiver.rb 30 $(PP)znobf30.nc
 	#$(CC) NobFiver.rb 20 $(PP)znobf20.nc
@@ -123,7 +123,7 @@ main:
 	#$(CC) Tarneck.rb 2 1 2 $(PP)tarn21.nc	
 	#$(CC) Shtar.rb 0 $(PP)shtar_bot.nc	
 	#$(CC) Shtar.rb 1 $(PP)shtar_top.nc	
-	#$(CC) Shtar.rb 2 $(PP)shtar_pla.nc		
+	$(CC) Shtar.rb 2 $(PP)shtar_pla.nc		
 	#$(CC) Shtar.rb 3 $(PP)shtar_plarig.nc		
 
 

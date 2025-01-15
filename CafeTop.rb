@@ -31,8 +31,9 @@ class CafeTop < PlumPott
   alpspot(dx(x),dy(y),r-180)
  end
  def a_trimpot(x,y,r)
-  pipe(dx(x),dy(y),0.06,0,-@depth)
-  tubo(dx(x),dy(y),0.27,0,-0.44,4)
+  tubo(dx(x),dy(y),0.27,0,-0.38,3)
+  pipe(dx(x),dy(y),0.06,-0.38,-@depth)
+  #tubo(dx(x),dy(y),0.27,0,-0.44,4)
  end
   def SMT0805LED(x,y,r)
     a_punkt(x,y,r)
