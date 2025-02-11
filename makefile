@@ -11,6 +11,7 @@ main:
 	echo -e $(GTEN) > $(DD)G10.nc
 	echo -e $(GDOZ) > $(DD)G00.nc
 	#$(CC) Shtar.rb 2 $(PP)shtar_pla.nc
+	$(CC) BenjoRolzTop.rb 1 1 $(PP)brlz11.nc
 
 	$(CC) CafeBot.rb  $(PP)cabot1.nc
 	$(CC) CafeTop.rb Digital_cafe 2 1  $(PP)cafe21.nc
@@ -36,6 +37,7 @@ main:
 	$(CC) BenjoSectionTop.rb 4 1 $(PP)Bsec41.nc  
 	$(CC) BenjoSectionTop.rb 4 2 $(PP)Bsec42.nc 
 	$(CC) BenjoSectionTop.rb 4 3 $(PP)Bsec43.nc 
+	$(CC) BenjoSuiteBot.rb rc 1 1 $(PP)rc11.nc 
 	$(CC) BenjoSuiteBot.rb gspsg 1 1 $(PP)gspsg11.nc  
 	$(CC) BenjoSuiteBot.rb gspsg 2 1 $(PP)gspsg21.nc  
 	$(CC) BenjoSuiteBot.rb gspsg 2 2 $(PP)gspsg22.nc  
