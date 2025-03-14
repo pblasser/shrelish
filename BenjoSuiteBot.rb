@@ -46,14 +46,16 @@ class BenjoSuiteBot < Jacksloon
   tubo(dx(x),dy(y),mm(4),0,-0.25,2)
   tubo(dx(x+moonx),dy(y+moony),mm(2),0,-0.25,2)
 
-  
+  #########dasdfadsf0
  end
   def HIRSCHMANN(x,y,r)
-
   tubo(dx(x),dy(y),mm(2),0,-0.37,3)
-
-  
  end
+  def SMT8080(x,y,r)
+  tubo(dx(x),dy(y),mm(5),0,-0.55,4)
+ end
+ ###############asdasdasda
+
   def brass(x,y,r)
   tubo(dx(x),dy(y),0.14,0,-0.5,4)
  end
@@ -236,8 +238,11 @@ JOHNSON(-3.18136,62.59018,-139)
    then mirr = -1 end
   yobel=2
   screw(15+mirr*9,84-15,0)
+  SMT8080(15,75-15,0)
+  
   brass(15-mirr*9,84-15,0)
   brass(15+mirr*9,6-15,0)
+  SMT8080(15,15-15,0)
   screw(15-mirr*9,6-15,0)
   JOHNSON(15-mirr*9,38,0)
   box(dx(28),dy(5),dx(2),dy(55),0,-yobel/8.0,yobel) #depth puff, cap puff
