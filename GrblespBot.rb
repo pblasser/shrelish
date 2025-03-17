@@ -57,7 +57,7 @@ class GrblespBot < Jacksloon
  omron_side(-20,-30,0)
  omron_side(20,-30,0)
  kyocera(-50,0,0)
- box(dx(-42),dy(-20),dx(42),dy(20),0,-5.0/8,5)
+ box(dx(-46),dy(-20),dx(42),dy(20),0,-5.0/8,5)
  dux(dx(42),dy(0),dx(52),dy(0),0,-1.0/8,1)
   @myOkuda = Okuda.new(@curxo,@stary,@width+MARJ*2+$bitwidth,@heigh+MARJ*2+$bitwidth,mm(8))
  @curxo += MARJ
