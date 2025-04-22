@@ -1,11 +1,12 @@
 
 require './Jacksloon.rb'
 require './Okuda.rb'
+require './Curxuda.rb'
 
 class CafeBot < Jacksloon
 
 MARJ = 0.42
-@@lipp=0
+#@@lipp=0
  def initialize(starx, stary)
   @width = 10.2
   @heigh = 6.0
@@ -82,6 +83,15 @@ proc()
   marx = MARJ + @starx + @width /2
   @myOkuda = Okuda.new(@curxo,@stary,@width+MARJ*2+$bitwidth,@heigh+@@lipp*2+$bitwidth,0.4)
   
+
+  topnuys = [[4.7,4.5,0.5,0.3]]
+
+  botnuys = [[-4.7,-4.5,-0.5,-0.3],
+          [0.7,1,4,4.3]]
+
+  carr = Curxuda.genarr(@width+MARJ*2+$bitwidth,@heigh+@@lipp*2+$bitwidth,0.4,topnuys,botnuys)
+  @myCurxuda = Curxuda.new(@curxo,@stary,0.81,carr)
+
   @curxo += @width /2
   
   @curxo += MARJ
@@ -91,7 +101,8 @@ proc()
  def ducabot
   topnuys = [[2,21]]
   botnuys = [[2,21]]
-  @myOkuda.bokchoydeluxe(-0.78,1.0,22,12,topnuys,botnuys)
+  #@myOkuda.bokchoydeluxe(-0.78,1.0,22,12,topnuys,botnuys)
+  @myCurxuda.bok()
  end
  def duxo
   #@curxo += $bitwidth

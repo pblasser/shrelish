@@ -20,6 +20,49 @@ class Curxuda < Bot
 
  end
 
+ def self.genarr(w,h,roundel,topnuys,botnuys)
+  arr=[]
+  arr.push([w/2,h/2-roundel])
+ 
+
+  arr.push([w/2-roundel,h/2,-roundel])
+  
+
+   topnuys.each {|a|
+    arr.push([a[0],h/2])
+    arr.push([a[1],h/2-@@lipp])
+    arr.push([a[2],h/2-@@lipp])
+    arr.push([a[3],h/2])
+   }
+
+
+
+  arr.push([-w/2+roundel,h/2])
+  arr.push([-w/2,h/2-roundel,-roundel])
+  arr.push([-w/2,-h/2+roundel])
+
+
+
+
+
+  arr.push([-w/2+roundel,-h/2,-roundel])
+
+
+   botnuys.each {|a|
+    arr.push([a[0],-h/2])
+    arr.push([a[1],-h/2+@@lipp])
+    arr.push([a[2],-h/2+@@lipp])
+    arr.push([a[3],-h/2])
+   }
+
+  arr.push([w/2-roundel,-h/2])
+  
+  arr.push([w/2,-h/2+roundel,-roundel])
+  arr.push([w/2,h/2-roundel])
+  arr
+ end
+
+
 
  def seg(a,z)
   x=a[0]
@@ -30,9 +73,12 @@ class Curxuda < Bot
   if (a.size==2) then
    len=len/($bitwidth*10)
    len=len.floor()*2.0
-   if len<=0 then cutt(a[0],a[1],z-$bitwidth) 
+   if len<=0 then cutt(a[0],a[1],z) #z-$bitwidth) 
+   elsif (z>-@depth+0.001) then cutt(a[0],a[1],z) 
    else
     zilch = $bitwidth
+    #zilch = 0
+    
     for i in 0..len do
      zilch*=-1
      if(z==-@depth) then
@@ -66,6 +112,7 @@ class Curxuda < Bot
   skimtoPoint(@curx+@starx,@cury+@stary,0.1)
   deepo=-0 
   decro=@depth/((@depth/$bitwidth).floor())
+  deepo=-decro
   while (deepo>=-@depth) do
    @arr.each {|a|
     seg(a,deepo)
