@@ -78,16 +78,20 @@ class Curxuda < Bot
    else
     zilch = $bitwidth
     #zilch = 0
-    
-    for i in 0..len do
-     zilch*=-1
-     if(z==-@depth) then
-      j=i-0.5#+(zilch*3)
-      if (j<0)then j=0 end
-      cutt(@curx+dx*j/len,@cury+dy*j/len,z)
-     end
+    cutt(@curx,@cury,z)
+    for i in 1..(len-1) do
+     #zilch*=-1
+     #if(z==-@depth) then
+     # j=i-0.5#+(zilch*3)
+     # if (j<0)then j=0 end
+     # cutt(@curx+dx*j/len,@cury+dy*j/len,z)
+     #end
+     #cutt(@curx+dx*i/len,@cury+dy*i/len,z+zilch)
+     cutt(@curx+dx*(i-0.2)/len,@cury+dy*(i-0.2)/len,z)
      cutt(@curx+dx*i/len,@cury+dy*i/len,z+zilch)
+     cutt(@curx+dx*(i+0.2)/len,@cury+dy*(i+0.2)/len,z)
     end
+    cutt(@curx+dx,@cury+dy,z)
    end
   elsif (a.size==3) then
     hyp=pyth(len/2.0,a[2])

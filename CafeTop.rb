@@ -1,6 +1,7 @@
 
 require './PlumPott.rb'
 require './Okuda.rb'
+require './Curxuda.rb'
 
  $bitwidth = 2.0/25.4
  $halfwidth = $bitwidth/2
@@ -85,6 +86,9 @@ def a_sidebutton(x,y,r)
   proc()
   @curxo += @width /2
   @myOkuda = Okuda.new(@curxo,@stary,@width+MARJ*2+$bitwidth,@heigh+@@lipp*2+$bitwidth,0.4)
+  carr = Curxuda.genarr(@width+MARJ*2+$bitwidth,@heigh+@@lipp*2+$bitwidth,0.4,[],[])
+  @myCurxuda = Curxuda.new(@curxo,@stary,@depth,carr)
+
   @curxo += @width /2
   @curxo += MARJ
 #@curxo += $bitwidth
@@ -93,7 +97,8 @@ def a_sidebutton(x,y,r)
  def ducatop
  end
  def ducabot
-  @myOkuda.bokchoy(-@depth,1.0,12,10)
+  #@myOkuda.bokchoy(-@depth,1.0,12,10)
+  @myCurxuda.bok()
  end
  def duxo
   #@curxo += $bitwidth
