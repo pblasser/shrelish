@@ -73,6 +73,110 @@ attr_accessor :batdepth
   end
  end
  
+
+
+ def rotaframe(x,y,wido,hido,theta) 
+  wido -= $bitwidth
+  hido -= $bitwidth
+  wido /= 2
+  hido /= 2
+  theta = Math::PI*theta/180
+  angol = Math.atan(hido/wido)
+  radio = Math.sqrt(hido*hido+wido*wido)
+  
+  euler=Complex.polar(radio,angol+theta)
+  cutoPoint(x+euler.real,y+euler.imag)
+  euler=Complex.polar(radio,Math::PI-angol+theta)
+  cutoPoint(x+euler.real,y+euler.imag)
+  euler=Complex.polar(radio,Math::PI+angol+theta)
+  cutoPoint(x+euler.real,y+euler.imag)
+  euler=Complex.polar(radio,0-angol+theta)
+  cutoPoint(x+euler.real,y+euler.imag)
+  euler=Complex.polar(radio,angol+theta)
+  cutoPoint(x+euler.real,y+euler.imag)
+ end
+ def rotaframeconventional(x,y,wido,hido,theta) 
+  wido -= $bitwidth
+  hido -= $bitwidth
+  wido /= 2
+  hido /= 2
+  theta = Math::PI*theta/180
+  angol = Math.atan(hido/wido)
+  radio = Math.sqrt(hido*hido+wido*wido)
+
+  euler=Complex.polar(radio,angol+theta)
+  cutoPoint(x+euler.real,y+euler.imag)
+    euler=Complex.polar(radio,0-angol+theta)
+  cutoPoint(x+euler.real,y+euler.imag)
+    euler=Complex.polar(radio,Math::PI+angol+theta)
+  cutoPoint(x+euler.real,y+euler.imag)
+    euler=Complex.polar(radio,Math::PI-angol+theta)
+  cutoPoint(x+euler.real,y+euler.imag)
+    euler=Complex.polar(radio,angol+theta)
+  cutoPoint(x+euler.real,y+euler.imag)
+ end
+ 
+ 
+ def rotabo(x,y,wido,hido,deep,step,theta) 
+  incro = (Float(0-deep) / Float(step))
+  skimtoPoint(x,y,0.1)
+  for i in 1..step do
+   penetrate((incro * i))
+   rotaframe(x,y,wido,hido,theta)
+  end
+ end
+ 
+ def rotabox(x,y,wido,hido,theta) 
+  incro = (Float(0-@depth) / Float(@zstep))
+  skimtoPoint(x,y,0.1)
+  
+  for i in 1..@zstep do
+   penetrate((incro * i))
+   rotaframe(x,y,wido,hido,theta)
+  end
+  
+ end
+ def rotabox(x,y,wido,hido,theta) 
+  wido -= $bitwidth
+  hido -= $bitwidth
+  wido /= 2
+  hido /= 2
+  theta = Math::PI*theta/180
+  angol = Math.atan(hido/wido)
+  radio = Math.sqrt(hido*hido+wido*wido)
+  skimtoPoint(x,y,0.1)
+   z = 0
+   incro = (Float(@depth) / Float(@zstep)) 
+   while z > -@depth - incro do
+   euler=Complex.polar(radio,angol+theta)
+   cutoPointDeepo(x+euler.real,y+euler.imag,z)
+   z -= incro / 4
+   euler=Complex.polar(radio,Math::PI-angol+theta)
+   cutoPointDeepo(x+euler.real,y+euler.imag,z)
+   z -= incro / 4
+   euler=Complex.polar(radio,Math::PI+angol+theta)
+  cutoPointDeepo(x+euler.real,y+euler.imag,z)
+  z -= incro / 4
+  euler=Complex.polar(radio,0-angol+theta)
+  cutoPointDeepo(x+euler.real,y+euler.imag,z)
+  z -= incro / 4
+  end
+ end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
  
 def kobiconn(x,y)
  nowchub = (0.367/2)

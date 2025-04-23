@@ -222,6 +222,16 @@ class Bot
   end
  end
 
+ def fubo(x,y,r,zstart,zdepth,step)
+  r -= $halfwidth
+  incro = (Float(zdepth-zstart) / Float(step))
+  skimtoPoint(x,y,zstart+0.1)
+  for i in 1..step do
+   penetrate(zstart + (incro * i))
+   drawzcirque(x,y,r,zstart + (incro * i))
+  end
+ end
+
  def tubo(x,y,r,zstart,zdepth,step)
   incro = (Float(zdepth-zstart) / Float(step))
   skimtoPoint(x,y,zstart+0.1)

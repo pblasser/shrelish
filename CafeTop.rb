@@ -19,7 +19,7 @@ class CafeTop < PlumPott
  end
   def an_omron(x,y,r)
  rotabo(dx(x),dy(y),0.5,0.6,0.125,1,r)
-  rotabox(dx(x),dy(y),0.5,0.5,r)
+  rotabox(dx(x),dy(y),0.55,0.55,r)
  end
  def JOHNSON(x,y,r)
  johnson(dx(x),dy(y))

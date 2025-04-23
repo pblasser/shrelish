@@ -39,8 +39,10 @@ MARJ = 0.42
 
   
  end
-  def a_bolt(x,y,r)
-  tubo(dx(x),dy(y),0.14,0,-0.5,4)
+ def a_bolt(x,y,r)
+  fubo(dx(x),dy(y),0.18,0,-0.12,1)
+  #tubo(dx(x),dy(y),0.14,-0.12,-0.5,3)
+  pipe(dx(x),dy(y),0.14,-0.12,-0.5)
  end
  def a_screw(x,y,r)
   screw = -0.16
@@ -63,8 +65,10 @@ MARJ = 0.42
 
  end
   def KEMETR82_50 (x,y,r)
+    #rotabo(dx(x),dy(y),0.5,0.2,0.5,4,180-r)
  end
   def KEMETR82_25 (x,y,r)
+    #rotabo(dx(x),dy(y),0.5,0.2,0.5,4,180-r)
  end
 
 
