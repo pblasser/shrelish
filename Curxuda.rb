@@ -31,7 +31,7 @@ class Curxuda < Bot
 
   inrund=0.2+$halfwidth
   inser=0.3-$halfwidth
-  deser=0.6
+  deser=0.55 + MARJ
 
   arr.push([-w/2,inrund+inser])
   arr.push([-w/2+inrund,inser,-inrund])
@@ -110,8 +110,10 @@ class Curxuda < Bot
   dy=y-@cury
   len = pyth(dx,dy)
   if (a.size==2) then
+    burtsch=0
+    #if (len>0.3) then burtsch=2 end
    len=len/($bitwidth*10)
-   len=len.floor()*2.0
+   len=len.floor()*2.0+burtsch
    if len<=0 then cutt(a[0],a[1],z) #z-$bitwidth) 
    elsif (z>-@depth+0.001) then cutt(a[0],a[1],z) 
    else

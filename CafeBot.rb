@@ -55,6 +55,10 @@ end
    box(dx(x-mm(4.5)),dy(y+mm(3)),dx(x+mm(4.5)),dy(y+mm(10)),0,-mm(2),1)
   box(dx(x-mm(4.2)),dy(y+mm(3)),dx(x+mm(4.2)),dy(y+mm(10)),-mm(2),-mm(8),2)
  end
+  def a_multibutton(x,y,r)
+   fox(dx(x-0.3),dy(y),dx(x+0.3),dy(y+0.5),0,-0.12,1)
+
+ end
  def an_omron(x,y,r)
   box(dx(x+5),dy(y-5),dx(x-5),dy(y+5),0,-0.3,3)
  end

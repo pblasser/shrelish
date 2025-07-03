@@ -37,13 +37,13 @@ class CafeTop < PlumPott
   #tubo(dx(x),dy(y),0.27,0,-0.44,4)
  end
  def a_trimpot_dud(x,y,r)
-  tubo(dx(x),dy(y),0.27,0,-0.12,1)
+#  tubo(dx(x),dy(y),0.27,0,-0.12,1)
 
  end
 
 
    def led(x,y,r)
-   tubo(dx(x),dy(y),mm(3.5),0,-0.05,1)
+   #tubo(dx(x),dy(y),mm(3.5),0,-0.05,1)
    spyrtub(dx(x),dy(y),mm(2.5),0)
   end
 
@@ -58,6 +58,9 @@ class CafeTop < PlumPott
    SMT0805LED(x,y,r)
   end
 def a_multibutton(x,y,r)
+  dux(dx(x),dy(y)-0.3,dx(x)+0.5,dy(y)-0.3,0,-0.125,1)
+  dux(dx(x),dy(y)+0.3,dx(x)+0.5,dy(y)+0.3,0,-0.125,1)
+
  # microshallot(dx(x),dy(y),1)
  end
   def KYCON5P(x,y,r)
