@@ -36,6 +36,17 @@ class CafeTop < PlumPott
   pipe(dx(x),dy(y),0.06,-0.38,-@depth)
   #tubo(dx(x),dy(y),0.27,0,-0.44,4)
  end
+ def a_trimpot_dud(x,y,r)
+  tubo(dx(x),dy(y),0.27,0,-0.12,1)
+
+ end
+
+
+   def led(x,y,r)
+   tubo(dx(x),dy(y),mm(3.5),0,-0.05,1)
+   spyrtub(dx(x),dy(y),mm(2.5),0)
+  end
+
   def SMT0805LED(x,y,r)
     a_punkt(x,y,r)
    #tubo(dx(x),dy(y),mm(4),0,-0.05,1)
@@ -46,8 +57,8 @@ class CafeTop < PlumPott
     def SMT1616(x,y,r)
    SMT0805LED(x,y,r)
   end
-def a_sidebutton(x,y,r)
-  microshallot(dx(x),dy(y),1)
+def a_multibutton(x,y,r)
+ # microshallot(dx(x),dy(y),1)
  end
   def KYCON5P(x,y,r)
   shallot(dx(x),dy(y),1)
@@ -86,8 +97,8 @@ def a_sidebutton(x,y,r)
   proc()
   @curxo += @width /2
   @myOkuda = Okuda.new(@curxo,@stary,@width+MARJ*2+$bitwidth,@heigh+@@lipp*2+$bitwidth,0.4)
-  carr = Curxuda.genarr(@width+MARJ*2+$bitwidth,@heigh+@@lipp*2+$bitwidth,0.4,[],[])
-  @myCurxuda = Curxuda.new(@curxo,@stary,@depth,carr)
+  
+  @myCurxuda = Curxuda.new(@curxo,@stary,@depth,@carr)
 
   @curxo += @width /2
   @curxo += MARJ
@@ -112,6 +123,7 @@ def initialize(starx, stary)
   @width = 6
   @heigh = 2.5
   @@lipp = 0.0
+  @carr = Curxuda.gencafarr(@width+MARJ*2+$bitwidth,@heigh+@@lipp*2+$bitwidth,0.4,[],[])
   super(starx, stary)
  end
 end
@@ -121,6 +133,7 @@ def initialize(starx, stary)
   @width = 6
   @heigh = 5
   @@lipp = 0.0
+  @carr = Curxuda.genarr(@width+MARJ*2+$bitwidth,@heigh+@@lipp*2+$bitwidth,0.4,[],[])
   super(starx, stary)
  end
 end
@@ -130,6 +143,7 @@ def initialize(starx, stary)
   @width = 6
   @heigh = 2.5
   @@lipp = 0.0
+  @carr = Curxuda.gencafarr(@width+MARJ*2+$bitwidth,@heigh+@@lipp*2+$bitwidth,0.4,[],[])
   super(starx, stary)
  end
 end

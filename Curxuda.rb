@@ -19,6 +19,45 @@ class Curxuda < Bot
   printf "G1 X%5.5f Y%5.5f Z%5.5f\n", x+@starx, y+@stary, z
 
  end
+ 
+
+ def self.gencafarr(w,h,roundel,a,b)
+  arr=[]
+  arr.push([w/2,h/2-roundel])
+  arr.push([w/2-roundel,h/2,-roundel])
+ ##alt topnuys
+  arr.push([-w/2+roundel,h/2])
+  arr.push([-w/2,h/2-roundel,-roundel])
+
+  inrund=0.2+$halfwidth
+  inser=0.3-$halfwidth
+  deser=0.6
+
+  arr.push([-w/2,inrund+inser])
+  arr.push([-w/2+inrund,inser,-inrund])
+  arr.push([-w/2+deser,inser])
+  arr.push([-w/2+deser,-inser])
+  arr.push([-w/2+inrund,-inser])  
+  arr.push([-w/2,-inrund-inser,-inrund])
+
+
+  arr.push([-w/2,-h/2+roundel])
+  arr.push([-w/2+roundel,-h/2,-roundel])
+ ##alt botnuys
+  arr.push([w/2-roundel,-h/2])  
+  arr.push([w/2,-h/2+roundel,-roundel])
+
+
+
+
+
+  arr.push([w/2,h/2-roundel])
+
+  arr
+
+
+ end
+
 
  def self.genarr(w,h,roundel,topnuys,botnuys)
   arr=[]

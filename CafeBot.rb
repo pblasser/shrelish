@@ -34,7 +34,9 @@ MARJ = 0.42
  def JOHNSON(x,y,r)
    # moony= 3.81*Math.cos(-r*Math::PI/180.0)
   #moonx=3.81*Math.sin(-r*Math::PI/180.0)
+  if (y.abs>2.5) then
   tubo(dx(x),dy(y),mm(4),0,-0.25,2)
+end
   #tubo(dx(x+moonx),dy(y+moony),mm(2),0,-0.25,2)
 
   
@@ -60,15 +62,15 @@ MARJ = 0.42
   tubo(dx(x),dy(y),mm(5),0,-0.55,4)
  end
   def esp30(x,y,r)
-  box(dx(x),dy(y-0.3),dx(x+1),dy(y+0.3),-0.4/0.8,-0.5/0.8,1)  
-  box(dx(x-2),dy(y-0.8),dx(x),dy(y+0.8),-0.4/0.8,-0.5/0.8,1)
+  box(dx(x),dy(y-0.3),dx(x+1),dy(y+0.3),-0.2/0.8,-0.5/0.8,3)  
+  box(dx(x-2),dy(y-0.8),dx(x),dy(y+0.8),-0.2/0.8,-0.5/0.8,3)
 
  end
   def KEMETR82_50 (x,y,r)
     #rotabo(dx(x),dy(y),0.5,0.2,0.5,4,180-r)
  end
   def KEMETR82_25 (x,y,r)
-    #rotabo(dx(x),dy(y),0.5,0.2,0.5,4,180-r)
+    rotabo(dx(x),dy(y),0.5,0.2,0.5,4,180-r)
  end
 
 
@@ -79,7 +81,7 @@ MARJ = 0.42
   @curxo += MARJ
   @curxo += $halfwidth
 
-box(dx(0.2),botrail,dx(10),toprail,0,-4.0/8.0,4)
+box(dx(0.2),botrail,dx(10),toprail,0,-2.0/8.0,2)
 proc()
 
   @curxo += @width /2
