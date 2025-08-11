@@ -11,12 +11,13 @@ main:
 	echo -e $(GTEN) > $(DD)G10.nc
 	echo -e $(GDOZ) > $(DD)G00.nc
 	#$(CC) Shtar.rb 2 $(PP)shtar_pla.nc
+	$(CC) SolarFan.rb 1 $(PP)solarfan.nc
 	$(CC) BenjoRolzTop.rb 1 1 $(PP)brlz11.nc
 
 	$(CC) CafeBot.rb  $(PP)cabot1.nc
-	$(CC) CafeTop.rb Digital_cafe 2 1  $(PP)cafe21.nc
+	$(CC) CafeTop.rb Digital_cafe 1 1  $(PP)cafe21.nc
 	$(CC) CafeTop.rb Quantum_experiment   $(PP)caqu1.nc
-	$(CC) CafeTop.rb Tier_horn  2 1 $(PP)cati21.nc
+	$(CC) CafeTop.rb Tier_horn  1 1 $(PP)cati21.nc
 	#$(CC) NobFiver.rb 50 $(PP)znobf50.nc
 	#$(CC) NobFiver.rb 30 $(PP)znobf30.nc
 	#$(CC) NobFiver.rb 20 $(PP)znobf20.nc
