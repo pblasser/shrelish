@@ -78,6 +78,11 @@ class Bot
   penetrate(zdepth)
   #boom!dwellus(0.5)
  end
+  def danger_drill(x,y,zdepth)
+  cutoPoint(x,y)
+  penetrate(zdepth)
+  #boom!dwellus(0.5)
+ end
  def drawzframe(minx,miny,maxx,maxy)
   #dwellus(0.1)
   if minx > maxx then minx = maxx = (minx+maxx)/2 end
@@ -239,6 +244,16 @@ class Bot
    penetrate(zstart + (incro * i))
    drawzdisque(x,y,r,zstart + (incro * i))
   end
+ end
+
+ def danger_tube(x,y,r,zstart,zdepth,step)
+  incro = (Float(zdepth-zstart) / Float(step))
+  cutoPoint(x,y)
+  for i in 1..step do
+   penetrate(zstart + (incro * i))
+   drawzdisque(x,y,r,zstart + (incro * i))
+  end
+  #retrax(zstart)
  end
  
  def grancirque(x,y,xr,yr)

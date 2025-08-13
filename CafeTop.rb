@@ -25,8 +25,10 @@ class CafeTop < PlumPott
  johnson(dx(x),dy(y))
  end
   def a_punkt(x,y,r)
-   tubo(dx(x),dy(y),0.1,0,-0.25,2)
-   drillus(dx(x),dy(y),-0.35,-@depth)
+   #tubo(dx(x),dy(y),0.1,0,-0.25,2)
+   pipe(dx(x),dy(y),0.1,0,-0.25)
+   danger_drill(dx(x),dy(y),-@depth)
+   retract
  end
  def a_pot(x,y,r)
   alpspot(dx(x),dy(y),r-180)
@@ -79,7 +81,9 @@ def a_multibutton(x,y,r)
   rotabo(dx(x),dy(y),0.5,0.2,0.125,1,r+90)
  end
    def esp30(x,y,r)
-  box(dx(x-0.8),dy(y+2),dx(x+0.8),dy(y),0,-0.1/0.8,1)  
+  #box(dx(x-0.8),dy(y+2),dx(x+0.8),dy(y),0,-0.1/0.8,1)  
+    box(dx(x-0.6),dy(y+2),dx(x-0.4),dy(y),0,-0.1/0.8,1)  
+      box(dx(x+0.4),dy(y+2),dx(x+0.6),dy(y),0,-0.1/0.8,1)  
  end
  #def proc() end
  def initialize(starx, stary)

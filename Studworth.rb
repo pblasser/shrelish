@@ -8,7 +8,7 @@ require './Okuda.rb'
 class Studworth < Tocante
  def initialize(starx, stary)
   super(starx, stary)
-  @width = 14
+  @width = 14 
   @heigh = 4
   @heighchub = @heigh / 2.0 
   @depth = 9.0/8.0
@@ -43,6 +43,7 @@ class Studworth < Tocante
   @curxo += @width /2
   return @curxo
  end
+ 
 end
 
 flipperat(Studworth)

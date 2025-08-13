@@ -116,7 +116,15 @@ attr_accessor :batdepth
   cutoPoint(x+euler.real,y+euler.imag)
  end
  
- 
+  def danger_rotabo(x,y,wido,hido,zstart,zdepth,step,theta) 
+  incro = (Float(zdepth-zstart) / Float(step))
+  cutoPoint(x,y)
+  for i in 1..step do
+   penetrate(zstart + (incro * i))
+   rotaframe(x,y,wido,hido,theta)
+  end
+  #retrax(zstart)
+ end
  def rotabo(x,y,wido,hido,deep,step,theta) 
   incro = (Float(0-deep) / Float(step))
   skimtoPoint(x,y,0.1)
