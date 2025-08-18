@@ -20,9 +20,10 @@ class Tocante < Jacksloon
  def initialize(arg)
   @width = 16
   @heigh = 6
-  @depth = 0.5
+  @depth = 0.8
   @alg = arg
   super(0, 0)
+  @depth = 0.8
  end
  def flip()
 

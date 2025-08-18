@@ -30,7 +30,7 @@ class Curxuda < Bot
   arr.push([-w/2,h/2-roundel,-roundel])
 
   inrund=0.2+$halfwidth
-  inser=0.3-$halfwidth
+  inser=0.275-$halfwidth
   deser=0.55 + MARJ
 
   arr.push([-w/2,inrund+inser])
