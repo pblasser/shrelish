@@ -15,6 +15,7 @@ main:
 	$(CC) BenjoRolzTop.rb 1 1 $(PP)brlz11.nc
 
 	$(CC) CafeBot.rb  $(PP)cabot1.nc
+	$(CC) CafeBot_BUCKETHEAD.rb  $(PP)cabucket.nc
 	$(CC) CafeTop.rb Digital_cafe 1 1  $(PP)cafe21.nc
 	$(CC) CafeTop.rb Quantum_experiment   $(PP)caqu1.nc
 	$(CC) CafeTop.rb Tier_horn  1 1 $(PP)cati21.nc
