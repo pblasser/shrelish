@@ -39,7 +39,7 @@ class CafeTop < PlumPott
   #tubo(dx(x),dy(y),0.27,0,-0.44,4)
  end
  def a_trimpot_dud(x,y,r)
-#  tubo(dx(x),dy(y),0.27,0,-0.12,1)
+  tubo(dx(x+0.15),dy(y),0.127,0,-0.125,1)
 
  end
 

@@ -63,6 +63,9 @@ MARJ = 0.42
   drillus(dx(x),dy(y),0,screw)
   retract
  end
+
+
+
  def a_sidebutton(x,y,r)
    box(dx(x-mm(2.5)),dy(y-mm(2)),dx(x+mm(2.5)),dy(y+mm(6)),0,-0.3,3)
    box(dx(x-mm(4.5)),dy(y+mm(3)),dx(x+mm(4.5)),dy(y+mm(10)),0,-mm(2),1)
@@ -82,10 +85,26 @@ MARJ = 0.42
   danger_tube(dx(x),dy(y),mm(5),@outier,-0.55,3)
   retrax(@intier)
  end
+ def a_washer(x,y,r)
+  danger_tube(dx(x),dy(y),mm(15),@outier,-0.5,3)
+  retrax(@intier)
+ end
+  def wobelisk(x,y,r)
+  box(dx(x-0.6),dy(y-0.5),dx(x+0.6),dy(y+0.1),-0.1/0.8,-0.5/0.8,4)  
+  retrax(@intier)
+ end
   def esp30(x,y,r)
   box(dx(x),dy(y-0.3),dx(x+1),dy(y+0.3),-0.1/0.8,-0.5/0.8,4)  
   box(dx(x-2),dy(y-0.8),dx(x),dy(y+0.8),-0.1/0.8,-0.5/0.8,4)
-  retract
+  retrax(@intier)
+ end
+  def a_trimpot(x,y,r)
+  #danger_tube(dx(x),dy(y),0.27,@outier,-0.25,1)
+  #tubo(dx(x),dy(y),0.27,0,-0.44,4)
+ end
+ def a_trimpot_dud(x,y,r)
+  danger_tube(dx(x),dy(y+0.15),0.25,@outier,-0.25,1)
+
  end
   def KEMETR82_50 (x,y,r)
     #rotabo(dx(x),dy(y),0.5,0.2,0.5,4,180-r)
