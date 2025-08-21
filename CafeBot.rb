@@ -95,7 +95,7 @@ MARJ = 0.42
  end
   def esp30(x,y,r)
   box(dx(x),dy(y-0.3),dx(x+1),dy(y+0.3),-0.1/0.8,-0.5/0.8,4)  
-  box(dx(x-2),dy(y-0.8),dx(x),dy(y+0.8),-0.1/0.8,-0.5/0.8,4)
+  box(dx(x-2.25),dy(y-0.8),dx(x),dy(y+0.8),-0.1/0.8,-0.5/0.8,4)
   retrax(@intier)
  end
   def a_trimpot(x,y,r)
