@@ -15,7 +15,7 @@ class CafeTop < PlumPott
  looscrew(dx(x),dy(y))
  end
  def ADAMUSB(x,y,r)
- fox(dx(x-0.22),dy(y+0.25),dx(x+0.22),dy(y-0.25),0,-@depth,4)
+ fox(dx(x-0.23),dy(y+0.25),dx(x+0.23),dy(y-0.25),0,-@depth,4)
  end
   def an_omron(x,y,r)
  rotabo(dx(x),dy(y),0.5,0.6,0.125,1,r)
