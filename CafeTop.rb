@@ -26,7 +26,7 @@ class CafeTop < PlumPott
  end
   def a_punkt(x,y,r)
    #tubo(dx(x),dy(y),0.1,0,-0.25,2)
-   pipe(dx(x),dy(y),0.1,0,-0.25)
+   pipe(dx(x),dy(y),0.1,0,-0.15)
    danger_drill(dx(x),dy(y),-@depth)
    retract
  end
@@ -45,7 +45,7 @@ class CafeTop < PlumPott
 
 
    def led(x,y,r)
-   #tubo(dx(x),dy(y),mm(3.5),0,-0.05,1)
+   tubo(dx(x),dy(y),mm(3.5),0,-0.05,1)
    spyrtub(dx(x),dy(y),mm(2.5),0)
   end
 
