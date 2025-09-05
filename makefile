@@ -16,9 +16,10 @@ main:
 
 	$(CC) CafeBot.rb  $(PP)cabot1.nc
 	$(CC) CafeBot_BUCKETHEAD.rb  $(PP)cabucket.nc
-	$(CC) CafeTop.rb Digital_cafe 1 1  $(PP)cafe21.nc
-	$(CC) CafeTop.rb Quantum_experiment   $(PP)caqu1.nc
-	$(CC) CafeTop.rb Tier_horn  1 1 $(PP)cati21.nc
+	$(CC) CafeTop.rb Digital_cafe 2 2  $(PP)cafe22.nc
+	$(CC) CafeTop.rb Digital_cafe  $(PP)cafe.nc
+	$(CC) CafeTop.rb Quantum_experiment 1 2  $(PP)caqu12.nc
+	$(CC) CafeTop.rb Tier_horn  2 2 $(PP)cati22.nc
 	#$(CC) NobFiver.rb 50 $(PP)znobf50.nc
 	#$(CC) NobFiver.rb 30 $(PP)znobf30.nc
 	#$(CC) NobFiver.rb 20 $(PP)znobf20.nc

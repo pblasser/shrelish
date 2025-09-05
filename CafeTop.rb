@@ -48,6 +48,13 @@ class CafeTop < PlumPott
    tubo(dx(x),dy(y),mm(3.5),0,-0.05,1)
    spyrtub(dx(x),dy(y),mm(2.5),0)
   end
+   def led(x,y,r)
+   pipe(dx(x),dy(y),mm(6),0,-0.25)
+   pipe(dx(x),dy(y),mm(5),0,-@depth)
+  end
+
+
+
 
   def SMT0805LED(x,y,r)
     a_punkt(x,y,r)
