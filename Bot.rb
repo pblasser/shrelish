@@ -130,6 +130,16 @@ class Bot
    drawzsquare(minx,miny,maxx,maxy)
   end
  end   
+ 
+  def danger_box(minx,miny,maxx,maxy,zstart,zdepth,step)
+  incro = (Float(zdepth-zstart) / Float(step))
+  cutoPoint(minx+$halfwidth,miny+$halfwidth)
+  for i in 1..step do
+   penetrate(zstart + (incro * i))
+   drawzsquare(minx,miny,maxx,maxy)
+  end
+ end   
+ 
  #hacked to change random bitsiwth fiox with classvar
   def randdrawzsquare(minx,miny,maxx,maxy,bronk)
   minx += $halfwidth

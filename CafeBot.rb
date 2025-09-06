@@ -103,7 +103,9 @@ MARJ = 0.42
   #tubo(dx(x),dy(y),0.27,0,-0.44,4)
  end
  def a_trimpot_dud(x,y,r)
-  danger_tube(dx(x),dy(y+0.15),0.25,@outier,-0.25,1)
+  danger_box(dx(x-0.5),dy(y-0.1),dx(x+0.5),dy(y+0.35),@outier,@intier,1)
+  #danger_tube(dx(x),dy(y+0.15),0.25,@outier,-0.25,1)
+  retrax(@intier)
 
  end
   def KEMETR82_50 (x,y,r)
