@@ -49,7 +49,7 @@ class NortubeBot < Jacksloon
   @curxo += @width /2
   
   @curxo += MARJ
-  @curxo += $bitwidth
+  @curxo += $halfwidth
 
 
 
