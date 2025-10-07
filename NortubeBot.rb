@@ -81,6 +81,8 @@ lox(@curxo-mm(47),@stary-mm(47),@curxo+mm(47),@stary+mm(47),4)
   return @curxo
  end
  def ducabot
+     $bitwidth = 5.1/25.4
+ $halfwidth = $bitwidth/2
   @myCurxuda.bok()
  end
  def duxo
