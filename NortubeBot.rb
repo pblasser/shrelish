@@ -20,11 +20,32 @@ class NortubeBot < Jacksloon
  end
  def mm(i) return i/25.4 end
 
+ def lox(minx,miny,maxx,maxy,layers)
+  minx += $halfwidth
+  miny += $halfwidth
+  maxx -= $halfwidth
+  maxy -= $halfwidth
+  skimtoPoint(minx,miny,0.1)
+   penetrate(0)
+  drawzframe(minx,miny,maxx,maxy)
+  for i in 1..layers do   
+   minx += $bitwidth 
+   miny += $bitwidth
+   maxx -= $bitwidth
+   maxy -= $bitwidth
+   drawzframe(minx,miny,maxx,maxy)
+  end
+ end 
 
  def boxo()
   @curxo += MARJ
   @curxo += $halfwidth
   @curxo += @width /2
+
+
+lox(@curxo-mm(47),@stary-mm(47),@curxo+mm(47),@stary+mm(47),4)
+
+
    kyconsterupsidedown(@curxo,@stary - mm(45))
    kyconster(@curxo,@stary + mm(45))
 
