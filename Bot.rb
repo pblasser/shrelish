@@ -454,5 +454,29 @@ def nummerat(clasz,num)
 end
 
 
-
+def nudderat()
+ clasz = Object.const_get(String(ARGV[0]))
+ xarg = yarg = 1
+ unless ARGV[1].nil? then yarg = Integer(ARGV[1]) end
+ unless ARGV[2].nil? then xarg = Integer(ARGV[2]) end
+ broth = clasz.new(0,0).getBrot + $rimmer
+ curyop = (yarg-1)*broth
+ curxo = 0
+ #cursorx = $halfwidth
+ mystuff = clasz.new(curxo,0)
+ for i in 1..xarg do
+  if i == 1 then mystuff.numerize end
+  curyo = curyop
+  for j in 1..yarg do
+   mystuff = clasz.new(curxo,curyo)
+   mystuff.boxo()
+   mystuff.ducabot()
+   curyo -= broth*2
+  end
+  curxo = mystuff.duxo() + $rimmer
+ end
+ printf "G0 Z0.5\n"
+ printf "G0 X0 Y0 \n"
+ return curxo
+end
 

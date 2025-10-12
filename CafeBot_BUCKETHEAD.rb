@@ -3,7 +3,7 @@ require './Jacksloon.rb'
 require './Okuda.rb'
 require './Curxuda.rb'
 
-class CafeBot < Jacksloon
+class Cafeteria < Jacksloon
 
 MARJ = 0.42
 #@@lipp=0
@@ -168,4 +168,4 @@ proc()
 end
 require './cafe_procs.rb'
 
-stutterat(CafeBot)
+stutterat(Cafeteria)

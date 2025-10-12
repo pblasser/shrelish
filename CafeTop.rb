@@ -42,13 +42,23 @@ class CafeTop < PlumPott
   tubo(dx(x+0.15),dy(y),0.127,0,-0.125,1)
 
  end
+ def a_mike(x,y,r)
+
+  a_punkt(x-0.48,y-0.380,0)
+  pipe(dx(x), dy(y),0.480,0,-@depth)
+  a_punkt(x+0.48,y+0.380,0)
+
+ end
+ def a_piezo(x,y,r)
+  pipe(dx(x), dy(y),0.375/2.0,0,-@depth)
+ end
 
 
    def led(x,y,r)
    tubo(dx(x),dy(y),mm(3.5),0,-0.05,1)
    spyrtub(dx(x),dy(y),mm(2.5),0)
   end
-   def led(x,y,r)
+   def led10(x,y,r)
    pipe(dx(x),dy(y),mm(6),0,-0.25)
    pipe(dx(x),dy(y),mm(5),0,-@depth)
   end
@@ -162,33 +172,20 @@ def initialize(starx, stary)
  end
 end
 
+
+class Mike_pre < CafeTop
+def initialize(starx, stary)
+  @width = 6
+  @heigh = 1.2
+  @@lipp = 0.0
+  @carr = Curxuda.genarr(@width+MARJ*2+$bitwidth,@heigh+@@lipp*2+$bitwidth,0.4,[],[])
+  super(starx, stary)
+ end
+end
+
 require './cafe_procs.rb'
+require './quan_procs.rb'
 
 $rimmer = 0.01
 $rimmer=0.01
-def dudderat()
- clasz = Object.const_get(String(ARGV[0]))
- xarg = yarg = 1
- unless ARGV[1].nil? then yarg = Integer(ARGV[1]) end
- unless ARGV[2].nil? then xarg = Integer(ARGV[2]) end
- broth = clasz.new(0,0).getBrot + $rimmer
- curyop = (yarg-1)*broth
- curxo = 0
- #cursorx = $halfwidth
- mystuff = clasz.new(curxo,0)
- for i in 1..xarg do
-  if i == 1 then mystuff.numerize end
-  curyo = curyop
-  for j in 1..yarg do
-   mystuff = clasz.new(curxo,curyo)
-   mystuff.boxo()
-   mystuff.ducabot()
-   curyo -= broth*2
-  end
-  curxo = mystuff.duxo() + $rimmer
- end
- printf "G0 Z0.5\n"
- printf "G0 X0 Y0 \n"
- return curxo
-end
-dudderat()
+nudderat()

@@ -274,7 +274,7 @@ a_screw(0.400000,0.850000,180.0)
 a_bolt(0.400000,-0.850000,180.0)
 end
 end
-class CafeBot
+class Cafeteria
 def proc
 KYCON5P(8.200000,-3.000000,180.0)
 KYCON5P(7.200000,-3.000000,180.0)
