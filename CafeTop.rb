@@ -59,7 +59,7 @@ class CafeTop < PlumPott
    spyrtub(dx(x),dy(y),mm(2.5),0)
   end
    def led10(x,y,r)
-   pipe(dx(x),dy(y),mm(6),0,-0.25)
+   pipe(dx(x),dy(y),mm(6.5),0,-0.25)
    pipe(dx(x),dy(y),mm(5),0,-@depth)
   end
 
@@ -77,8 +77,8 @@ class CafeTop < PlumPott
    SMT0805LED(x,y,r)
   end
 def a_multibutton(x,y,r)
-  dux(dx(x),dy(y)-0.3,dx(x)+0.5,dy(y)-0.3,0,-0.125,1)
-  dux(dx(x),dy(y)+0.3,dx(x)+0.5,dy(y)+0.3,0,-0.125,1)
+  #dux(dx(x),dy(y)-0.3,dx(x)+0.5,dy(y)-0.3,0,-0.125,1)
+  #dux(dx(x),dy(y)+0.3,dx(x)+0.5,dy(y)+0.3,0,-0.125,1)
 
  # microshallot(dx(x),dy(y),1)
  end

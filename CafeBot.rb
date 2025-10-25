@@ -71,7 +71,7 @@ MARJ = 0.42
   retract
  end
   def a_multibutton(x,y,r)
-   fox(dx(x-0.3),dy(y+0.1),dx(x+0.3),dy(y+0.4),0,-0.12,1)
+   box(dx(x-0.35),dy(y+0.1),dx(x+0.35),dy(y+0.4),0,-0.12,1)
    retract
 
  end
