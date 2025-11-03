@@ -134,6 +134,8 @@ MARJ = 0.42
   @curxo += MARJ
   @curxo += $halfwidth
 box(dx(0.2),botrail,dx(@width-0.2),toprail,0,@outier,1)
+#temp
+box(dx(@width-1.2),botrail,dx(@width-0.2),toprail,@outier,@intier,1)
 retract
 proc()
   @curxo += @width /2
