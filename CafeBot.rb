@@ -113,7 +113,12 @@ MARJ = 0.42
  end
   def KEMETR82_25 (x,y,r)
 
-   danger_rotabo(dx(x),dy(y),0.5,0.2,@outier,-0.55,3,180-r)
+  theta = Math::PI*r/180
+  euler=Complex.polar(0.2,theta)
+ x=dx(x+euler.imag)
+ y=dy(y+euler.real)
+
+   danger_rotaflo(x,y,0.5,0.6,@outier,-0.55,3,180-r)
    retrax(@intier)
 
     #rotabo(dx(x),dy(y),0.5,0.2,0.5,4,180-r)
@@ -124,7 +129,7 @@ MARJ = 0.42
     retrax(@intier)
  end
  def a_piezo(x,y,r)
-    danger_tube(dx(x),dy(y),0.125,@outier,-0.5,3)
+    danger_tube(dx(x),dy(y),0.3,@outier,-0.5,3)
     retrax(@intier)
  end
 
@@ -135,7 +140,7 @@ MARJ = 0.42
   @curxo += $halfwidth
 box(dx(0.2),botrail,dx(@width-0.2),toprail,0,@outier,1)
 #temp
-box(dx(@width-1.2),botrail,dx(@width-0.2),toprail,@outier,@intier,1)
+#box(dx(@width-1.2),botrail,dx(@width-0.2),toprail,@outier,@intier,1)
 retract
 proc()
   @curxo += @width /2

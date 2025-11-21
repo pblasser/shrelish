@@ -72,14 +72,9 @@ attr_accessor :batdepth
    i += 1
   end
  end
- 
 
 
- def rotaframe(x,y,wido,hido,theta) 
-  wido -= $bitwidth
-  hido -= $bitwidth
-  wido /= 2
-  hido /= 2
+ def rotafram(x,y,wido,hido,theta) 
   theta = Math::PI*theta/180
   angol = Math.atan(hido/wido)
   radio = Math.sqrt(hido*hido+wido*wido)
@@ -95,6 +90,30 @@ attr_accessor :batdepth
   euler=Complex.polar(radio,angol+theta)
   cutoPoint(x+euler.real,y+euler.imag)
  end
+
+
+ def rotaframe(x,y,wido,hido,theta) 
+  wido -= $bitwidth
+  hido -= $bitwidth
+  wido /= 2
+  hido /= 2
+  rotafram(x,y,wido,hido,theta)
+ end
+
+ def rotaflice(x,y,wido,hido,theta) 
+  wido -= $bitwidth
+  hido -= $bitwidth
+  wido /= 2
+  hido /= 2
+  rotafram(x,y,wido,hido,theta)
+  while (wido>0) and (hido>0) do
+   rotafram(x,y,wido,hido,theta)
+   wido -= $bitwidth
+   hido -= $bitwidth
+  end
+ end
+
+
  def rotaframeconventional(x,y,wido,hido,theta) 
   wido -= $bitwidth
   hido -= $bitwidth
@@ -122,6 +141,15 @@ attr_accessor :batdepth
   for i in 1..step do
    penetrate(zstart + (incro * i))
    rotaframe(x,y,wido,hido,theta)
+  end
+  #retrax(zstart)
+ end
+ def danger_rotaflo(x,y,wido,hido,zstart,zdepth,step,theta) 
+  incro = (Float(zdepth-zstart) / Float(step))
+  cutoPoint(x,y)
+  for i in 1..step do
+   penetrate(zstart + (incro * i))
+   rotaflice(x,y,wido,hido,theta)
   end
   #retrax(zstart)
  end
