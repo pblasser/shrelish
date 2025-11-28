@@ -184,7 +184,19 @@ end
  end
 end
 
+
+ class Cafeteria_stereo < CafeBot
+ def initialize(starx, stary)
+  @width = 16.7
+  @topnuys = [[2.2,1.7,-3,-3.5]]
+  @botnuys = [#[-4.7,-4.5,-0.5,-0.3],
+          [-2.3,-2,0.7,1]]
+  
+  super(starx, stary)
+ end
+end
+
 require './cafe_procs.rb'
 require './quan_procs.rb'
-
+require './cafster_procs.rb'
 nudderat()

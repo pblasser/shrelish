@@ -17,6 +17,9 @@ main:
 
 	$(CC) CafeBot.rb Cafeteria  $(PP)cabot1.nc
 	$(CC) CafeBot.rb Cafequantum $(PP)caqot1.nc
+	$(CC) CafeBot.rb Cafeteria_stereo $(PP)catst1.nc
+
+
 	$(CC) CafeTop.rb Mike_pre 4 2  $(PP)capre42.nc	
 	$(CC) CafeTop.rb Digital_cafe 2 2  $(PP)cafe22.nc
 	$(CC) CafeTop.rb Quantum_experiment 1 2  $(PP)caqu12.nc
