@@ -45,13 +45,14 @@ MARJ = 0.05 #0.25
   @@numero += 1
   @@numero %= 7
   pizdepth = -0.43 #-0.4 #-0.355 #phor 0.5
-  slitdepth = pizdepth
+  slitdepth = pizdepth+0.05 #december 2025
   tubo(@curxo+1.2,@stary,0.55,-0.3,pizdepth,1)
   dux(@curxo+1.2,@stary-@heighchub, 
    @curxo+1.2,@stary+@heighchub, -0.3, pizdepth,1)
   
   bronx(@curxo+1.95,@stary-0.2,@curxo+5+MARJ+$halfwidth,@stary+0.2,-0.05,slitdepth,3,bronxner) #0.078
-  fox(@curxo+2.06,@stary-1.0/18.0,@curxo+5+MARJ+$halfwidth,@stary+1.0/18.0,slitdepth,0-@depth,1)
+  fox(@curxo+2.06,@stary-1.0/18.0,@curxo+5,@stary+1.0/18.0,slitdepth,0-@depth,1)
+  #  fox(@curxo+2.06,@stary-1.0/18.0,@curxo+5+MARJ+$halfwidth,@stary+1.0/18.0,slitdepth,0-@depth,1)
 
   @curxo += @width /2
   @myOkuda = Okuda.new(@curxo,@stary,@width+MARJ*2+$bitwidth,@heigh+@@lipp*2+$bitwidth,0.05)
