@@ -11,7 +11,8 @@ main:
 	echo -e $(GTEN) > $(DD)G10.nc
 	echo -e $(GDOZ) > $(DD)G00.nc
 	#$(CC) Shtar.rb 2 $(PP)shtar_pla.nc
-	#$(CC) NortubeBot.rb 1 1 $(PP)6mm11.nc
+	#$(CC) NortubeBot.rb 1 1 $(PP)6mm90.nc
+	$(CC) NortubeBotToo.rb 1 1 $(PP)6mm110.nc
 	#$(CC) SolarFan.rb 1 $(PP)solarfan.nc
 	#$(CC) BenjoRolzTop.rb 1 1 $(PP)brlz11.nc
 
