@@ -58,15 +58,10 @@ class Curxuda < Bot
 
  end
 
-
- def self.genarr(w,h,roundel,topnuys,botnuys)
+def self.genfarr(w,h,roundel,topnuys,botnuys,sidenuys)
   arr=[]
   arr.push([w/2,h/2-roundel])
- 
-
   arr.push([w/2-roundel,h/2,-roundel])
-  
-
    topnuys.each {|a|
     arr.push([a[0],h/2])
     arr.push([a[1],h/2-@@lipp])
@@ -74,19 +69,17 @@ class Curxuda < Bot
     arr.push([a[3],h/2])
    }
 
-
-
   arr.push([-w/2+roundel,h/2])
   arr.push([-w/2,h/2-roundel,-roundel])
+  sidenuys.each {|a|
+    arr.push([-w/2,a[0]])
+    arr.push([-w/2+@@lipp,a[1]])
+    arr.push([-w/2+@@lipp,a[2]])
+    arr.push([-w/2,a[3]])
+   }
+
   arr.push([-w/2,-h/2+roundel])
-
-
-
-
-
   arr.push([-w/2+roundel,-h/2,-roundel])
-
-
    botnuys.each {|a|
     arr.push([a[0],-h/2])
     arr.push([a[1],-h/2+@@lipp])
@@ -95,15 +88,26 @@ class Curxuda < Bot
    }
 
   arr.push([w/2-roundel,-h/2])
-  
   arr.push([w/2,-h/2+roundel,-roundel])
+  sidenuys.each {|a|
+    arr.push([w/2,a[3]])
+    arr.push([w/2-@@lipp,a[2]])
+    arr.push([w/2-@@lipp,a[1]])
+    arr.push([w/2,a[0]])
+   }
   arr.push([w/2,h/2-roundel])
   arr
  end
 
 
+ def self.genarr(w,h,roundel,topnuys,botnuys)
+  arr=self.genfarr(w,h,roundel,topnuys,botnuys,[])
+  arr
+ end
 
- def seg(a,z)
+
+
+ def segdiv(a,z,div)
   x=a[0]
   y=a[1]
   dx=x-@curx
@@ -112,8 +116,8 @@ class Curxuda < Bot
   if (a.size==2) then
     burtsch=0
     #if (len>0.3) then burtsch=2 end
-   len=len/($bitwidth*10)
-   len=len.floor()*2.0+burtsch
+   len=len/(div)
+   len=len.floor()*2.0
    if len<=0 then cutt(a[0],a[1],z) #z-$bitwidth) 
    elsif (z>-@depth+0.001) then cutt(a[0],a[1],z) 
    else
@@ -151,23 +155,30 @@ class Curxuda < Bot
    @cury=y
  end
 
+def seg(a,z)
+  segdiv(a,z,$bitwidth*10)
+end
 
-
- def bok()
+ def boka(div)
   skimtoPoint(@curx+@starx,@cury+@stary,0.1)
   deepo=-0 
   decro=@depth/((@depth/$bitwidth).floor())
   deepo=-decro
   while (deepo>=-@depth) do
    @arr.each {|a|
-    seg(a,deepo)
+    segdiv(a,deepo,div)
    }
 
-    seg(@arr[0],deepo)
+    segdiv(@arr[0],deepo,div)
 
    deepo = deepo- decro  
   end
  end
+  def bok()
+  boka($bitwidth*10)
 end
+end
+
+
 
 #Curxuda.new(10,10,0.55,[[0,0],[10,10],[5,15,-2],[2,5,-2]]).bok()
