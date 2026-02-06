@@ -130,6 +130,25 @@ class Bot
    drawzsquare(minx,miny,maxx,maxy)
   end
  end   
+
+ #lox is for a first facing cut, like on rough wood
+ def lox(minx,miny,maxx,maxy,layers)
+  minx += $halfwidth
+  miny += $halfwidth
+  maxx -= $halfwidth
+  maxy -= $halfwidth
+  skimtoPoint(minx,miny,0.1)
+   penetrate(0)
+  drawzframe(minx,miny,maxx,maxy)
+  for i in 1..layers do   
+   minx += $bitwidth 
+   miny += $bitwidth
+   maxx -= $bitwidth
+   maxy -= $bitwidth
+   drawzframe(minx,miny,maxx,maxy)
+  end
+ end 
+
  
   def danger_box(minx,miny,maxx,maxy,zstart,zdepth,step)
   incro = (Float(zdepth-zstart) / Float(step))

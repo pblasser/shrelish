@@ -20,30 +20,7 @@ class NortubeBot < Jacksloon
  end
  def mm(i) return i/25.4 end
 
- def lox(minx,miny,maxx,maxy,layers)
-  minx += $halfwidth
-  miny += $halfwidth
-  maxx -= $halfwidth
-  maxy -= $halfwidth
-  skimtoPoint(minx,miny,0.1)
-   penetrate(0)
-  drawzframe(minx,miny,maxx,maxy)
-  for i in 1..layers do   
-   minx += $bitwidth 
-   miny += $bitwidth
-   maxx -= $bitwidth
-   maxy -= $bitwidth
-   drawzframe(minx,miny,maxx,maxy)
-  end
- end 
- def kobiside(x,y)
- nowchub = (0.367/2)
- #box(x+0.3,y+nowchub,x+0.5,y+nowchub+$bitwidth,0,-0.211,2)
- box(x-MARJ-$halfwidth,y-0.5,x+mm(0.5),y+0.5,0,-1,8)
- box(x-$halfwidth,y-nowchub,x+0.75,y+nowchub,0,-0.433,4)#june23 made 433 back to 4
- 
- #december 2023 made 4 back to 433
-end
+
  def boxo()
   @curxo += MARJ
   @curxo += $halfwidth
@@ -59,8 +36,8 @@ end
    tiertre=tiertwo-mm(2)
 
   box(@curxo-mm(35),@stary-mm(35),@curxo+mm(35),@stary+mm(35),0,tierwon,4)
-  box(@curxo-mm(30),@stary-mm(25),@curxo+mm(30),@stary+mm(25),tierwon,tiertwo,4)
-  box(@curxo-mm(25),@stary-mm(25),@curxo+mm(25),@stary+mm(25),tiertwo,tiertre,1)
+  box(@curxo-mm(31),@stary-mm(26),@curxo+mm(31),@stary+mm(26),tierwon,tiertwo,4)
+  box(@curxo-mm(20),@stary-mm(25),@curxo+mm(20),@stary+mm(25),tiertwo,tiertre,1)
 
   
 
@@ -68,7 +45,7 @@ end
 
   
 
-  topnuys = [[1.2,0.8,-0.8,-1.2]]
+  topnuys = [[1.0,0.6,-0.6,-1.0]]
     sidenuys = topnuys
 
   botnuys = [topnuys[0].collect { |n| n * -1 }]
@@ -90,9 +67,9 @@ end
   return @curxo
  end
  def ducabot
-     $bitwidth = 5.1/25.4
+     $bitwidth = 4.1/25.4
  $halfwidth = $bitwidth/2
-  @myCurxuda.boka(mm(20))
+  @myCurxuda.boka(mm(30))
  end
  def duxo
   return @curxo
