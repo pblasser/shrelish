@@ -213,12 +213,14 @@ attr_accessor :batdepth
 
 
  
- 
-def kobiconn(x,y)
- nowchub = (0.367/2)
+def _kobiconn(x,y,w)
+ nowchub = (w)
  box(x+nowchub,y-0.5,x+nowchub+$bitwidth,y-0.3,0,-0.211,2)
  box(x-nowchub,y-0.75,x+nowchub,y+$halfwidth,0,-0.433,4)#june23 made 433 back to 4
  #december 2023 made 4 back to 433
+end 
+def kobiconn(x,y)
+ _kobiconn(x,y,0.17) #was 0.367/2
 end
  def kobiside(x,y)
  nowchub = (0.367/2)
@@ -242,24 +244,29 @@ end
  KYCONCHAN=-0.333 #sept 25 was -0.3
  KYCONCHIZ=KYCONCHAN - 0.051
  
- 
- def kyconsterupsidedown(x,y)
+ def _kyconsterupsidedown(x,y,w)
   nowchub = (0.266/2) #kyconSHAFT
   box(x-nowchub,y-$bitwidth,x+nowchub,y+0.4,0,KYCONCHAN,3)
-  nowchub = (0.5/2) #kyconSTEREO
+  nowchub = (w/2) #kyconSTEREO
   box(x-nowchub,y+0.1,x+nowchub,y+0.65,0,KYCONCHIZ,3)
   nowchub -= $halfwidth
   dux(x-nowchub,y+0.1+$halfwidth,x-nowchub,y+0.5,KYCONCHIZ,-0.404,1)
   dux(x+nowchub,y+0.1+$halfwidth,x+nowchub,y+0.5,KYCONCHIZ,-0.404,1)
+end 
+ def kyconsterupsidedown(x,y)
+  _kyconsterupsidedown(x,y,0.5)
 end
- def kyconster(x,y)
+ def _kyconster(x,y,w)
   nowchub = (0.266/2) #kyconSHAFT
   box(x-nowchub,y-0.4,x+nowchub,y+$halfwidth+$halfwidth,0,KYCONCHAN,3)
-  nowchub = (0.5/2) #kyconSTEREO
+  nowchub = (w/2) #kyconSTEREO
   box(x-nowchub,y-0.65,x+nowchub,y-0.1,0,KYCONCHIZ,3)
   nowchub -= $halfwidth
   dux(x-nowchub,y-0.5,x-nowchub,y-0.1-$halfwidth,KYCONCHIZ,-0.404,1)
   dux(x+nowchub,y-0.5,x+nowchub,y-0.1-$halfwidth,KYCONCHIZ,-0.404,1)
+end
+ def kyconster(x,y)
+  _kyconster(x,y,0.5)
 end
 
 def drawzarc(x,y,r,z)
