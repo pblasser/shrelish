@@ -177,8 +177,26 @@ end
   def bok()
   boka($bitwidth*10)
 end
+
+def doka(div) #open ended section
+ skimtoPoint(@curx+@starx,@cury+@stary,0.1)
+   deepo=-0 
+  decro=@depth/((@depth/$bitwidth).floor())
+  deepo=-decro
+  yobel=@arr
+  while (deepo>=-@depth) do
+   yobel.each {|a|
+    segdiv(a,deepo,div)
+   }
+   #segdiv(@arr[0],deepo,div)
+   yobel = yobel.reverse
+   yobel = yobel.map { |n| 
+    unless (n[2]==nil) then n[2]*=-1.0 end
+     n}
+   deepo = deepo- decro  
+  end
 end
 
-
+end
 
 #Curxuda.new(10,10,0.55,[[0,0],[10,10],[5,15,-2],[2,5,-2]]).bok()

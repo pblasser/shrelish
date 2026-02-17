@@ -11,8 +11,8 @@ main:
 	echo -e $(GTEN) > $(DD)G10.nc
 	echo -e $(GDOZ) > $(DD)G00.nc
 	#$(CC) Shtar.rb 2 $(PP)shtar_pla.nc
-	$(CC) NorBot.rb 1 1 1 90 $(PP)469_1n11.nc
-	$(CC) NorBot.rb 2 2 3 90 $(PP)469_3n22.nc
+	$(CC) NorBot.rb 1 1 1 90 branche $(PP)469_1n11.nc
+	$(CC) NorBot.rb 1 1 3 90 modular $(PP)469_3n22.nc
 	$(CC) NorBot.rb 1 1 1 110 $(PP)499_1n11.nc
 	$(CC) NorBot.rb 1 1 2 110 $(PP)499_2n11.nc
 	$(CC) NorBot.rb 1 1 1 114 $(PP)468_1n11.nc
