@@ -361,66 +361,12 @@ def indostutterat(clasz)
   end
   browblank.reverse.each {|y| y.ducabot}
   browblank.each {|y| y.ducatop}
-  printf "G0 Z0.5\n"
+  printf "G0 Z0.1\n"
   printf "G0 X0 Y0 \n"
 end
 
-def oldestutterat(clasz)
- xarg = yarg = 1
- unless ARGV[0].nil? then yarg = Integer(ARGV[0]) end
- unless ARGV[1].nil? then xarg = Integer(ARGV[1]) end
- if yarg == 0 then return indostutterat(clasz) end
- 
- curyo = clasz.new(0,0).getBrot #* (yarg-1)
- curyop = curyo + 0.05 + (2*curyo*(yarg-1)) + (yarg*$rimmer)
- curyob = 0 - curyop
- rowse = []
- toprowse = []
- botrowse = []
- for i in 1..yarg do
-  
-  curxo = 0
-  trowblank = []
-  mystuff = clasz.new(curxo,curyop)
-  mystuff = clasz.new(mystuff.duxo(), curyop)
-  if i == 1 then mystuff.numerize end
-  for j in 1..xarg do
-   trowblank.push(mystuff)
-   mystuff.boxo()
-   mystuff = clasz.new(mystuff.duxo(), curyop)
-  end
-  #toprowse.push(rowblank)
- 
-  browblank = []
-  mystuff = clasz.new(curxo,-curyop)
-  mystuff = clasz.new(mystuff.duxo(),-curyop)
-  for j in 1..xarg do
-   browblank.push(mystuff)
-   mystuff.boxo()
-   mystuff = clasz.new(mystuff.duxo(),-curyop)
-  end
-  trowblank.each {|y| y.ducatop}
-  trowblank.reverse.each {|y| y.ducabot}
-  browblank.reverse.each {|y| y.ducabot}
-  browblank.each {|y| y.ducatop}
-  #botrowse.push(rowblank)
-  
-  curyop -= mystuff.getBrot
-  curyop -= mystuff.getBrot
-  curyop -= $rimmer
- end
- printf "G0 Z0.5\n"
-  printf "G0 X0 Y0 \n"
- #toprowse.reverse.each {|x| 
- # x.each {|y| y.ducatop}
- # x.reverse.each {|y| y.ducabot}
- #}
- #botrowse.reverse.each {|x| 
- # x.reverse.each {|y| y.ducabot}
- # x.each {|y| y.ducatop}
- #}
-end
 $rimmer = 0.01
+$rise =
 def stutterat(clasz)
  xarg = yarg = 1
  unless ARGV[0].nil? then yarg = Integer(ARGV[0]) end
@@ -440,7 +386,7 @@ def stutterat(clasz)
   end
   curxo = mystuff.duxo() + $rimmer
  end
- printf "G0 Z0.5\n"
+ printf "G0 Z0.1\n"
  printf "G0 X0 Y0 \n"
  return curxo
 end
@@ -467,7 +413,7 @@ def nummerat(clasz,num)
   end
   curxo = mystuff.duxo() + $rimmer
  end
- printf "G0 Z0.5\n"
+ printf "G0 Z0.1\n"
  printf "G0 X0 Y0 \n"
  return curxo
 end
@@ -494,7 +440,7 @@ def nudderat()
   end
   curxo = mystuff.duxo() + $rimmer
  end
- printf "G0 Z0.5\n"
+ printf "G0 Z0.1\n"
  printf "G0 X0 Y0 \n"
  return curxo
 end
