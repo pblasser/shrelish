@@ -19,10 +19,6 @@ main:
 	$(CC) NorBot.rb 1 1 1 140 $(PP)498_1n11.nc
 	
 	$(CC) NorTop.rb 1 1 $(PP)NTop11.nc 
-coarse:CC=echo
-coarse:DD=../temp/
-coarse:PP= & curl -s -o nul http://coarse.local/upload -F upload=@../temp/
-coarse:main
 
 
 	#$(CC) SolarFan.rb 1 $(PP)solarfan.nc

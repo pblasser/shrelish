@@ -23,11 +23,11 @@ MARJ = 0.42
  end
 
  def KYCON5P(x,y,r)
-  _kyconsterupsidedown(dx(x),dy(y),0.53)
+  _kyconsterupsidedown(dx(x),dy(y),0.55)
   retract
  end
  def KYCON3P(x,y,r)
-  _kyconster(dx(x),dy(y),0.53)
+  _kyconster(dx(x),dy(y),0.55)
   retract
  end
   def KOBICONDC(x,y,r)
@@ -80,7 +80,7 @@ MARJ = 0.42
   retract
  end
  def SMT8080(x,y,r)
-  danger_tube(dx(x),dy(y),mm(5.5),@outier,-0.55,3)
+  danger_tube(dx(x),dy(y),mm(6),@outier,-0.55,3)
   retrax(@intier)
  end
  def a_washer(x,y,r)
