@@ -58,8 +58,9 @@ class NorBot < Jacksloon
    _kyconsterupsidedown(@curxo,@stary - (@wid0/2),0.53)
    _kyconster(@curxo,@stary + (@wid0/2),0.53)
    if [:modular,:branche].include?(@stil) then compartments.call(@curxo) end
-   topnuys.prepend(nuys[0].collect { |n| n + @curxo -marx })
-   botnuys.append(nuys[0].collect { |n| (n*-1) + @curxo -marx })
+   topnuys.unshift(nuys[0].collect { |n| n + @curxo -marx })
+   botnuys.push(nuys[0].collect { |n| (n*-1) + @curxo -marx })
+   #so, old ruby2.on.macbook shudbe prepend and append
    @curxo += @wid0 /2
    if (i<@argtoo) then @curxo += mm(6) end
   end 
