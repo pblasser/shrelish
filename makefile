@@ -12,7 +12,7 @@ main:
 	echo -e $(GDOZ) > $(DD)G00.nc
 	#$(CC) Shtar.rb 2 $(PP)shtar_pla.nc
 	$(CC) NorBot.rb 1 1 1 90 branche $(PP)469_1n11.nc
-	$(CC) NorBot.rb 2 1 5 90 continu $(PP)469_2n22.nc
+	$(CC) NorBot.rb 2 2 3 90 continu dynamono90 $(PP)469_2n22.nc
 	$(CC) NorBot.rb 1 1 1 110 $(PP)499_1n11.nc
 	$(CC) NorBot.rb 2 2 3 110 continu $(PP)499_3n22.nc
 	$(CC) NorBot.rb 1 1 1 114 $(PP)468_1n11.nc
