@@ -13,7 +13,7 @@ class NorBot < Jacksloon
   @@lipp = MARJ
  def initialize(starx, stary)
   @argtoo = 1
-  @powjak = mm(0.5)
+  #@powjak = mm(0.5)
   unless ARGV[2].nil? then @argtoo = Integer(ARGV[2]) end
   @wid0 = 90
   unless ARGV[3].nil? then @wid0 = Integer(ARGV[3]) end
@@ -24,8 +24,8 @@ class NorBot < Jacksloon
   @wid0= mm(@wid0)
   @width = @wid0 * @argtoo
   @width += (@argtoo-1)*mm(6)
-  @width += @powjak*2 
-  @heigh = @wid0+ @powjak*2 
+  #@width += #@powjak*2 
+  @heigh = @wid0#+ @powjak*2 
    #0.75
   super(starx, stary)
   @depth = mm(35)
@@ -52,13 +52,13 @@ class NorBot < Jacksloon
 
 
  def getBrot() #in the rare case of y repetition
-  return @heighchub + $halfwidth + @@lipp + @powjak
+  return @heighchub + $halfwidth + @@lipp# + @powjak
  end
 
  def boxo()
   
   @curxo += MARJ
-  @curxo += @powjak
+  #@curxo += @powjak
   @curxo += $halfwidth
   kobiside(@curxo,@stary)
   @fittingsprocs[@line].call()
@@ -88,7 +88,7 @@ class NorBot < Jacksloon
    @curxo += @wid0 /2
    if (i<@argtoo) then @curxo += mm(6) end
   end 
-  mx = @width/2 -mm(10) -@powjak
+  mx = @width/2 -mm(10) #-@powjak
   if (@stil==:continu) then compartments.call(marx) end
   carr = Curxuda.genfarr(@width+MARJ*2+$bitwidth,
   @heigh+@@lipp*2+$bitwidth,
@@ -105,7 +105,7 @@ class NorBot < Jacksloon
 
 ])
   @curxo += MARJ
- @curxo += @powjak
+ #@curxo += @powjak
   @curxo += $halfwidth
   return @curxo
  end
