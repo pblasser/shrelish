@@ -68,8 +68,8 @@ class NorTop < PlumPott
   johnson(dx(x),dy(y))
  end
   def TUBE(x,y,r)
-    pipe(dx(x),dy(y),mm(10),0,-0.22)
-  pipe(dx(x),dy(y),mm(9),0,-@depth)
+    pipe(dx(x),dy(y),mm(11),0,-0.22)
+  pipe(dx(x),dy(y),mm(9.5),0,-@depth)
  end
  def LED(x,y,r)
     a_punkt(x,y,r)
