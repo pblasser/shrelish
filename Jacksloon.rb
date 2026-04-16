@@ -227,6 +227,7 @@ end
  #box(x+0.3,y+nowchub,x+0.5,y+nowchub+$bitwidth,0,-0.211,2)
  #box(x-MARJ-$halfwidth,y-0.5,x,y+0.5,0,-1,8)
  box(x-$halfwidth,y-nowchub,x+0.75,y+nowchub,0,-0.433,4)#june23 made 433 back to 4
+ #box(x,y-nowchub,x+0.75,y+nowchub,0,-0.433,4)#june23 made 433 back to 4
  
  #december 2023 made 4 back to 433
 end

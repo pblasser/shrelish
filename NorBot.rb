@@ -60,7 +60,7 @@ class NorBot < Jacksloon
   @curxo += MARJ
   #@curxo += @powjak
   @curxo += $halfwidth
-  kobiside(@curxo,@stary)
+  kobiside(@curxo+mm(1),@stary)
   @fittingsprocs[@line].call()
   nuys = [[1.0,0.6,-0.6,-1.0]]
   marx = MARJ + @starx + @width /2 + $halfwidth
@@ -70,10 +70,15 @@ class NorBot < Jacksloon
 #lox(@curxo-mm(47),@stary-mm(47),@curxo+mm(47),@stary+mm(47),4)
   mx = my = @wid0/2 -mm(9.5) 
   tierwon=-mm(14)
+  tierdre=tierwon-mm(2) #for drillholes for aluplatte
   tiertwo=tierwon-mm(14)
   tiertre=tiertwo-mm(2)
   compartments = Proc.new { |m|    
    box(m-mx,@stary-my,m+mx,@stary+my,0,tierwon,4)
+   drillus(m-mm(15),@stary-mm(30),tierwon,tierdre)
+   drillus(m-mm(15),@stary+mm(30),tierwon,tierdre)
+   drillus(m+mm(15),@stary+mm(30),tierwon,tierdre)
+   drillus(m+mm(15),@stary-mm(30),tierwon,tierdre)
    box(m-mm(30.5),@stary-mm(25.5),m+mm(30.5),@stary+mm(25.5),tierwon,tiertwo,4)
    box(m-mm(20),@stary-mm(25),m+mm(20),@stary+mm(25),tiertwo,tiertre,1) 
   }
@@ -130,6 +135,19 @@ class NorBot < Jacksloon
  @fittingsprocs =
  { 
   :nortube90 => Proc.new {  },
+:nortube110 => Proc.new { 
+a_screw(88.00,6.00,0)
+JOHNSON(98.64,42.07,174)
+JOHNSON(100.00,55.00,-123)
+JOHNSON(101.36,67.93,-141)
+JOHNSON(103.50,80.00,-141)
+a_screw(88.00,104.00,0)
+JOHNSON(22.00,101.00,66)
+a_screw(6.00,88.00,-90)
+a_screw(6.00,22.00,90)
+JOHNSON(21.00,12.00,33)
+},
+
   :dynastro90 => Proc.new {  },
 :dynamono90 => Proc.new { 
 a_screw(168.00,6.00,0.0)

@@ -13,12 +13,15 @@ main:
 	#$(CC) Shtar.rb 2 $(PP)shtar_pla.nc
 	#$(CC) NorBot.rb 1 1 1 90 branche $(PP)469_1n11.nc
 	$(CC) NorBot.rb 1 1 2 90 continu dynamono90 $(PP)4nor_dynmon90_11.nc
+	$(CC) NorBot.rb 1 1 1 110 continu nortube110 $(PP)4nor_110_11.nc
 	#$(CC) NorBot.rb 1 1 1 110 $(PP)499_1n11.nc
 	#$(CC) NorBot.rb 2 2 3 110 continu $(PP)499_3n22.nc
 	#$(CC) NorBot.rb 1 1 1 114 $(PP)468_1n11.nc
 	#$(CC) NorBot.rb 1 1 1 140 $(PP)498_1n11.nc
 	
 	$(CC) NorTop.rb 1 1 90 90 nortube69 $(PP)nortube69_11.nc 
+	$(CC) NorTop.rb 1 1 90 90 nortube69_old $(PP)nortube69_o11.nc 
+	$(CC) NorTop.rb 1 1 110 110 nortube97 $(PP)nortube97_11.nc 
 	$(CC) NorTop.rb 1 1 90 90 norduck $(PP)norduck_11.nc 
 
 
